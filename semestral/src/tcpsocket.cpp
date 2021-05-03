@@ -9,7 +9,7 @@ TCPSocket::TCPSocket(int descriptor,sockaddr_in address):Socket(PF_INET,SOCK_STR
 
 bool TCPSocket::Send(const char *str, size_t str_len)
 {
-    return !(m_closed || send(this->m_descriptor, str, str_len, 0) < 0);
+    return !(m_closed || send(m_descriptor, str, str_len, 0) < 0);
 }
 
 bool TCPSocket::Send(std::string str)
