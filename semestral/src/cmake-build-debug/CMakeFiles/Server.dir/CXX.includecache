@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kostdani/Documents/CVUT/PA2/Server/Actor.h
+unistd.h
+-
+sys/epoll.h
+-
+fcntl.h
+-
+iostream
+-
+
+/home/kostdani/Documents/CVUT/PA2/Server/Counter.h
+Actor.h
+/home/kostdani/Documents/CVUT/PA2/Server/Actor.h
+sys/eventfd.h
+-
+
+/home/kostdani/Documents/CVUT/PA2/Server/Message.h
+
+/home/kostdani/Documents/CVUT/PA2/Server/Queuer.cpp
+Queuer.h
+/home/kostdani/Documents/CVUT/PA2/Server/Queuer.h
+
+/home/kostdani/Documents/CVUT/PA2/Server/Queuer.h
+Counter.h
+/home/kostdani/Documents/CVUT/PA2/Server/Counter.h
+Message.h
+/home/kostdani/Documents/CVUT/PA2/Server/Message.h
+queue
+-
+mutex
+-
+
