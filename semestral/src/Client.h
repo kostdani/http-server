@@ -4,18 +4,19 @@
 
 #ifndef SERVER_CLIENT_H
 #define SERVER_CLIENT_H
-#include "Actor.h"
+#include "Queuer.h"
+#include "Reciever.h"
+#include "Sender.h"
+#include "Timer.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
-class Client : public Actor {
+class Client : public Queuer {
 public:
     Client(int descriptor, sockaddr_in addr);
 
 
     void onInput() override;
-
-    void onOutput() override;
 
     void onError() override;
 

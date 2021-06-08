@@ -5,6 +5,12 @@ CMakeFiles/Server.dir/Accepter.cpp.o: ../Accepter.cpp
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Accepter.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Client.h
+CMakeFiles/Server.dir/Accepter.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/Accepter.cpp.o: ../Message.h
+CMakeFiles/Server.dir/Accepter.cpp.o: ../Queuer.h
+CMakeFiles/Server.dir/Accepter.cpp.o: ../Reciever.h
+CMakeFiles/Server.dir/Accepter.cpp.o: ../Sender.h
+CMakeFiles/Server.dir/Accepter.cpp.o: ../Timer.h
 
 CMakeFiles/Server.dir/Actor.cpp.o: ../Actor.cpp
 CMakeFiles/Server.dir/Actor.cpp.o: ../Actor.h
@@ -12,6 +18,12 @@ CMakeFiles/Server.dir/Actor.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Client.cpp
 CMakeFiles/Server.dir/Client.cpp.o: ../Client.h
+CMakeFiles/Server.dir/Client.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/Client.cpp.o: ../Message.h
+CMakeFiles/Server.dir/Client.cpp.o: ../Queuer.h
+CMakeFiles/Server.dir/Client.cpp.o: ../Reciever.h
+CMakeFiles/Server.dir/Client.cpp.o: ../Sender.h
+CMakeFiles/Server.dir/Client.cpp.o: ../Timer.h
 
 CMakeFiles/Server.dir/Counter.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Counter.cpp.o: ../Counter.cpp
@@ -33,9 +45,11 @@ CMakeFiles/Server.dir/Queuer.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.cpp
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.h
-CMakeFiles/Server.dir/Reciever.cpp.o: ../Timer.h
 
 CMakeFiles/Server.dir/Sender.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/Sender.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/Sender.cpp.o: ../Message.h
+CMakeFiles/Server.dir/Sender.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/Sender.cpp.o: ../Sender.cpp
 CMakeFiles/Server.dir/Sender.cpp.o: ../Sender.h
 
@@ -48,6 +62,9 @@ CMakeFiles/Server.dir/main.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/main.cpp.o: ../Client.h
 CMakeFiles/Server.dir/main.cpp.o: ../Counter.h
 CMakeFiles/Server.dir/main.cpp.o: ../Epoller.h
+CMakeFiles/Server.dir/main.cpp.o: ../Message.h
+CMakeFiles/Server.dir/main.cpp.o: ../Queuer.h
+CMakeFiles/Server.dir/main.cpp.o: ../Reciever.h
 CMakeFiles/Server.dir/main.cpp.o: ../Sender.h
 CMakeFiles/Server.dir/main.cpp.o: ../Timer.h
 CMakeFiles/Server.dir/main.cpp.o: ../main.cpp

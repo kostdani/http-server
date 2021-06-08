@@ -4,7 +4,10 @@
 
 #include "Client.h"
 
-Client::Client(int descriptor, sockaddr_in addr): Actor(descriptor){
+Client::Client(int descriptor, sockaddr_in addr): Queuer(){
+    AddActor(new Reciever(descriptor));
+    AddActor(new Sender (dup(descriptor)));
+    AddActor(new Timer(1));
     m_addr=addr;
 }
 

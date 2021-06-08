@@ -6,7 +6,6 @@
 
 
 Reciever::Reciever(int descriptor): Actor(descriptor) {
-
 }
 
 bool Reciever::multiplex(int epolld) {

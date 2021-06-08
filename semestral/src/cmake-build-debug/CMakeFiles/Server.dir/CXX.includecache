@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/kostdani/kostdani/semestral/src/Accepter.cpp
+Accepter.h
+/home/kostdani/kostdani/semestral/src/Accepter.h
+
 /home/kostdani/kostdani/semestral/src/Accepter.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
@@ -26,9 +30,19 @@ fcntl.h
 iostream
 -
 
+/home/kostdani/kostdani/semestral/src/Client.cpp
+Client.h
 /home/kostdani/kostdani/semestral/src/Client.h
-Actor.h
-/home/kostdani/kostdani/semestral/src/Actor.h
+
+/home/kostdani/kostdani/semestral/src/Client.h
+Queuer.h
+/home/kostdani/kostdani/semestral/src/Queuer.h
+Reciever.h
+/home/kostdani/kostdani/semestral/src/Reciever.h
+Sender.h
+/home/kostdani/kostdani/semestral/src/Sender.h
+Timer.h
+/home/kostdani/kostdani/semestral/src/Timer.h
 sys/socket.h
 -
 arpa/inet.h
@@ -46,9 +60,33 @@ Actor.h
 set
 -
 
-/home/kostdani/kostdani/semestral/src/Sender.h
+/home/kostdani/kostdani/semestral/src/Message.h
+
+/home/kostdani/kostdani/semestral/src/Queuer.h
+Counter.h
+/home/kostdani/kostdani/semestral/src/Counter.h
+Message.h
+/home/kostdani/kostdani/semestral/src/Message.h
+queue
+-
+mutex
+-
+
+/home/kostdani/kostdani/semestral/src/Reciever.cpp
+Reciever.h
+/home/kostdani/kostdani/semestral/src/Reciever.h
+
+/home/kostdani/kostdani/semestral/src/Reciever.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
+
+/home/kostdani/kostdani/semestral/src/Sender.cpp
+Sender.h
+/home/kostdani/kostdani/semestral/src/Sender.h
+
+/home/kostdani/kostdani/semestral/src/Sender.h
+Queuer.h
+/home/kostdani/kostdani/semestral/src/Queuer.h
 
 /home/kostdani/kostdani/semestral/src/Timer.h
 Actor.h

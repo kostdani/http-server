@@ -6,6 +6,12 @@ CMakeFiles/Server.dir/Accepter.cpp.o
  /home/kostdani/kostdani/semestral/src/Accepter.h
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Client.h
+ /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/Message.h
+ /home/kostdani/kostdani/semestral/src/Queuer.h
+ /home/kostdani/kostdani/semestral/src/Reciever.h
+ /home/kostdani/kostdani/semestral/src/Sender.h
+ /home/kostdani/kostdani/semestral/src/Timer.h
 CMakeFiles/Server.dir/Actor.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.cpp
  /home/kostdani/kostdani/semestral/src/Actor.h
@@ -13,6 +19,12 @@ CMakeFiles/Server.dir/Client.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Client.cpp
  /home/kostdani/kostdani/semestral/src/Client.h
+ /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/Message.h
+ /home/kostdani/kostdani/semestral/src/Queuer.h
+ /home/kostdani/kostdani/semestral/src/Reciever.h
+ /home/kostdani/kostdani/semestral/src/Sender.h
+ /home/kostdani/kostdani/semestral/src/Timer.h
 CMakeFiles/Server.dir/Counter.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Counter.cpp
@@ -34,9 +46,11 @@ CMakeFiles/Server.dir/Reciever.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Reciever.cpp
  /home/kostdani/kostdani/semestral/src/Reciever.h
- /home/kostdani/kostdani/semestral/src/Timer.h
 CMakeFiles/Server.dir/Sender.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
+ /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/Message.h
+ /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Sender.cpp
  /home/kostdani/kostdani/semestral/src/Sender.h
 CMakeFiles/Server.dir/Timer.cpp.o
@@ -49,6 +63,9 @@ CMakeFiles/Server.dir/main.cpp.o
  /home/kostdani/kostdani/semestral/src/Client.h
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/Epoller.h
+ /home/kostdani/kostdani/semestral/src/Message.h
+ /home/kostdani/kostdani/semestral/src/Queuer.h
+ /home/kostdani/kostdani/semestral/src/Reciever.h
  /home/kostdani/kostdani/semestral/src/Sender.h
  /home/kostdani/kostdani/semestral/src/Timer.h
  /home/kostdani/kostdani/semestral/src/main.cpp
