@@ -22,6 +22,7 @@ Message * Queuer::Get() {
 }
 
 void Queuer::onInput() {
+    printf("queuer input\n");
     while(true){
         m_mtx.lock();
         if(m_queue.empty()){
@@ -34,6 +35,7 @@ void Queuer::onInput() {
         m_mtx.unlock();
         
         //
+        msghandler(m);
     }
 }
 
@@ -42,7 +44,7 @@ bool Queuer::multiplex(int epolld) {
 
     epoll_event ev{};
     ev.data.ptr = this;
-    ev.events = EPOLLIN | EPOLLET;
+    ev.events = EPOLLIN ;
 
     return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
 

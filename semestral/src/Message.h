@@ -4,7 +4,7 @@
 
 #ifndef SERVER_MESSAGE_H
 #define SERVER_MESSAGE_H
-
+#include <string>
 
 class Message {
 public:
@@ -17,6 +17,12 @@ public:
     ClientSettings(int d);
 
     int m_descriptor;
+};
+
+class TextMsg: public Message{
+public:
+    TextMsg(std::string str);
+    std::string m_str;
 };
 
 #endif //SERVER_MESSAGE_H

@@ -44,30 +44,23 @@ public:
     }
 };
 
-int f(A *a){
-    printf("fa\n");
-}
-int f (B * b){
-    printf("f(b)\n");
-}
 
 int main() {
-    A a(1);
-    B b(1);
-    f(&a);
-    f(&b);
-    /*
+
     Epoller epoll;
-    auto ac=new Accepter("127.0.0.1",8080);
-    epoll.AddActor(ac);
+    //auto ac=new Accepter("127.0.0.1",8080);
+    //epoll.AddActor(ac);
+    auto q=new Queuer();
+    epoll.AddActor(q);
     auto cnt=new Counter();
     epoll.AddActor(cnt);
     std::thread thr(thrfunc,&epoll);
 
+    q->Put(new TextMsg("testtxt"));
     std::cout << "waiting for my lord" << std::endl;
     std::cin.ignore();
     stop=true;
     cnt->Add(1);
-    thr.join();*/
+    thr.join();
     return 0;
 }

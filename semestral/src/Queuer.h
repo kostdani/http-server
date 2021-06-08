@@ -8,7 +8,6 @@
 #include "Message.h"
 #include <queue>
 #include <mutex>
-
 class Queuer : public Counter {
 public:
     Queuer();
@@ -21,6 +20,13 @@ public:
 
     bool Empty() const;
 
+    void msghandler(Message *msg){
+        printf("emptymsg\n");
+    }
+    void msghandler(TextMsg *msg){
+        printf("testmsg: ");
+        std::cout<<msg->m_str<<std::endl;
+    }
 
     void onInput() override;
 
