@@ -35,6 +35,10 @@ CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.cpp
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Timer.h
 
+CMakeFiles/Server.dir/Sender.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/Sender.cpp.o: ../Sender.cpp
+CMakeFiles/Server.dir/Sender.cpp.o: ../Sender.h
+
 CMakeFiles/Server.dir/Timer.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Timer.cpp.o: ../Timer.cpp
 CMakeFiles/Server.dir/Timer.cpp.o: ../Timer.h
@@ -44,6 +48,7 @@ CMakeFiles/Server.dir/main.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/main.cpp.o: ../Client.h
 CMakeFiles/Server.dir/main.cpp.o: ../Counter.h
 CMakeFiles/Server.dir/main.cpp.o: ../Epoller.h
+CMakeFiles/Server.dir/main.cpp.o: ../Sender.h
 CMakeFiles/Server.dir/main.cpp.o: ../Timer.h
 CMakeFiles/Server.dir/main.cpp.o: ../main.cpp
 

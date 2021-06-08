@@ -3,6 +3,7 @@
 #include "Accepter.h"
 #include "Counter.h"
 #include "Timer.h"
+#include "Sender.h"
 #include <thread>
 bool stop=false;
 
@@ -24,6 +25,7 @@ void thrfunc(Epoller *epoll){
 }
 
 int main() {
+    Sender s;
     Epoller epoll;
     auto ac=new Accepter("127.0.0.1",8080);
     auto t=new Timer(1);

@@ -4,16 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kostdani/Documents/CVUT/PA2/Server/Accepter.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/Accepter.cpp.o"
-  "/home/kostdani/Documents/CVUT/PA2/Server/Actor.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/Actor.cpp.o"
-  "/home/kostdani/Documents/CVUT/PA2/Server/Client.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/Client.cpp.o"
-  "/home/kostdani/Documents/CVUT/PA2/Server/Counter.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/Counter.cpp.o"
-  "/home/kostdani/Documents/CVUT/PA2/Server/Epoller.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/Epoller.cpp.o"
-  "/home/kostdani/Documents/CVUT/PA2/Server/Message.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/Message.cpp.o"
-  "/home/kostdani/Documents/CVUT/PA2/Server/Queuer.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/Queuer.cpp.o"
-  "/home/kostdani/Documents/CVUT/PA2/Server/Reciever.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/Reciever.cpp.o"
-  "/home/kostdani/Documents/CVUT/PA2/Server/Timer.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/Timer.cpp.o"
-  "/home/kostdani/Documents/CVUT/PA2/Server/main.cpp" "/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Accepter.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Accepter.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Actor.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Actor.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Client.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Client.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Counter.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Counter.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Epoller.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Epoller.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Message.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Message.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Queuer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Queuer.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Reciever.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Reciever.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Sender.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Sender.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Timer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Timer.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/main.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

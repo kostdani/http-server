@@ -62,10 +62,10 @@ RM = /home/kostdani/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.7142.21/b
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kostdani/Documents/CVUT/PA2/Server
+CMAKE_SOURCE_DIR = /home/kostdani/kostdani/semestral/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug
+CMAKE_BINARY_DIR = /home/kostdani/kostdani/semestral/src/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Server.dir/depend.make
@@ -78,133 +78,146 @@ include CMakeFiles/Server.dir/flags.make
 
 CMakeFiles/Server.dir/main.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Server.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/main.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Server.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/main.cpp.o -c /home/kostdani/kostdani/semestral/src/main.cpp
 
 CMakeFiles/Server.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/main.cpp > CMakeFiles/Server.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/main.cpp > CMakeFiles/Server.dir/main.cpp.i
 
 CMakeFiles/Server.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/main.cpp -o CMakeFiles/Server.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/main.cpp -o CMakeFiles/Server.dir/main.cpp.s
 
 CMakeFiles/Server.dir/Epoller.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Epoller.cpp.o: ../Epoller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Server.dir/Epoller.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Epoller.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/Epoller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Server.dir/Epoller.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Epoller.cpp.o -c /home/kostdani/kostdani/semestral/src/Epoller.cpp
 
 CMakeFiles/Server.dir/Epoller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Epoller.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/Epoller.cpp > CMakeFiles/Server.dir/Epoller.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Epoller.cpp > CMakeFiles/Server.dir/Epoller.cpp.i
 
 CMakeFiles/Server.dir/Epoller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Epoller.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/Epoller.cpp -o CMakeFiles/Server.dir/Epoller.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Epoller.cpp -o CMakeFiles/Server.dir/Epoller.cpp.s
 
 CMakeFiles/Server.dir/Actor.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Actor.cpp.o: ../Actor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Server.dir/Actor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Actor.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/Actor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Server.dir/Actor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Actor.cpp.o -c /home/kostdani/kostdani/semestral/src/Actor.cpp
 
 CMakeFiles/Server.dir/Actor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Actor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/Actor.cpp > CMakeFiles/Server.dir/Actor.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Actor.cpp > CMakeFiles/Server.dir/Actor.cpp.i
 
 CMakeFiles/Server.dir/Actor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Actor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/Actor.cpp -o CMakeFiles/Server.dir/Actor.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Actor.cpp -o CMakeFiles/Server.dir/Actor.cpp.s
 
 CMakeFiles/Server.dir/Accepter.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Accepter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Server.dir/Accepter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Accepter.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/Accepter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Server.dir/Accepter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Accepter.cpp.o -c /home/kostdani/kostdani/semestral/src/Accepter.cpp
 
 CMakeFiles/Server.dir/Accepter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Accepter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/Accepter.cpp > CMakeFiles/Server.dir/Accepter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Accepter.cpp > CMakeFiles/Server.dir/Accepter.cpp.i
 
 CMakeFiles/Server.dir/Accepter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Accepter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/Accepter.cpp -o CMakeFiles/Server.dir/Accepter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Accepter.cpp -o CMakeFiles/Server.dir/Accepter.cpp.s
 
 CMakeFiles/Server.dir/Client.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Client.cpp.o: ../Client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Server.dir/Client.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Client.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/Client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Server.dir/Client.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Client.cpp.o -c /home/kostdani/kostdani/semestral/src/Client.cpp
 
 CMakeFiles/Server.dir/Client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/Client.cpp > CMakeFiles/Server.dir/Client.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Client.cpp > CMakeFiles/Server.dir/Client.cpp.i
 
 CMakeFiles/Server.dir/Client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/Client.cpp -o CMakeFiles/Server.dir/Client.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Client.cpp -o CMakeFiles/Server.dir/Client.cpp.s
 
 CMakeFiles/Server.dir/Counter.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Counter.cpp.o: ../Counter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Server.dir/Counter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Counter.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/Counter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Server.dir/Counter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Counter.cpp.o -c /home/kostdani/kostdani/semestral/src/Counter.cpp
 
 CMakeFiles/Server.dir/Counter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Counter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/Counter.cpp > CMakeFiles/Server.dir/Counter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Counter.cpp > CMakeFiles/Server.dir/Counter.cpp.i
 
 CMakeFiles/Server.dir/Counter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Counter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/Counter.cpp -o CMakeFiles/Server.dir/Counter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Counter.cpp -o CMakeFiles/Server.dir/Counter.cpp.s
 
 CMakeFiles/Server.dir/Reciever.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Server.dir/Reciever.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Reciever.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/Reciever.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Server.dir/Reciever.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Reciever.cpp.o -c /home/kostdani/kostdani/semestral/src/Reciever.cpp
 
 CMakeFiles/Server.dir/Reciever.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Reciever.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/Reciever.cpp > CMakeFiles/Server.dir/Reciever.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Reciever.cpp > CMakeFiles/Server.dir/Reciever.cpp.i
 
 CMakeFiles/Server.dir/Reciever.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Reciever.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/Reciever.cpp -o CMakeFiles/Server.dir/Reciever.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Reciever.cpp -o CMakeFiles/Server.dir/Reciever.cpp.s
 
 CMakeFiles/Server.dir/Timer.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Timer.cpp.o: ../Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Server.dir/Timer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Timer.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/Timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Server.dir/Timer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Timer.cpp.o -c /home/kostdani/kostdani/semestral/src/Timer.cpp
 
 CMakeFiles/Server.dir/Timer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Timer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/Timer.cpp > CMakeFiles/Server.dir/Timer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Timer.cpp > CMakeFiles/Server.dir/Timer.cpp.i
 
 CMakeFiles/Server.dir/Timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Timer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/Timer.cpp -o CMakeFiles/Server.dir/Timer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Timer.cpp -o CMakeFiles/Server.dir/Timer.cpp.s
 
 CMakeFiles/Server.dir/Queuer.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Queuer.cpp.o: ../Queuer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Server.dir/Queuer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Queuer.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/Queuer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Server.dir/Queuer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Queuer.cpp.o -c /home/kostdani/kostdani/semestral/src/Queuer.cpp
 
 CMakeFiles/Server.dir/Queuer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Queuer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/Queuer.cpp > CMakeFiles/Server.dir/Queuer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Queuer.cpp > CMakeFiles/Server.dir/Queuer.cpp.i
 
 CMakeFiles/Server.dir/Queuer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Queuer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/Queuer.cpp -o CMakeFiles/Server.dir/Queuer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Queuer.cpp -o CMakeFiles/Server.dir/Queuer.cpp.s
 
 CMakeFiles/Server.dir/Message.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Message.cpp.o: ../Message.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Server.dir/Message.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Message.cpp.o -c /home/kostdani/Documents/CVUT/PA2/Server/Message.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Server.dir/Message.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Message.cpp.o -c /home/kostdani/kostdani/semestral/src/Message.cpp
 
 CMakeFiles/Server.dir/Message.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Message.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/Documents/CVUT/PA2/Server/Message.cpp > CMakeFiles/Server.dir/Message.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Message.cpp > CMakeFiles/Server.dir/Message.cpp.i
 
 CMakeFiles/Server.dir/Message.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Message.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/Documents/CVUT/PA2/Server/Message.cpp -o CMakeFiles/Server.dir/Message.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Message.cpp -o CMakeFiles/Server.dir/Message.cpp.s
+
+CMakeFiles/Server.dir/Sender.cpp.o: CMakeFiles/Server.dir/flags.make
+CMakeFiles/Server.dir/Sender.cpp.o: ../Sender.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Server.dir/Sender.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Sender.cpp.o -c /home/kostdani/kostdani/semestral/src/Sender.cpp
+
+CMakeFiles/Server.dir/Sender.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Sender.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kostdani/kostdani/semestral/src/Sender.cpp > CMakeFiles/Server.dir/Sender.cpp.i
+
+CMakeFiles/Server.dir/Sender.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Sender.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kostdani/kostdani/semestral/src/Sender.cpp -o CMakeFiles/Server.dir/Sender.cpp.s
 
 # Object files for target Server
 Server_OBJECTS = \
@@ -217,7 +230,8 @@ Server_OBJECTS = \
 "CMakeFiles/Server.dir/Reciever.cpp.o" \
 "CMakeFiles/Server.dir/Timer.cpp.o" \
 "CMakeFiles/Server.dir/Queuer.cpp.o" \
-"CMakeFiles/Server.dir/Message.cpp.o"
+"CMakeFiles/Server.dir/Message.cpp.o" \
+"CMakeFiles/Server.dir/Sender.cpp.o"
 
 # External object files for target Server
 Server_EXTERNAL_OBJECTS =
@@ -232,9 +246,10 @@ Server: CMakeFiles/Server.dir/Reciever.cpp.o
 Server: CMakeFiles/Server.dir/Timer.cpp.o
 Server: CMakeFiles/Server.dir/Queuer.cpp.o
 Server: CMakeFiles/Server.dir/Message.cpp.o
+Server: CMakeFiles/Server.dir/Sender.cpp.o
 Server: CMakeFiles/Server.dir/build.make
 Server: CMakeFiles/Server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -247,6 +262,6 @@ CMakeFiles/Server.dir/clean:
 .PHONY : CMakeFiles/Server.dir/clean
 
 CMakeFiles/Server.dir/depend:
-	cd /home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kostdani/Documents/CVUT/PA2/Server /home/kostdani/Documents/CVUT/PA2/Server /home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug /home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug /home/kostdani/Documents/CVUT/PA2/Server/cmake-build-debug/CMakeFiles/Server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kostdani/kostdani/semestral/src/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kostdani/kostdani/semestral/src /home/kostdani/kostdani/semestral/src /home/kostdani/kostdani/semestral/src/cmake-build-debug /home/kostdani/kostdani/semestral/src/cmake-build-debug /home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Server.dir/depend
 
