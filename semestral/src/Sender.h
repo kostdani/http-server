@@ -24,17 +24,4 @@ protected:
 };
 
 
-void Sender::onInput() {
-    printf("sender input %d\n",m_descriptor);
-}
-void Sender::onOutput() {
-    printf("sender out %d\n",m_descriptor);
-}
-
-void Sender::onError() {
-    printf("sender error\n");
-}
-
-
-
 #endif //SERVER_SENDER_H

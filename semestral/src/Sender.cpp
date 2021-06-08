@@ -16,3 +16,16 @@ bool Sender::multiplex(int epolld) {
     return epoll_ctl(epolld, EPOLL_CTL_ADD, m_socketfd, &ev) == 0;
 
 }
+
+
+void Sender::onInput() {
+    printf("sender input %d\n",m_descriptor);
+}
+void Sender::onOutput() {
+    printf("sender out %d\n",m_descriptor);
+}
+
+void Sender::onError() {
+    printf("sender error\n");
+}
+
