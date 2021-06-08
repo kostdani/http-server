@@ -7,8 +7,16 @@
 
 
 class Message {
-
+public:
+    Message()=default;
 };
 
+
+class ClientSettings : public Message{
+public:
+    ClientSettings(int d);
+
+    int m_descriptor;
+};
 
 #endif //SERVER_MESSAGE_H

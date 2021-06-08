@@ -15,9 +15,9 @@ public:
 
    // ~Queuer();
 
-    void Put(Message & msg);
+    void Put(Message * msg);
 
-    Message Get();
+    Message * Get();
 
     bool Empty() const;
 
@@ -26,7 +26,7 @@ public:
 
 protected:
     bool multiplex(int epolld) override;
-    std::queue<Message> m_queue;
+    std::queue<Message *> m_queue;
     std::mutex m_mtx;
 };
 

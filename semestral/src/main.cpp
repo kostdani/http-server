@@ -24,14 +24,42 @@ void thrfunc(Epoller *epoll){
     }
 }
 
+class A{
+public:
+    A(int a){
+        this->a=a;
+    }
+    virtual void print(){
+        printf("a\n");
+    }
+    int a;
+};
+class B:public A{
+public:
+    B(int b):A(b){
+    }
+    void print() override{
+
+        printf("b\n");
+    }
+};
+
+int f(A *a){
+    printf("fa\n");
+}
+int f (B * b){
+    printf("f(b)\n");
+}
+
 int main() {
-    Sender s;
+    A a(1);
+    B b(1);
+    f(&a);
+    f(&b);
+    /*
     Epoller epoll;
     auto ac=new Accepter("127.0.0.1",8080);
-    auto t=new Timer(1);
-    t->ResetTimer();
     epoll.AddActor(ac);
-    epoll.AddActor(t);
     auto cnt=new Counter();
     epoll.AddActor(cnt);
     std::thread thr(thrfunc,&epoll);
@@ -40,6 +68,6 @@ int main() {
     std::cin.ignore();
     stop=true;
     cnt->Add(1);
-    thr.join();
+    thr.join();*/
     return 0;
 }

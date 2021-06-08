@@ -21,7 +21,7 @@ public:
     void onError() override;
 
 protected:
-    bool multiplex(int epolld) override;
+ //   bool multiplex(int epolld) override;
     sockaddr_in m_addr;
 };
 

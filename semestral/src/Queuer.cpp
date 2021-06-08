@@ -6,7 +6,7 @@
 
 Queuer::Queuer():Counter() {}
 
-void Queuer::Put(Message &msg) {
+void Queuer::Put(Message *msg) {
     m_mtx.lock();
     m_queue.push(msg);
     Add(1);
@@ -15,7 +15,7 @@ void Queuer::Put(Message &msg) {
 bool Queuer::Empty() const{
     return m_queue.empty();
 }
-Message Queuer::Get() {
+Message * Queuer::Get() {
     auto m= m_queue.front();
     m_queue.pop();
     return m;

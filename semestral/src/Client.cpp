@@ -5,9 +5,9 @@
 #include "Client.h"
 
 Client::Client(int descriptor, sockaddr_in addr): Queuer(){
-    AddActor(new Reciever(descriptor));
-    AddActor(new Sender (dup(descriptor)));
-    AddActor(new Timer(1));
+    m_parent->AddActor(new Reciever(descriptor));
+    m_parent->AddActor(new Sender (dup(descriptor)));
+    m_parent->AddActor(new Timer(1));
     m_addr=addr;
 }
 
@@ -28,14 +28,11 @@ void Client::onInput() {
         }
     }
 }
-void Client::onOutput() {
-    printf("cli out %d\n",m_descriptor);
-}
 void Client::onError() {
     printf("cli error\n");
 }
 
-
+/*
 bool Client::multiplex(int epolld) {
 
     epoll_event ev{};
@@ -44,4 +41,4 @@ bool Client::multiplex(int epolld) {
 
     return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
 
-}
+}*/

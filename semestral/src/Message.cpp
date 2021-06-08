@@ -3,3 +3,7 @@
 //
 
 #include "Message.h"
+
+ClientSettings::ClientSettings(int d) {
+    m_descriptor=d;
+}

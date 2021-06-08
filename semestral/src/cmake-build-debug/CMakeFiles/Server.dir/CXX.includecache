@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/kostdani/kostdani/semestral/src/Accepter.cpp
-Accepter.h
-/home/kostdani/kostdani/semestral/src/Accepter.h
-
 /home/kostdani/kostdani/semestral/src/Accepter.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
@@ -29,10 +25,6 @@ fcntl.h
 -
 iostream
 -
-
-/home/kostdani/kostdani/semestral/src/Client.cpp
-Client.h
-/home/kostdani/kostdani/semestral/src/Client.h
 
 /home/kostdani/kostdani/semestral/src/Client.h
 Queuer.h
@@ -72,17 +64,9 @@ queue
 mutex
 -
 
-/home/kostdani/kostdani/semestral/src/Reciever.cpp
-Reciever.h
-/home/kostdani/kostdani/semestral/src/Reciever.h
-
 /home/kostdani/kostdani/semestral/src/Reciever.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
-
-/home/kostdani/kostdani/semestral/src/Sender.cpp
-Sender.h
-/home/kostdani/kostdani/semestral/src/Sender.h
 
 /home/kostdani/kostdani/semestral/src/Sender.h
 Queuer.h
