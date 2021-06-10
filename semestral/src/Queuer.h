@@ -14,9 +14,9 @@ public:
 
    // ~Queuer();
 
-    void Put(Message * msg);
+    void Push(Message * msg);
 
-    Message * Get();
+    Message * Pop();
 
     bool Empty() const;
 

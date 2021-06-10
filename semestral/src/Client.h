@@ -23,6 +23,7 @@ public:
 protected:
  //   bool multiplex(int epolld) override;
     sockaddr_in m_addr;
+    int m_clientfd;
 };
 
 

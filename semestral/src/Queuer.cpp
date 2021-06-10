@@ -6,7 +6,7 @@
 
 Queuer::Queuer():Counter() {}
 
-void Queuer::Put(Message *msg) {
+void Queuer::Push(Message *msg) {
     m_mtx.lock();
     m_queue.push(msg);
     Add(1);
@@ -15,27 +15,25 @@ void Queuer::Put(Message *msg) {
 bool Queuer::Empty() const{
     return m_queue.empty();
 }
-Message * Queuer::Get() {
-    auto m= m_queue.front();
-    m_queue.pop();
-    return m;
+Message * Queuer::Pop() {
+    Message *r=nullptr;
+    m_mtx.lock();
+    if(!m_queue.empty()){
+        r=m_queue.front();
+        m_queue.pop();
+    }else{
+        Reset();
+    }
+    m_mtx.unlock();
+    return r;
 }
 
 void Queuer::onInput() {
     printf("queuer input\n");
-    while(true){
-        m_mtx.lock();
-        if(m_queue.empty()){
-            Reset();
-            m_mtx.unlock();
-            break;
-        }
-        auto m=m_queue.front();
-        m_queue.pop();
-        m_mtx.unlock();
-        
-        //
-        msghandler(m);
+    Message *msg;
+    while((msg=Pop())){
+        printf("handlong message\n");
+        msghandler(msg);
     }
 }
 
