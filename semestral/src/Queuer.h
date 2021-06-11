@@ -6,27 +6,20 @@
 #define SERVER_QUEUER_H
 #include "Counter.h"
 #include "Message.h"
+#include <functional>
 #include <queue>
 #include <mutex>
+
 class Queuer : public Counter {
 public:
     Queuer();
-
    // ~Queuer();
 
-    void Push(Message * msg);
+    void Push(Message* msg);
 
-    Message * Pop();
+    Message* Pop();
 
     bool Empty() const;
-
-    void msghandler(Message *msg){
-        printf("emptymsg\n");
-    }
-    void msghandler(TextMsg *msg){
-        printf("testmsg: ");
-        std::cout<<msg->m_str<<std::endl;
-    }
 
     void onInput() override;
 

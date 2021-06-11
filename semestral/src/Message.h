@@ -6,8 +6,8 @@
 #define SERVER_MESSAGE_H
 #include <string>
 
-class Message {
-public:
+struct Message {
+
     Message()=default;
 };
 

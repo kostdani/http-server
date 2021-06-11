@@ -56,9 +56,16 @@ int main() {
     epoll.AddActor(cnt);
     std::thread thr(thrfunc,&epoll);
 
-    q->Push(new TextMsg("testtxt"));
+    q->Push(new Message());
+    q->Push(new Message());
     std::cout << "waiting for my lord" << std::endl;
     std::cin.ignore();
+
+
+    q->Push(new Message());
+    std::cout << "waiting for my lord" << std::endl;
+    std::cin.ignore();
+
     stop=true;
     cnt->Add(1);
     thr.join();
