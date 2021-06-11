@@ -56,6 +56,9 @@ void Accepter::onInput() {
         if(!newcli)
             break;
         printf("addng new cli\n");
+        Message *sm=new Message();
+        *sm={Message::msg_type::SETTINGS,""};
+        newcli->Push(sm);
         AddActor(newcli);
     }
 

@@ -48,23 +48,15 @@ public:
 int main() {
 
     Epoller epoll;
-    //auto ac=new Accepter("127.0.0.1",8080);
-    //epoll.AddActor(ac);
-    auto q=new Queuer();
-    epoll.AddActor(q);
+    auto ac=new Accepter("127.0.0.1",8080);
+    epoll.AddActor(ac);
     auto cnt=new Counter();
     epoll.AddActor(cnt);
     std::thread thr(thrfunc,&epoll);
 
-    q->Push(new Message());
-    q->Push(new Message());
     std::cout << "waiting for my lord" << std::endl;
     std::cin.ignore();
 
-
-    q->Push(new Message());
-    std::cout << "waiting for my lord" << std::endl;
-    std::cin.ignore();
 
     stop=true;
     cnt->Add(1);

@@ -4,11 +4,13 @@
 
 #ifndef SERVER_ACTOR_H
 #define SERVER_ACTOR_H
-
+#include "Message.h"
 #include <unistd.h>
 #include <sys/epoll.h>
 #include <fcntl.h>
 #include <iostream>
+#include <functional>
+
 class Actor {
 public:
     // Constructor
@@ -33,6 +35,7 @@ public:
 
     friend class Epoller;
 
+    std::function<void(Message *)> handler=[](Message *){};
 
 protected:
     virtual bool multiplex(int epolld);

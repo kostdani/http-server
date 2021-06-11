@@ -5,6 +5,7 @@
 #ifndef SERVER_ACCEPTER_H
 #define SERVER_ACCEPTER_H
 #include "Actor.h"
+#include "Reciever.h"
 #include "Client.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>

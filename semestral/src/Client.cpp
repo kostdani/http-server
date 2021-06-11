@@ -5,31 +5,21 @@
 #include "Client.h"
 
 Client::Client(int descriptor, sockaddr_in addr): Queuer(){
-    m_parent->AddActor(new Reciever(descriptor));
-    m_parent->AddActor(new Sender (dup(descriptor)));
-    m_parent->AddActor(new Timer(1));
+    m_clientfd=descriptor;
     m_addr=addr;
 }
 
-
-void Client::onInput() {
-    printf("cli input %d\n",m_descriptor);
-    char buf[256]{};
-    while(true){
-        int len = read(m_descriptor, buf, 256);
-        printf("len %d\n",len);
-        if(len==-1){
-            printf("error %d\n",errno);
-            break;
-        }
-        std::cout.write(buf,len);
-        if(len < 256) {
-            break;
-        }
+void Client::handler(Message *msg) {
+    printf("client handler\n");
+    if(msg->type==Message::msg_type::BYTEARRAY){
+        std::cout<<msg->msg;
+    }else if(msg->type==Message::msg_type::SETTINGS){
+        printf("clisetup\n");
+        m_recv=new Reciever(m_clientfd,this);
+        AddActor(m_recv);
+    }else{
+        printf("errormsg\n");
     }
-}
-void Client::onError() {
-    printf("cli error\n");
 }
 
 /*

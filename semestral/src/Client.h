@@ -16,13 +16,16 @@ public:
     Client(int descriptor, sockaddr_in addr);
 
 
-    void onInput() override;
+ //   void onInput() override;
 
-    void onError() override;
+ //   void onError() override;
+
+    void handler(Message *msg) override;
 
 protected:
  //   bool multiplex(int epolld) override;
     sockaddr_in m_addr;
+    Reciever *m_recv=0;
     int m_clientfd;
 };
 

@@ -7,22 +7,15 @@
 #include <string>
 
 struct Message {
-
-    Message()=default;
+    enum class msg_type
+    {
+        ERROR,
+        SETTINGS,
+        BYTEARRAY
+    };
+    msg_type type;
+    std::string msg;
 };
 
-
-class ClientSettings : public Message{
-public:
-    ClientSettings(int d);
-
-    int m_descriptor;
-};
-
-class TextMsg: public Message{
-public:
-    TextMsg(std::string str);
-    std::string m_str;
-};
 
 #endif //SERVER_MESSAGE_H

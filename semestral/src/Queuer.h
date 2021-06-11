@@ -6,7 +6,6 @@
 #define SERVER_QUEUER_H
 #include "Counter.h"
 #include "Message.h"
-#include <functional>
 #include <queue>
 #include <mutex>
 
@@ -22,6 +21,8 @@ public:
     bool Empty() const;
 
     void onInput() override;
+
+    virtual void handler(Message *msg);
 
 protected:
     bool multiplex(int epolld) override;

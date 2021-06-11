@@ -33,12 +33,17 @@ Message * Queuer::Pop() {
     return r;
 }
 
+void Queuer::handler(Message *msg) {
+    std::cout<<msg->msg<<std::endl;
+}
+
 void Queuer::onInput() {
     printf("queuer input\n");
     Message * msg=0;
     while((msg=Pop())){
         printf("handling message\n");
-        std::cout<<msg<<std::endl;
+        handler(msg);
+        //std::cout<<msg<<std::endl;
     }
 }
 
