@@ -39,6 +39,13 @@ CMakeFiles/Server.dir/Epoller.cpp.o: ../Message.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../HTTPServer.cpp
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../HTTPServer.h
 
+CMakeFiles/Server.dir/Logger.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/Logger.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/Logger.cpp.o: ../Logger.cpp
+CMakeFiles/Server.dir/Logger.cpp.o: ../Logger.h
+CMakeFiles/Server.dir/Logger.cpp.o: ../Message.h
+CMakeFiles/Server.dir/Logger.cpp.o: ../Queuer.h
+
 CMakeFiles/Server.dir/Message.cpp.o: ../Message.cpp
 CMakeFiles/Server.dir/Message.cpp.o: ../Message.h
 
@@ -72,6 +79,7 @@ CMakeFiles/Server.dir/main.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/main.cpp.o: ../Client.h
 CMakeFiles/Server.dir/main.cpp.o: ../Counter.h
 CMakeFiles/Server.dir/main.cpp.o: ../Epoller.h
+CMakeFiles/Server.dir/main.cpp.o: ../Logger.h
 CMakeFiles/Server.dir/main.cpp.o: ../Message.h
 CMakeFiles/Server.dir/main.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/main.cpp.o: ../Reciever.h

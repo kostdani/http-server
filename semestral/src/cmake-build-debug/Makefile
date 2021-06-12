@@ -304,6 +304,33 @@ HTTPServer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPServer.cpp.s
 .PHONY : HTTPServer.cpp.s
 
+Logger.o: Logger.cpp.o
+
+.PHONY : Logger.o
+
+# target to build an object file
+Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Logger.cpp.o
+.PHONY : Logger.cpp.o
+
+Logger.i: Logger.cpp.i
+
+.PHONY : Logger.i
+
+# target to preprocess a source file
+Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Logger.cpp.i
+.PHONY : Logger.cpp.i
+
+Logger.s: Logger.cpp.s
+
+.PHONY : Logger.s
+
+# target to generate assembly for a file
+Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Logger.cpp.s
+.PHONY : Logger.cpp.s
+
 Message.o: Message.cpp.o
 
 .PHONY : Message.o
@@ -493,6 +520,9 @@ help:
 	@echo "... HTTPServer.o"
 	@echo "... HTTPServer.i"
 	@echo "... HTTPServer.s"
+	@echo "... Logger.o"
+	@echo "... Logger.i"
+	@echo "... Logger.s"
 	@echo "... Message.o"
 	@echo "... Message.i"
 	@echo "... Message.s"

@@ -39,6 +39,13 @@ CMakeFiles/Server.dir/Epoller.cpp.o
 CMakeFiles/Server.dir/HTTPServer.cpp.o
  /home/kostdani/kostdani/semestral/src/HTTPServer.cpp
  /home/kostdani/kostdani/semestral/src/HTTPServer.h
+CMakeFiles/Server.dir/Logger.cpp.o
+ /home/kostdani/kostdani/semestral/src/Actor.h
+ /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/Logger.cpp
+ /home/kostdani/kostdani/semestral/src/Logger.h
+ /home/kostdani/kostdani/semestral/src/Message.h
+ /home/kostdani/kostdani/semestral/src/Queuer.h
 CMakeFiles/Server.dir/Message.cpp.o
  /home/kostdani/kostdani/semestral/src/Message.cpp
  /home/kostdani/kostdani/semestral/src/Message.h
@@ -73,6 +80,7 @@ CMakeFiles/Server.dir/main.cpp.o
  /home/kostdani/kostdani/semestral/src/Client.h
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/Epoller.h
+ /home/kostdani/kostdani/semestral/src/Logger.h
  /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Reciever.h

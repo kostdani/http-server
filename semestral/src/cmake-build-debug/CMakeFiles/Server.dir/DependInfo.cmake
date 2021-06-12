@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kostdani/kostdani/semestral/src/Counter.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Counter.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Epoller.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Epoller.cpp.o"
   "/home/kostdani/kostdani/semestral/src/HTTPServer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/HTTPServer.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/Logger.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Logger.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Message.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Message.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Queuer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Queuer.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Reciever.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Reciever.cpp.o"

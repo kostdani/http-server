@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/kostdani/kostdani/semestral/src/Accepter.cpp
-Accepter.h
-/home/kostdani/kostdani/semestral/src/Accepter.h
-
 /home/kostdani/kostdani/semestral/src/Accepter.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
@@ -35,10 +31,6 @@ iostream
 -
 functional
 -
-
-/home/kostdani/kostdani/semestral/src/Client.cpp
-Client.h
-/home/kostdani/kostdani/semestral/src/Client.h
 
 /home/kostdani/kostdani/semestral/src/Client.h
 Queuer.h
@@ -66,6 +58,12 @@ Actor.h
 set
 -
 
+/home/kostdani/kostdani/semestral/src/Logger.h
+Queuer.h
+/home/kostdani/kostdani/semestral/src/Queuer.h
+fstream
+-
+
 /home/kostdani/kostdani/semestral/src/Message.h
 string
 -
@@ -85,10 +83,6 @@ Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
 Queuer.h
 /home/kostdani/kostdani/semestral/src/Queuer.h
-
-/home/kostdani/kostdani/semestral/src/Sender.cpp
-Sender.h
-/home/kostdani/kostdani/semestral/src/Sender.h
 
 /home/kostdani/kostdani/semestral/src/Sender.h
 Queuer.h
@@ -113,6 +107,8 @@ Timer.h
 /home/kostdani/kostdani/semestral/src/Timer.h
 Sender.h
 /home/kostdani/kostdani/semestral/src/Sender.h
+Logger.h
+/home/kostdani/kostdani/semestral/src/Logger.h
 thread
 -
 

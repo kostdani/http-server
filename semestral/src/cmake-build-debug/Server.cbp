@@ -118,6 +118,12 @@
 		<Unit filename="/home/kostdani/kostdani/semestral/src/HTTPServer.h">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/Logger.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/Logger.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Message.cpp">
 			<Option target="Server"/>
 		</Unit>
