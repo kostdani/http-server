@@ -11,7 +11,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
-class Client : public Queuer {
+class Client : public Queuer<Message *> {
 public:
     Client(int descriptor, sockaddr_in addr);
 
@@ -20,7 +20,7 @@ public:
 
  //   void onError() override;
 
-    void handler(Message *msg) override;
+    void handler(Message * msg) override;
 
 protected:
  //   bool multiplex(int epolld) override;

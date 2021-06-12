@@ -36,6 +36,9 @@ CMakeFiles/Server.dir/Epoller.cpp.o: ../Epoller.cpp
 CMakeFiles/Server.dir/Epoller.cpp.o: ../Epoller.h
 CMakeFiles/Server.dir/Epoller.cpp.o: ../Message.h
 
+CMakeFiles/Server.dir/HTTPServer.cpp.o: ../HTTPServer.cpp
+CMakeFiles/Server.dir/HTTPServer.cpp.o: ../HTTPServer.h
+
 CMakeFiles/Server.dir/Message.cpp.o: ../Message.cpp
 CMakeFiles/Server.dir/Message.cpp.o: ../Message.h
 

@@ -6,7 +6,7 @@
 #define SERVER_SENDER_H
 #include "Queuer.h"
 
-class Sender: public Queuer {
+class Sender: public Queuer<std::string >{
 public:
     Sender(int descriptor);
 

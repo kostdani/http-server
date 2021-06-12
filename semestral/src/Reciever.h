@@ -9,14 +9,14 @@
 
 class Reciever : public Actor{
 public:
-    Reciever(int descriptor,Queuer *q);
+    Reciever(int descriptor,Queuer<Message *> *q);
 
     void onInput() override;
 
     void onError() override;
 
 protected:
-    Queuer *m_q;
+    Queuer<Message *> *m_q;
     std::string m_str="";
     bool multiplex(int epolld) override;
 };

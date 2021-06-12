@@ -5,7 +5,7 @@
 #include "Reciever.h"
 
 
-Reciever::Reciever(int descriptor,Queuer *q): Actor(descriptor) {
+Reciever::Reciever(int descriptor,Queuer<Message *> *q): Actor(descriptor) {
     m_q=q;
 }
 

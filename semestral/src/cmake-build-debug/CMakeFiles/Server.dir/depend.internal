@@ -36,6 +36,9 @@ CMakeFiles/Server.dir/Epoller.cpp.o
  /home/kostdani/kostdani/semestral/src/Epoller.cpp
  /home/kostdani/kostdani/semestral/src/Epoller.h
  /home/kostdani/kostdani/semestral/src/Message.h
+CMakeFiles/Server.dir/HTTPServer.cpp.o
+ /home/kostdani/kostdani/semestral/src/HTTPServer.cpp
+ /home/kostdani/kostdani/semestral/src/HTTPServer.h
 CMakeFiles/Server.dir/Message.cpp.o
  /home/kostdani/kostdani/semestral/src/Message.cpp
  /home/kostdani/kostdani/semestral/src/Message.h
