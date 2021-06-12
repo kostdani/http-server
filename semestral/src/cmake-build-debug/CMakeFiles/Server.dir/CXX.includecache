@@ -6,11 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/kostdani/kostdani/semestral/src/Message.cpp
+/home/kostdani/kostdani/semestral/src/Actor.h
 Message.h
 /home/kostdani/kostdani/semestral/src/Message.h
+unistd.h
+-
+sys/epoll.h
+-
+fcntl.h
+-
+iostream
+-
+functional
+-
+
+/home/kostdani/kostdani/semestral/src/Counter.h
+Actor.h
+/home/kostdani/kostdani/semestral/src/Actor.h
+sys/eventfd.h
+-
 
 /home/kostdani/kostdani/semestral/src/Message.h
 string
+-
+
+/home/kostdani/kostdani/semestral/src/Queuer.cpp
+Queuer.h
+/home/kostdani/kostdani/semestral/src/Queuer.h
+
+/home/kostdani/kostdani/semestral/src/Queuer.h
+Counter.h
+/home/kostdani/kostdani/semestral/src/Counter.h
+Message.h
+/home/kostdani/kostdani/semestral/src/Message.h
+queue
+-
+mutex
 -
 

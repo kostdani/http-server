@@ -17,6 +17,7 @@ public:
 
 protected:
     Queuer *m_q;
+    std::string m_str="";
     bool multiplex(int epolld) override;
 };
 

@@ -43,6 +43,7 @@ void Queuer::onInput() {
     while((msg=Pop())){
         printf("handling message\n");
         handler(msg);
+        delete msg;
         //std::cout<<msg<<std::endl;
     }
 }
