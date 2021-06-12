@@ -277,6 +277,60 @@ Epoller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Epoller.cpp.s
 .PHONY : Epoller.cpp.s
 
+HTTPRequest.o: HTTPRequest.cpp.o
+
+.PHONY : HTTPRequest.o
+
+# target to build an object file
+HTTPRequest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRequest.cpp.o
+.PHONY : HTTPRequest.cpp.o
+
+HTTPRequest.i: HTTPRequest.cpp.i
+
+.PHONY : HTTPRequest.i
+
+# target to preprocess a source file
+HTTPRequest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRequest.cpp.i
+.PHONY : HTTPRequest.cpp.i
+
+HTTPRequest.s: HTTPRequest.cpp.s
+
+.PHONY : HTTPRequest.s
+
+# target to generate assembly for a file
+HTTPRequest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRequest.cpp.s
+.PHONY : HTTPRequest.cpp.s
+
+HTTPRespond.o: HTTPRespond.cpp.o
+
+.PHONY : HTTPRespond.o
+
+# target to build an object file
+HTTPRespond.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRespond.cpp.o
+.PHONY : HTTPRespond.cpp.o
+
+HTTPRespond.i: HTTPRespond.cpp.i
+
+.PHONY : HTTPRespond.i
+
+# target to preprocess a source file
+HTTPRespond.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRespond.cpp.i
+.PHONY : HTTPRespond.cpp.i
+
+HTTPRespond.s: HTTPRespond.cpp.s
+
+.PHONY : HTTPRespond.s
+
+# target to generate assembly for a file
+HTTPRespond.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRespond.cpp.s
+.PHONY : HTTPRespond.cpp.s
+
 HTTPServer.o: HTTPServer.cpp.o
 
 .PHONY : HTTPServer.o
@@ -517,6 +571,12 @@ help:
 	@echo "... Epoller.o"
 	@echo "... Epoller.i"
 	@echo "... Epoller.s"
+	@echo "... HTTPRequest.o"
+	@echo "... HTTPRequest.i"
+	@echo "... HTTPRequest.s"
+	@echo "... HTTPRespond.o"
+	@echo "... HTTPRespond.i"
+	@echo "... HTTPRespond.s"
 	@echo "... HTTPServer.o"
 	@echo "... HTTPServer.i"
 	@echo "... HTTPServer.s"
