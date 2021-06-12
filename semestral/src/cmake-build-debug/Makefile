@@ -277,6 +277,33 @@ Epoller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Epoller.cpp.s
 .PHONY : Epoller.cpp.s
 
+HTTPServer.o: HTTPServer.cpp.o
+
+.PHONY : HTTPServer.o
+
+# target to build an object file
+HTTPServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPServer.cpp.o
+.PHONY : HTTPServer.cpp.o
+
+HTTPServer.i: HTTPServer.cpp.i
+
+.PHONY : HTTPServer.i
+
+# target to preprocess a source file
+HTTPServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPServer.cpp.i
+.PHONY : HTTPServer.cpp.i
+
+HTTPServer.s: HTTPServer.cpp.s
+
+.PHONY : HTTPServer.s
+
+# target to generate assembly for a file
+HTTPServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPServer.cpp.s
+.PHONY : HTTPServer.cpp.s
+
 Message.o: Message.cpp.o
 
 .PHONY : Message.o
@@ -463,6 +490,9 @@ help:
 	@echo "... Epoller.o"
 	@echo "... Epoller.i"
 	@echo "... Epoller.s"
+	@echo "... HTTPServer.o"
+	@echo "... HTTPServer.i"
+	@echo "... HTTPServer.s"
 	@echo "... Message.o"
 	@echo "... Message.i"
 	@echo "... Message.s"

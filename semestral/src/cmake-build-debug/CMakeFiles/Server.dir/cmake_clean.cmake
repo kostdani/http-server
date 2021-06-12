@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Server.dir/Client.cpp.o"
   "CMakeFiles/Server.dir/Counter.cpp.o"
   "CMakeFiles/Server.dir/Epoller.cpp.o"
+  "CMakeFiles/Server.dir/HTTPServer.cpp.o"
   "CMakeFiles/Server.dir/Message.cpp.o"
   "CMakeFiles/Server.dir/Queuer.cpp.o"
   "CMakeFiles/Server.dir/Reciever.cpp.o"
