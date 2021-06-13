@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/kostdani/kostdani/semestral/src/Accepter.cpp
-Accepter.h
-/home/kostdani/kostdani/semestral/src/Accepter.h
-
 /home/kostdani/kostdani/semestral/src/Accepter.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
@@ -38,10 +34,6 @@ iostream
 functional
 -
 
-/home/kostdani/kostdani/semestral/src/Client.cpp
-Client.h
-/home/kostdani/kostdani/semestral/src/Client.h
-
 /home/kostdani/kostdani/semestral/src/Client.h
 Queuer.h
 /home/kostdani/kostdani/semestral/src/Queuer.h
@@ -56,19 +48,11 @@ sys/socket.h
 arpa/inet.h
 -
 
-/home/kostdani/kostdani/semestral/src/ContentGenerator.cpp
-ContentGenerator.h
-/home/kostdani/kostdani/semestral/src/ContentGenerator.h
-
 /home/kostdani/kostdani/semestral/src/ContentGenerator.h
 HTTPRequest.h
 /home/kostdani/kostdani/semestral/src/HTTPRequest.h
 Queuer.h
 /home/kostdani/kostdani/semestral/src/Queuer.h
-
-/home/kostdani/kostdani/semestral/src/Counter.cpp
-Counter.h
-/home/kostdani/kostdani/semestral/src/Counter.h
 
 /home/kostdani/kostdani/semestral/src/Counter.h
 Actor.h
@@ -81,10 +65,6 @@ Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
 set
 -
-
-/home/kostdani/kostdani/semestral/src/FileContent.cpp
-FileContent.h
-/home/kostdani/kostdani/semestral/src/FileContent.h
 
 /home/kostdani/kostdani/semestral/src/FileContent.h
 ContentGenerator.h
@@ -110,9 +90,25 @@ string
 map
 -
 
-/home/kostdani/kostdani/semestral/src/Logger.cpp
+/home/kostdani/kostdani/semestral/src/HTTPServer.cpp
+HTTPServer.h
+/home/kostdani/kostdani/semestral/src/HTTPServer.h
+
+/home/kostdani/kostdani/semestral/src/HTTPServer.h
+Epoller.h
+/home/kostdani/kostdani/semestral/src/Epoller.h
+Counter.h
+/home/kostdani/kostdani/semestral/src/Counter.h
+Accepter.h
+/home/kostdani/kostdani/semestral/src/Accepter.h
 Logger.h
 /home/kostdani/kostdani/semestral/src/Logger.h
+thread
+-
+vector
+-
+fstream
+-
 
 /home/kostdani/kostdani/semestral/src/Logger.h
 Queuer.h
@@ -124,10 +120,6 @@ fstream
 string
 -
 
-/home/kostdani/kostdani/semestral/src/Queuer.cpp
-Queuer.h
-/home/kostdani/kostdani/semestral/src/Queuer.h
-
 /home/kostdani/kostdani/semestral/src/Queuer.h
 Counter.h
 /home/kostdani/kostdani/semestral/src/Counter.h
@@ -137,10 +129,6 @@ queue
 -
 mutex
 -
-
-/home/kostdani/kostdani/semestral/src/Reciever.cpp
-Reciever.h
-/home/kostdani/kostdani/semestral/src/Reciever.h
 
 /home/kostdani/kostdani/semestral/src/Reciever.h
 Actor.h
@@ -153,10 +141,6 @@ Sender.h
 /home/kostdani/kostdani/semestral/src/Sender.h
 netdb.h
 -
-
-/home/kostdani/kostdani/semestral/src/Sender.cpp
-Sender.h
-/home/kostdani/kostdani/semestral/src/Sender.h
 
 /home/kostdani/kostdani/semestral/src/Sender.h
 Queuer.h
@@ -187,4 +171,6 @@ thread
 -
 FileContent.h
 /home/kostdani/kostdani/semestral/src/FileContent.h
+HTTPServer.h
+/home/kostdani/kostdani/semestral/src/HTTPServer.h
 
