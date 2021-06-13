@@ -4,7 +4,8 @@
 
 #ifndef SERVER_HTTPREQUEST_H
 #define SERVER_HTTPREQUEST_H
-#include "HTTPRespond.h"
+#include "Sender.h"
+#include "Logger.h"
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -12,18 +13,46 @@
 
 class HTTPRequest {
 public:
-    HTTPRequest(std::string bytearray="");
+    HTTPRequest(Logger *l= nullptr,Sender*s= nullptr,std::string bytearray="");
 
-    bool ParseHead(std::string rawstring);
-    bool AddHeader(std::string header);
-    bool Parse(std::string rawstring);
+    void SetCode(int code);
+
 
     void Finish();
     std::string method;
     std::string uri;
     std::string version;
     std::map<std::string,std::string> headers;
+    class HTTPRespond {
+    public:
+        HTTPRespond(){}
+
+        std::string code;
+        std::string version;
+        std::map<std::string,std::string> headers;
+        std::string body;
+    };
     HTTPRespond respond;
+private:
+    Logger *m_logger;
+    Sender *m_sender;
+    bool ParseHead(std::string rawstring);
+    bool AddHeader(std::string header);
+    bool Parse(std::string rawstring);
+
+    class HTTPLog {
+    public:
+        HTTPLog(){}
+
+        std::string host;
+        std::string ident;
+        std::string authuser;
+        std::string date;
+        std::string request;
+        std::string status;
+        std::string bytes;
+    };
+    HTTPLog m_log;
 };
 
 

@@ -17,15 +17,51 @@ bool Sender::multiplex(int epolld) {
 
 }
 
-
 void Sender::onInput() {
-    printf("sender input %d\n",m_descriptor);
+    printf("Sender input\n");
+    if(last.length()-n>=0){
+        int r=write(m_socketfd,last.c_str()+n,last.length()-n);
+        if(r==-1){
+            printf("error %d",errno);
+            return;
+        }else if(r<last.length()-n){
+            n+=r;
+            return;
+        }else{
+            last="";
+            n=0;
+        }
+    }
+
+    std::pair<std::string,bool> msg= {};
+    while(true){
+        msg=Pop();
+        if(!msg.second)
+            break;
+        printf("handling message\n");
+        handler(msg.first);
+        if(!last.empty()){
+            break;
+        }
+        //std::cout<<msg<<std::endl;
+    }
+
 }
+
 void Sender::onOutput() {
     printf("sender out %d\n",m_descriptor);
+    onInput();
 }
 
-void Sender::onError() {
-    printf("sender error\n");
+void Sender::handler(std::string msg) {
+    n=write(m_socketfd,msg.c_str(),msg.length());
+    if(n==-1){
+        printf("error %d",errno);
+        return;
+    }else if(n<msg.length()){
+        last=msg;
+    }else{
+        n=0;
+    }
 }
 

@@ -130,12 +130,6 @@
 		<Unit filename="/home/kostdani/kostdani/semestral/src/HTTPRequest.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/kostdani/kostdani/semestral/src/HTTPRespond.cpp">
-			<Option target="Server"/>
-		</Unit>
-		<Unit filename="/home/kostdani/kostdani/semestral/src/HTTPRespond.h">
-			<Option target="Server"/>
-		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/HTTPServer.cpp">
 			<Option target="Server"/>
 		</Unit>

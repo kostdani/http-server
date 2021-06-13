@@ -358,33 +358,6 @@ HTTPRequest.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRequest.cpp.s
 .PHONY : HTTPRequest.cpp.s
 
-HTTPRespond.o: HTTPRespond.cpp.o
-
-.PHONY : HTTPRespond.o
-
-# target to build an object file
-HTTPRespond.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRespond.cpp.o
-.PHONY : HTTPRespond.cpp.o
-
-HTTPRespond.i: HTTPRespond.cpp.i
-
-.PHONY : HTTPRespond.i
-
-# target to preprocess a source file
-HTTPRespond.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRespond.cpp.i
-.PHONY : HTTPRespond.cpp.i
-
-HTTPRespond.s: HTTPRespond.cpp.s
-
-.PHONY : HTTPRespond.s
-
-# target to generate assembly for a file
-HTTPRespond.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/HTTPRespond.cpp.s
-.PHONY : HTTPRespond.cpp.s
-
 HTTPServer.o: HTTPServer.cpp.o
 
 .PHONY : HTTPServer.o
@@ -634,9 +607,6 @@ help:
 	@echo "... HTTPRequest.o"
 	@echo "... HTTPRequest.i"
 	@echo "... HTTPRequest.s"
-	@echo "... HTTPRespond.o"
-	@echo "... HTTPRespond.i"
-	@echo "... HTTPRespond.s"
 	@echo "... HTTPServer.o"
 	@echo "... HTTPServer.i"
 	@echo "... HTTPServer.s"

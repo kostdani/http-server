@@ -8,13 +8,13 @@
 Reciever::Reciever(Logger *l,int descriptor,sockaddr_in addr): Actor(descriptor) {
     m_logger=l;
     m_addr=addr;
-    //m_sender=new Sender(dup(descriptor));
+    m_sender=new Sender(dup(descriptor));
 }
 
 bool Reciever::multiplex(int epolld) {
-    /*
+
     if(!m_sender->multiplex(epolld))
-        return false;*/
+        return false;
     epoll_event ev{};
     ev.data.ptr = this;
     ev.events = EPOLLIN | EPOLLET;
@@ -37,7 +37,11 @@ void Reciever::onInput() {
         for (int i=s; i < len; ++i) {
             if(buf[i]=='\n'&& i+1<len && buf[i+1]=='\r'){
                 m_str.append(buf+s,i-s+1);
-                m_logger->Push(m_str);
+                HTTPRequest req(m_logger,m_sender,m_str);
+
+                auto f=new FileContent("/home/kostdani/index.html");
+                f->Push(req);
+                AddActor(f);
                 m_str="";
                 i+=2;
                 s=i+1;

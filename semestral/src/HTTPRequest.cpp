@@ -5,7 +5,9 @@
 #include "HTTPRequest.h"
 
 
-HTTPRequest::HTTPRequest(std::string bytearray){
+HTTPRequest::HTTPRequest(Logger* l,Sender *s,std::string bytearray){
+    m_sender=s;
+    m_logger=l;
 Parse(bytearray);
 }
 
@@ -42,7 +44,6 @@ bool HTTPRequest::Parse(std::string rawstring){
 }
 
 void HTTPRequest::Finish() {
-
     std::string res=version;
     res.append(" ")
             .append(respond.code)
@@ -55,5 +56,23 @@ void HTTPRequest::Finish() {
     }
     res.append("\n")
             .append(respond.body);
-    std::cout<<res<<std::endl;
+    std::cout<<"to sender: \n\n"<<res<<std::endl;
+    m_sender->Push(res);
+
+    std::string log;
+    log.append(m_log.host)
+    .append(" ")
+    .append(m_log.ident)
+    .append(" ")
+    .append(m_log.authuser)
+    .append(" [")
+    .append(m_log.date)
+    .append("] \"")
+    .append(m_log.request)
+    .append("\" ")
+    .append(m_log.status)
+    .append(" ")
+    .append(m_log.bytes);
+    std::cout<<"tologger: "<<log<<std::endl;
+    m_logger->Push(log);
 }

@@ -8,6 +8,8 @@
 #include "Queuer.h"
 #include "Logger.h"
 #include "Sender.h"
+#include "HTTPRequest.h"
+#include "FileContent.h"
 #include <netdb.h>
 class Reciever : public Actor{
 public:

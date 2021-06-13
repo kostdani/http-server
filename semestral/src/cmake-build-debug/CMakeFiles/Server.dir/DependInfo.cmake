@@ -12,7 +12,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kostdani/kostdani/semestral/src/Epoller.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Epoller.cpp.o"
   "/home/kostdani/kostdani/semestral/src/FileContent.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/FileContent.cpp.o"
   "/home/kostdani/kostdani/semestral/src/HTTPRequest.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/HTTPRequest.cpp.o"
-  "/home/kostdani/kostdani/semestral/src/HTTPRespond.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/HTTPRespond.cpp.o"
   "/home/kostdani/kostdani/semestral/src/HTTPServer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/HTTPServer.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Logger.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Logger.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Message.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Message.cpp.o"

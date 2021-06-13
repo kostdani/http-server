@@ -11,15 +11,17 @@ public:
     Sender(int descriptor);
 
 
-    void onInput() override;
 
+    void onInput() override;
     void onOutput() override;
 
-    void onError() override;
+    void handler(std::string msg) override;
 
     bool multiplex(int epolld) override;
 protected:
     int m_socketfd=-1;
+    std::string last;
+    int n=0;
 
 };
 
