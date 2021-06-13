@@ -10,7 +10,7 @@
 #include <sstream>
 #include <iostream>
 #include <map>
-
+#include <ctime>
 class HTTPRequest {
 public:
     HTTPRequest(Logger *l= nullptr,Sender*s= nullptr,std::string bytearray="");
@@ -33,6 +33,19 @@ public:
         std::string body;
     };
     HTTPRespond respond;
+    class HTTPLog {
+    public:
+        HTTPLog(){}
+
+        std::string host="-";
+        std::string ident="-";
+        std::string authuser="-";
+        std::string date="-";
+        std::string request="-";
+        std::string status="-";
+        std::string bytes="-";
+    };
+    HTTPLog m_log;
 private:
     Logger *m_logger;
     Sender *m_sender;
@@ -40,19 +53,6 @@ private:
     bool AddHeader(std::string header);
     bool Parse(std::string rawstring);
 
-    class HTTPLog {
-    public:
-        HTTPLog(){}
-
-        std::string host;
-        std::string ident;
-        std::string authuser;
-        std::string date;
-        std::string request;
-        std::string status;
-        std::string bytes;
-    };
-    HTTPLog m_log;
 };
 
 

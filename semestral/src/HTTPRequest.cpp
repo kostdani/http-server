@@ -16,7 +16,8 @@ bool HTTPRequest::ParseHead(std::string rawstring){
 
     getline(str,method,' ');
     getline(str,uri,' ');
-    getline(str,version,'\n');
+    getline(str,version,'\0');
+    m_log.request=rawstring;
     return true;
 }
 bool HTTPRequest::AddHeader(std::string header){
@@ -28,14 +29,23 @@ bool HTTPRequest::AddHeader(std::string header){
     return true;
 }
 bool HTTPRequest::Parse(std::string rawstring){
+    char tbuf[30];
+    std::time_t t = std::time(nullptr);
+    std::strftime(tbuf, 30, "%d/%b/%Y:%H:%M:%S %z", std::localtime(&t));
+    m_log.date=tbuf;
+
     std::stringstream str(rawstring);
     std::string head;
-    getline(str,head,'\n');
+    getline(str,head,'\r');
+    if(str.get()!='\n')
+        return false;
     if(!ParseHead(head))
         return false;
     while(true){
         std::string header;
-        getline(str,header,'\n');
+        getline(str,header,'\r');
+        if(str.get()!='\n')
+            return false;
         if(header.empty()){
             return true;
         }
@@ -56,7 +66,7 @@ void HTTPRequest::Finish() {
     }
     res.append("\n")
             .append(respond.body);
-    std::cout<<"to sender: \n\n"<<res<<std::endl;
+    //std::cout<<"to sender: \n\n"<<res<<std::endl;
     m_sender->Push(res);
 
     std::string log;
@@ -73,6 +83,6 @@ void HTTPRequest::Finish() {
     .append(m_log.status)
     .append(" ")
     .append(m_log.bytes);
-    std::cout<<"tologger: "<<log<<std::endl;
+    //std::cout<<"tologger: "<<log<<std::endl;
     m_logger->Push(log);
 }

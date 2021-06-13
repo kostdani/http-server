@@ -42,14 +42,12 @@ public:
     }
 
     void onInput() override{
-        printf("queuer input\n");
 
         std::pair<T,bool> msg= {};
         while(true){
             msg=Pop();
             if(!msg.second)
                 break;
-            printf("handling message\n");
             handler(msg.first);
             //std::cout<<msg<<std::endl;
         }

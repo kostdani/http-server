@@ -23,6 +23,7 @@ public:
     // Checks if decriptor is ok
     bool Check();
 
+    void Close();
     // Create new actor
     virtual bool AddActor(Actor * newActor);
 

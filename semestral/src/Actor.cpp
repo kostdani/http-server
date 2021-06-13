@@ -14,11 +14,12 @@ bool Actor::Check() {
 }
 
 Actor::~Actor() {
-    std::cout<<"desctruct\n";
+    Close();
+}
+void Actor::Close() {
     if(Check())
         close(m_descriptor);
 }
-
 bool Actor::AddActor(Actor *newActor) {
     if(m_parent)
         return m_parent->AddActor(newActor);

@@ -20,7 +20,7 @@ public:
     // Load Config file
     bool LoadConfig(std::string filename);
     // Starts the server
-    bool Start(int thrn);
+    bool Start();
     // Stops the server
     bool Stop();
 

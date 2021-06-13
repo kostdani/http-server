@@ -9,7 +9,7 @@ HTTPServer::HTTPServer():m_epoller() {
 
 }
 
-bool HTTPServer::Start(int thrn) {
+bool HTTPServer::Start() {
     m_stopper=new Counter();
     m_epoller.AddActor(m_stopper);
 

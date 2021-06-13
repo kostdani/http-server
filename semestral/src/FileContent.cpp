@@ -16,6 +16,12 @@ FileContent::FileContent(std::string filename):ContentGenerator() {
                  std::string file_contents { std::istreambuf_iterator<char>(infile), std::istreambuf_iterator<char>() };
                  req.respond.headers["Content-Length"]=std::to_string(file_contents.length());
                  req.respond.body=file_contents;
+
+                 req.m_log.status="200";
+                 req.m_log.bytes=std::to_string(file_contents.length());
+
+
+
                  req.Finish();
                  //std::cout<<file_contents<<std::endl;
              }else {

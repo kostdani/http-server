@@ -48,7 +48,8 @@ Reciever * Accepter::Accept() {
     if(!Check())
         return nullptr;
     sockaddr_in addr={};
-    socklen_t len=0;
+    socklen_t len=sizeof (sockaddr_in);
+
     int d= accept(m_descriptor,(sockaddr *)&addr,&len);
     if(d==-1)
         return nullptr;
@@ -57,13 +58,11 @@ Reciever * Accepter::Accept() {
 }
 
 void Accepter::onInput() {
-    printf("new clients available\n");
     while(true) {
-        printf("here\n");
         Reciever *newcli = Accept();
         if(!newcli)
             break;
-        printf("addng new cli\n");
+        m_logger->Push("Accepted new client: "+newcli->GetIP());
         AddActor(newcli);
     }
 

@@ -38,7 +38,6 @@ void Sender::onInput() {
         msg=Pop();
         if(!msg.second)
             break;
-        printf("handling message\n");
         handler(msg.first);
         if(!last.empty()){
             break;
@@ -49,7 +48,6 @@ void Sender::onInput() {
 }
 
 void Sender::onOutput() {
-    printf("sender out %d\n",m_descriptor);
     onInput();
 }
 

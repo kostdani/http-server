@@ -24,7 +24,6 @@ bool Reciever::multiplex(int epolld) {
 
 
 void Reciever::onInput() {
-    printf("recieve input %d\n",m_descriptor);
     char buf[4096]{};
     while(true){
         int len = read(m_descriptor, buf, 256);
@@ -38,6 +37,7 @@ void Reciever::onInput() {
             if(buf[i]=='\n'&& i+1<len && buf[i+1]=='\r'){
                 m_str.append(buf+s,i-s+1);
                 HTTPRequest req(m_logger,m_sender,m_str);
+                req.m_log.host=inet_ntoa(m_addr.sin_addr);
 
                 auto f=new FileContent("/home/kostdani/index.html");
                 f->Push(req);
@@ -59,3 +59,6 @@ void Reciever::onError() {
     printf("recieve error\n");
 }
 
+std::string Reciever::GetIP() {
+    return  inet_ntoa(m_addr.sin_addr);
+}

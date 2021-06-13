@@ -20,8 +20,8 @@ void Logger::handler(std::string msg) {
     std::ofstream out;
     out.open(m_logfile, std::ios::app);
     if(out.is_open()){
-        out<<msg;
-        std::cout<<"logger: "<<msg<<std::endl;
+        out<<msg<<std::endl;
+        //std::cout<<"logger: "<<msg<<std::endl;
         out.close();
     }
 }

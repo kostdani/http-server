@@ -15,9 +15,13 @@ std::string samplerawrequest("GET / HTTP/1.0\n"
 
 int main() {
     HTTPServer serv;
-    serv.LoadConfig("server.cfg");
-    serv.Start(1);
-    std::cout << "waiting for my lord" << std::endl;
+    printf("Starting server...\n");
+    if(!serv.LoadConfig("server.cfg")|| !serv.Start()){
+        printf("cant start server.\n");
+        return 1;
+    }
+
+    std::cout << "Press enter to stop server" << std::endl;
     std::cin.ignore();
     serv.Stop();
     return 0;
