@@ -8,15 +8,17 @@
 #include "Counter.h"
 #include "Accepter.h"
 #include "Logger.h"
+#include "ContentGenerator.h"
 #include <thread>
 #include <vector>
 #include <fstream>
+#include <map>
 class HTTPServer {
 public:
     // Constructor
     HTTPServer();
     // Load Config file
-    bool Config(std::ifstream cfg_file);
+    bool LoadConfig(std::string filename);
     // Starts the server
     bool Start(int thrn);
     // Stops the server
@@ -25,11 +27,18 @@ public:
     void threadfunction();
 
 protected:
+    bool LoadThreads(std::map<std::string,std::string> &cfgmap);
+    bool LoadLogfile(std::map<std::string,std::string> &cfgmap);
+    bool LoadListen(std::map<std::string,std::string> &cfgmap);
+    bool LoadLocations(std::map<std::string,std::string> &cfgmap);
     Logger *m_logger=0;
     bool m_stop=true;
     Counter *m_stopper= nullptr;
     Epoller m_epoller;
     std::vector<std::thread> m_threads;
+    int thrn=1;
+
+    std::map<std::string,ContentGenerator *> m_contentmap;
 };
 
 

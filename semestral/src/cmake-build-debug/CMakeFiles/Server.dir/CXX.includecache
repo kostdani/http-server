@@ -90,10 +90,6 @@ string
 map
 -
 
-/home/kostdani/kostdani/semestral/src/HTTPServer.cpp
-HTTPServer.h
-/home/kostdani/kostdani/semestral/src/HTTPServer.h
-
 /home/kostdani/kostdani/semestral/src/HTTPServer.h
 Epoller.h
 /home/kostdani/kostdani/semestral/src/Epoller.h
@@ -103,11 +99,15 @@ Accepter.h
 /home/kostdani/kostdani/semestral/src/Accepter.h
 Logger.h
 /home/kostdani/kostdani/semestral/src/Logger.h
+ContentGenerator.h
+/home/kostdani/kostdani/semestral/src/ContentGenerator.h
 thread
 -
 vector
 -
 fstream
+-
+map
 -
 
 /home/kostdani/kostdani/semestral/src/Logger.h

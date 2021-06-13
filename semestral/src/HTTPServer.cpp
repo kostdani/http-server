@@ -53,3 +53,88 @@ void HTTPServer::threadfunction() {
         }
     }
 }
+
+void clearstring(std::string &str){
+    for (int i = 0; i < str.length(); ++i) {
+        if(isspace(str[i])){
+            str.erase(i,1);
+            i--;
+        }
+    }
+}
+
+
+bool HTTPServer::LoadThreads(std::map<std::string, std::string> &cfgmap) {
+    auto it=cfgmap.find("threads");
+    if(it!=cfgmap.end()){
+
+        int threads=std::stoi(it->second);
+        if(threads>0)
+            thrn=threads;
+        else
+            return false;
+
+    }else{
+        return true;
+    }
+}
+
+bool HTTPServer::LoadLogfile(std::map<std::string, std::string> &cfgmap) {
+
+    auto it=cfgmap.find("logfile");
+    if(it!=cfgmap.end()){
+        clearstring(it->second);
+        m_logger=new Logger(it->second);
+        m_epoller.AddActor(m_logger);
+        return true;
+    }else{
+        printf("no logfile\n");
+        return false;
+    }
+
+}
+
+bool HTTPServer::LoadListen(std::map<std::string, std::string> &cfgmap) {
+    auto it=cfgmap.find("listen");
+    if(it!=cfgmap.end()){
+        clearstring(it->second);
+        std::stringstream ss(it->second);
+        std::string ip,port;
+        getline(ss,ip,':');
+        getline(ss,port);
+        int iport=std::stoi(port);
+        auto ac=new Accepter(m_logger,ip.c_str(),iport);
+        m_epoller.AddActor(ac);
+        return true;
+    }else{
+        printf("no logfile\n");
+        return false;
+    }
+}
+
+bool HTTPServer::LoadConfig(std::string filename) {
+    std::map<std::string,std::string> configmap;
+    std::ifstream file(filename);
+    if(!file)
+        return false;
+    while(true){
+        std::string key,val;
+        if(!getline(file,key,' ')||!getline(file,val,';')){
+            break;
+        }else{
+            clearstring(key);
+            auto it=configmap.find(key);
+            if(it!=configmap.end()){
+                printf("wrong config");
+                return false;
+            }
+            configmap[key]=val;
+            std::cout<<key<<"   "<<val<<std::endl;
+        }
+
+    }
+
+return LoadThreads(configmap) && LoadLogfile(configmap) && LoadListen(configmap);
+
+
+}

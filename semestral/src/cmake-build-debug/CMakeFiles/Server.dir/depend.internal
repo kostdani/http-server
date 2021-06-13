@@ -68,8 +68,11 @@ CMakeFiles/Server.dir/HTTPServer.cpp.o
  /home/kostdani/kostdani/semestral/src/Accepter.h
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Client.h
+ /home/kostdani/kostdani/semestral/src/ContentGenerator.h
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/Epoller.h
+ /home/kostdani/kostdani/semestral/src/HTTPRequest.h
+ /home/kostdani/kostdani/semestral/src/HTTPRespond.h
  /home/kostdani/kostdani/semestral/src/HTTPServer.cpp
  /home/kostdani/kostdani/semestral/src/HTTPServer.h
  /home/kostdani/kostdani/semestral/src/Logger.h

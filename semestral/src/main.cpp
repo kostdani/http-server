@@ -15,6 +15,7 @@ std::string samplerawrequest("GET / HTTP/1.0\n"
 
 int main() {
     HTTPServer serv;
+    serv.LoadConfig("server.cfg");
     serv.Start(1);
     std::cout << "waiting for my lord" << std::endl;
     std::cin.ignore();
