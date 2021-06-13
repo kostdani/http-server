@@ -30,17 +30,17 @@ std::string sample("GET / HTTP/1.0\n"
 
 
 int main() {
-    HTTPRequest req(sample);
+    //HTTPRequest req(sample);
 
 
 
-    //auto l =new Logger("server.log");
-    //auto ac=new Accepter(l,"127.0.0.1",8080);
-    auto f= new FileContent("/home/kostdani/index.html");
+    auto l =new Logger("server.log");
+    auto ac=new Accepter(l,"127.0.0.1",8080);
+    //auto f= new FileContent("/home/kostdani/index.html");
     Epoller epoll;
-    epoll.AddActor(f);
-    //epoll.AddActor(ac);
-    //epoll.AddActor(l);
+    //epoll.AddActor(f);
+    epoll.AddActor(ac);
+    epoll.AddActor(l);
     auto cnt=new Counter();
     epoll.AddActor(cnt);
     std::thread thr(thrfunc,&epoll);
@@ -48,7 +48,7 @@ int main() {
     std::cout << "waiting for my lord" << std::endl;
     std::cin.ignore();
 
-    f->Push(req);
+   // f->Push(req);
 
     stop=true;
     cnt->Add(1);

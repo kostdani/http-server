@@ -6,14 +6,15 @@
 
 Counter::Counter():Actor(eventfd(0,EFD_NONBLOCK)) {}
 
-void Counter::Add(uint32_t x) {
+void Counter::Add(eventfd_t x) {
     if(Check())
         eventfd_write(m_descriptor,x);
 }
 
 void Counter::Reset() {
+    eventfd_t i=0;
     if(Check())
-        eventfd_read(m_descriptor,0);
+        eventfd_read(m_descriptor,&i);
 }
 
 

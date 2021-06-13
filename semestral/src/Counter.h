@@ -11,7 +11,7 @@ class Counter: public Actor {
 public:
     Counter();
 
-    void Add(uint32_t x);
+    void Add(eventfd_t x);
 
     void Reset();
 

@@ -45,8 +45,10 @@ Accepter::Accepter(Logger *l,sockaddr_in addr): Actor(socket(PF_INET, SOCK_STREA
 Accepter::Accepter(Logger *l,const char *ip, int port) : Accepter(l,IPv4_converter(ip,port)){};
 
 Reciever * Accepter::Accept() {
-    sockaddr_in addr;
-    socklen_t len;
+    if(!Check())
+        return nullptr;
+    sockaddr_in addr={};
+    socklen_t len=0;
     int d= accept(m_descriptor,(sockaddr *)&addr,&len);
     if(d==-1)
         return nullptr;
