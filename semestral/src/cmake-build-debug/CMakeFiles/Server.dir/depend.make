@@ -28,6 +28,15 @@ CMakeFiles/Server.dir/Client.cpp.o: ../Reciever.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Sender.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Timer.h
 
+CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../ContentGenerator.cpp
+CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../ContentGenerator.h
+CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../HTTPRequest.h
+CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../HTTPRespond.h
+CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../Message.h
+CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../Queuer.h
+
 CMakeFiles/Server.dir/Counter.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Counter.cpp.o: ../Counter.cpp
 CMakeFiles/Server.dir/Counter.cpp.o: ../Counter.h
@@ -37,6 +46,16 @@ CMakeFiles/Server.dir/Epoller.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Epoller.cpp.o: ../Epoller.cpp
 CMakeFiles/Server.dir/Epoller.cpp.o: ../Epoller.h
 CMakeFiles/Server.dir/Epoller.cpp.o: ../Message.h
+
+CMakeFiles/Server.dir/FileContent.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/FileContent.cpp.o: ../ContentGenerator.h
+CMakeFiles/Server.dir/FileContent.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/FileContent.cpp.o: ../FileContent.cpp
+CMakeFiles/Server.dir/FileContent.cpp.o: ../FileContent.h
+CMakeFiles/Server.dir/FileContent.cpp.o: ../HTTPRequest.h
+CMakeFiles/Server.dir/FileContent.cpp.o: ../HTTPRespond.h
+CMakeFiles/Server.dir/FileContent.cpp.o: ../Message.h
+CMakeFiles/Server.dir/FileContent.cpp.o: ../Queuer.h
 
 CMakeFiles/Server.dir/HTTPRequest.cpp.o: ../HTTPRequest.cpp
 CMakeFiles/Server.dir/HTTPRequest.cpp.o: ../HTTPRequest.h
@@ -88,8 +107,12 @@ CMakeFiles/Server.dir/Timer.cpp.o: ../Timer.h
 CMakeFiles/Server.dir/main.cpp.o: ../Accepter.h
 CMakeFiles/Server.dir/main.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/main.cpp.o: ../Client.h
+CMakeFiles/Server.dir/main.cpp.o: ../ContentGenerator.h
 CMakeFiles/Server.dir/main.cpp.o: ../Counter.h
 CMakeFiles/Server.dir/main.cpp.o: ../Epoller.h
+CMakeFiles/Server.dir/main.cpp.o: ../FileContent.h
+CMakeFiles/Server.dir/main.cpp.o: ../HTTPRequest.h
+CMakeFiles/Server.dir/main.cpp.o: ../HTTPRespond.h
 CMakeFiles/Server.dir/main.cpp.o: ../Logger.h
 CMakeFiles/Server.dir/main.cpp.o: ../Message.h
 CMakeFiles/Server.dir/main.cpp.o: ../Queuer.h

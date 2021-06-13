@@ -7,16 +7,18 @@
 #include "HTTPRespond.h"
 #include <string>
 #include <sstream>
+#include <iostream>
 #include <map>
 
 class HTTPRequest {
 public:
-    HTTPRequest(std::string bytearray);
+    HTTPRequest(std::string bytearray="");
 
     bool ParseHead(std::string rawstring);
     bool AddHeader(std::string header);
     bool Parse(std::string rawstring);
 
+    void Finish();
     std::string method;
     std::string uri;
     std::string version;

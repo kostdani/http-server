@@ -100,6 +100,12 @@
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Client.h">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/ContentGenerator.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/ContentGenerator.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Counter.cpp">
 			<Option target="Server"/>
 		</Unit>
@@ -110,6 +116,12 @@
 			<Option target="Server"/>
 		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Epoller.h">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/FileContent.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/FileContent.h">
 			<Option target="Server"/>
 		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/HTTPRequest.cpp">

@@ -223,6 +223,33 @@ Client.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Client.cpp.s
 .PHONY : Client.cpp.s
 
+ContentGenerator.o: ContentGenerator.cpp.o
+
+.PHONY : ContentGenerator.o
+
+# target to build an object file
+ContentGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/ContentGenerator.cpp.o
+.PHONY : ContentGenerator.cpp.o
+
+ContentGenerator.i: ContentGenerator.cpp.i
+
+.PHONY : ContentGenerator.i
+
+# target to preprocess a source file
+ContentGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/ContentGenerator.cpp.i
+.PHONY : ContentGenerator.cpp.i
+
+ContentGenerator.s: ContentGenerator.cpp.s
+
+.PHONY : ContentGenerator.s
+
+# target to generate assembly for a file
+ContentGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/ContentGenerator.cpp.s
+.PHONY : ContentGenerator.cpp.s
+
 Counter.o: Counter.cpp.o
 
 .PHONY : Counter.o
@@ -276,6 +303,33 @@ Epoller.s: Epoller.cpp.s
 Epoller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Epoller.cpp.s
 .PHONY : Epoller.cpp.s
+
+FileContent.o: FileContent.cpp.o
+
+.PHONY : FileContent.o
+
+# target to build an object file
+FileContent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/FileContent.cpp.o
+.PHONY : FileContent.cpp.o
+
+FileContent.i: FileContent.cpp.i
+
+.PHONY : FileContent.i
+
+# target to preprocess a source file
+FileContent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/FileContent.cpp.i
+.PHONY : FileContent.cpp.i
+
+FileContent.s: FileContent.cpp.s
+
+.PHONY : FileContent.s
+
+# target to generate assembly for a file
+FileContent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/FileContent.cpp.s
+.PHONY : FileContent.cpp.s
 
 HTTPRequest.o: HTTPRequest.cpp.o
 
@@ -565,12 +619,18 @@ help:
 	@echo "... Client.o"
 	@echo "... Client.i"
 	@echo "... Client.s"
+	@echo "... ContentGenerator.o"
+	@echo "... ContentGenerator.i"
+	@echo "... ContentGenerator.s"
 	@echo "... Counter.o"
 	@echo "... Counter.i"
 	@echo "... Counter.s"
 	@echo "... Epoller.o"
 	@echo "... Epoller.i"
 	@echo "... Epoller.s"
+	@echo "... FileContent.o"
+	@echo "... FileContent.i"
+	@echo "... FileContent.s"
 	@echo "... HTTPRequest.o"
 	@echo "... HTTPRequest.i"
 	@echo "... HTTPRequest.s"

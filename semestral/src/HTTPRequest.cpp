@@ -40,3 +40,20 @@ bool HTTPRequest::Parse(std::string rawstring){
         AddHeader(header);
     }
 }
+
+void HTTPRequest::Finish() {
+
+    std::string res=version;
+    res.append(" ")
+            .append(respond.code)
+            .append("\n");
+    for(auto h:respond.headers){
+        res.append(h.first)
+                .append(": ")
+                .append(h.second)
+                .append("\n");
+    }
+    res.append("\n")
+            .append(respond.body);
+    std::cout<<res<<std::endl;
+}

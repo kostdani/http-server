@@ -28,6 +28,15 @@ CMakeFiles/Server.dir/Client.cpp.o
  /home/kostdani/kostdani/semestral/src/Reciever.h
  /home/kostdani/kostdani/semestral/src/Sender.h
  /home/kostdani/kostdani/semestral/src/Timer.h
+CMakeFiles/Server.dir/ContentGenerator.cpp.o
+ /home/kostdani/kostdani/semestral/src/Actor.h
+ /home/kostdani/kostdani/semestral/src/ContentGenerator.cpp
+ /home/kostdani/kostdani/semestral/src/ContentGenerator.h
+ /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/HTTPRequest.h
+ /home/kostdani/kostdani/semestral/src/HTTPRespond.h
+ /home/kostdani/kostdani/semestral/src/Message.h
+ /home/kostdani/kostdani/semestral/src/Queuer.h
 CMakeFiles/Server.dir/Counter.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Counter.cpp
@@ -38,6 +47,16 @@ CMakeFiles/Server.dir/Epoller.cpp.o
  /home/kostdani/kostdani/semestral/src/Epoller.cpp
  /home/kostdani/kostdani/semestral/src/Epoller.h
  /home/kostdani/kostdani/semestral/src/Message.h
+CMakeFiles/Server.dir/FileContent.cpp.o
+ /home/kostdani/kostdani/semestral/src/Actor.h
+ /home/kostdani/kostdani/semestral/src/ContentGenerator.h
+ /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/FileContent.cpp
+ /home/kostdani/kostdani/semestral/src/FileContent.h
+ /home/kostdani/kostdani/semestral/src/HTTPRequest.h
+ /home/kostdani/kostdani/semestral/src/HTTPRespond.h
+ /home/kostdani/kostdani/semestral/src/Message.h
+ /home/kostdani/kostdani/semestral/src/Queuer.h
 CMakeFiles/Server.dir/HTTPRequest.cpp.o
  /home/kostdani/kostdani/semestral/src/HTTPRequest.cpp
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
@@ -89,8 +108,12 @@ CMakeFiles/Server.dir/main.cpp.o
  /home/kostdani/kostdani/semestral/src/Accepter.h
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Client.h
+ /home/kostdani/kostdani/semestral/src/ContentGenerator.h
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/Epoller.h
+ /home/kostdani/kostdani/semestral/src/FileContent.h
+ /home/kostdani/kostdani/semestral/src/HTTPRequest.h
+ /home/kostdani/kostdani/semestral/src/HTTPRespond.h
  /home/kostdani/kostdani/semestral/src/Logger.h
  /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h

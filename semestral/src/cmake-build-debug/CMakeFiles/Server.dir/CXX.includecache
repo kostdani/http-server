@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/kostdani/kostdani/semestral/src/Accepter.cpp
-Accepter.h
-/home/kostdani/kostdani/semestral/src/Accepter.h
-
 /home/kostdani/kostdani/semestral/src/Accepter.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
@@ -52,10 +48,46 @@ sys/socket.h
 arpa/inet.h
 -
 
+/home/kostdani/kostdani/semestral/src/ContentGenerator.h
+HTTPRequest.h
+/home/kostdani/kostdani/semestral/src/HTTPRequest.h
+Queuer.h
+/home/kostdani/kostdani/semestral/src/Queuer.h
+
 /home/kostdani/kostdani/semestral/src/Counter.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
 sys/eventfd.h
+-
+
+/home/kostdani/kostdani/semestral/src/Epoller.h
+Actor.h
+/home/kostdani/kostdani/semestral/src/Actor.h
+set
+-
+
+/home/kostdani/kostdani/semestral/src/FileContent.h
+ContentGenerator.h
+/home/kostdani/kostdani/semestral/src/ContentGenerator.h
+fstream
+-
+
+/home/kostdani/kostdani/semestral/src/HTTPRequest.h
+HTTPRespond.h
+/home/kostdani/kostdani/semestral/src/HTTPRespond.h
+string
+-
+sstream
+-
+iostream
+-
+map
+-
+
+/home/kostdani/kostdani/semestral/src/HTTPRespond.h
+string
+-
+map
 -
 
 /home/kostdani/kostdani/semestral/src/Logger.h
@@ -99,4 +131,24 @@ Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
 sys/timerfd.h
 -
+
+/home/kostdani/kostdani/semestral/src/main.cpp
+iostream
+-
+Epoller.h
+/home/kostdani/kostdani/semestral/src/Epoller.h
+Accepter.h
+/home/kostdani/kostdani/semestral/src/Accepter.h
+Counter.h
+/home/kostdani/kostdani/semestral/src/Counter.h
+Timer.h
+/home/kostdani/kostdani/semestral/src/Timer.h
+Sender.h
+/home/kostdani/kostdani/semestral/src/Sender.h
+Logger.h
+/home/kostdani/kostdani/semestral/src/Logger.h
+thread
+-
+FileContent.h
+/home/kostdani/kostdani/semestral/src/FileContent.h
 

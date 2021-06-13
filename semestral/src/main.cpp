@@ -6,6 +6,7 @@
 #include "Sender.h"
 #include "Logger.h"
 #include <thread>
+#include "FileContent.h"
 bool stop=false;
 
 void thrfunc(Epoller *epoll){
@@ -24,17 +25,22 @@ void thrfunc(Epoller *epoll){
         }
     }
 }
-
+std::string sample("GET / HTTP/1.0\n"
+                    "Host: 127.0.0.1:8080\n\n");
 
 
 int main() {
-auto l =new Logger("server.log");
+    HTTPRequest req(sample);
 
 
+
+    //auto l =new Logger("server.log");
+    //auto ac=new Accepter(l,"127.0.0.1",8080);
+    auto f= new FileContent("/home/kostdani/index.html");
     Epoller epoll;
-    auto ac=new Accepter(l,"127.0.0.1",8080);
-    epoll.AddActor(ac);
-    epoll.AddActor(l);
+    epoll.AddActor(f);
+    //epoll.AddActor(ac);
+    //epoll.AddActor(l);
     auto cnt=new Counter();
     epoll.AddActor(cnt);
     std::thread thr(thrfunc,&epoll);
@@ -42,6 +48,7 @@ auto l =new Logger("server.log");
     std::cout << "waiting for my lord" << std::endl;
     std::cin.ignore();
 
+    f->Push(req);
 
     stop=true;
     cnt->Add(1);
