@@ -7,22 +7,24 @@
 #include "Actor.h"
 #include "Reciever.h"
 #include "Client.h"
+#include "Logger.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
 
 class Accepter : public Actor{
 public:
-    Accepter(sockaddr_in addr);
+    Accepter(Logger *l,sockaddr_in addr);
 
-    Accepter(const char * ip="127.0.0.1",int port=80);
+    Accepter(Logger *l,const char * ip="127.0.0.1",int port=80);
 
     void onInput() override;
 
-    Client *Accept();
+    Reciever *Accept();
 
-protected:
     bool multiplex(int epolld) override;
+protected:
+    Logger *m_logger=0;
 };
 
 

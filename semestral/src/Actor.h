@@ -37,8 +37,8 @@ public:
 
     std::function<void(Message *)> handler=[](Message *){};
 
-protected:
     virtual bool multiplex(int epolld);
+protected:
     Actor *m_parent=0;
     int m_descriptor=-1;
 };

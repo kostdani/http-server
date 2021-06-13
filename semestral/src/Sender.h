@@ -17,10 +17,10 @@ public:
 
     void onError() override;
 
+    bool multiplex(int epolld) override;
 protected:
     int m_socketfd=-1;
 
-    bool multiplex(int epolld) override;
 };
 
 

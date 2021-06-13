@@ -5,11 +5,16 @@
 #include "Reciever.h"
 
 
-Reciever::Reciever(int descriptor,Queuer<Message *> *q): Actor(descriptor) {
-    m_q=q;
+Reciever::Reciever(Logger *l,int descriptor,sockaddr_in addr): Actor(descriptor) {
+    m_logger=l;
+    m_addr=addr;
+    //m_sender=new Sender(dup(descriptor));
 }
 
 bool Reciever::multiplex(int epolld) {
+    /*
+    if(!m_sender->multiplex(epolld))
+        return false;*/
     epoll_event ev{};
     ev.data.ptr = this;
     ev.events = EPOLLIN | EPOLLET;
@@ -20,18 +25,25 @@ bool Reciever::multiplex(int epolld) {
 
 void Reciever::onInput() {
     printf("recieve input %d\n",m_descriptor);
-    char buf[256]{};
+    char buf[4096]{};
     while(true){
         int len = read(m_descriptor, buf, 256);
-        printf("len %d\n",len);
         if(len==-1){
             printf("error %d\n",errno);
             break;
         }
-        //std::cout.write(buf,len);
-        Message *nm= new Message;
-        *nm={Message::msg_type::BYTEARRAY,std::string(buf,len)};
-        m_q->Push(nm);
+        int s=0;
+
+        for (int i=s; i < len; ++i) {
+            if(buf[i]=='\n'&& i+1<len && buf[i+1]=='\r'){
+                m_str.append(buf+s,i-s+1);
+                m_logger->Push(m_str);
+                m_str="";
+                i+=2;
+                s=i+1;
+            }
+        }
+        m_str.append(buf+s,len-s);
 
         if(len < 256) {
             break;

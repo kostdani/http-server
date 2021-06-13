@@ -9,7 +9,7 @@
 
 class HTTPRespond {
 public:
-    HTTPRespond();
+    HTTPRespond(){}
 
     std::string code;
     std::string version;

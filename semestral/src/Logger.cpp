@@ -21,6 +21,7 @@ void Logger::handler(std::string msg) {
     out.open(m_logfile, std::ios::app);
     if(out.is_open()){
         out<<msg;
-        //out.close();
+        std::cout<<"logger: "<<msg<<std::endl;
+        out.close();
     }
 }

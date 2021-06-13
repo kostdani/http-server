@@ -20,8 +20,8 @@ public:
     void onInput() override;
 
 
-protected:
     bool multiplex(int epolld) override;
+protected:
     timespec m_timeout{};
 };
 

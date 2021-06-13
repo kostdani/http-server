@@ -32,14 +32,12 @@ auto l =new Logger("server.log");
 
 
     Epoller epoll;
-    auto ac=new Accepter("127.0.0.1",8080);
-    //epoll.AddActor(ac);
+    auto ac=new Accepter(l,"127.0.0.1",8080);
+    epoll.AddActor(ac);
     epoll.AddActor(l);
     auto cnt=new Counter();
     epoll.AddActor(cnt);
     std::thread thr(thrfunc,&epoll);
-    l->Push("TESTMSG\n");
-    l->Push("SecondMSG\n");
 
     std::cout << "waiting for my lord" << std::endl;
     std::cin.ignore();

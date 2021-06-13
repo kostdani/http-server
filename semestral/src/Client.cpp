@@ -15,7 +15,7 @@ void Client::handler(Message *msg) {
         std::cout<<msg->msg;
     }else if(msg->type==Message::msg_type::SETTINGS){
         printf("clisetup\n");
-        m_recv=new Reciever(m_clientfd,this);
+       // m_recv=new Reciever(m_clientfd,this);
         AddActor(m_recv);
     }else{
         printf("errormsg\n");

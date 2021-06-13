@@ -7,6 +7,7 @@ CMakeFiles/Server.dir/Accepter.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Client.h
  /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/Logger.h
  /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Reciever.h
@@ -21,6 +22,7 @@ CMakeFiles/Server.dir/Client.cpp.o
  /home/kostdani/kostdani/semestral/src/Client.cpp
  /home/kostdani/kostdani/semestral/src/Client.h
  /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/Logger.h
  /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Reciever.h
@@ -36,6 +38,13 @@ CMakeFiles/Server.dir/Epoller.cpp.o
  /home/kostdani/kostdani/semestral/src/Epoller.cpp
  /home/kostdani/kostdani/semestral/src/Epoller.h
  /home/kostdani/kostdani/semestral/src/Message.h
+CMakeFiles/Server.dir/HTTPRequest.cpp.o
+ /home/kostdani/kostdani/semestral/src/HTTPRequest.cpp
+ /home/kostdani/kostdani/semestral/src/HTTPRequest.h
+ /home/kostdani/kostdani/semestral/src/HTTPRespond.h
+CMakeFiles/Server.dir/HTTPRespond.cpp.o
+ /home/kostdani/kostdani/semestral/src/HTTPRespond.cpp
+ /home/kostdani/kostdani/semestral/src/HTTPRespond.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o
  /home/kostdani/kostdani/semestral/src/HTTPServer.cpp
  /home/kostdani/kostdani/semestral/src/HTTPServer.h
@@ -58,10 +67,12 @@ CMakeFiles/Server.dir/Queuer.cpp.o
 CMakeFiles/Server.dir/Reciever.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/Logger.h
  /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Reciever.cpp
  /home/kostdani/kostdani/semestral/src/Reciever.h
+ /home/kostdani/kostdani/semestral/src/Sender.h
 CMakeFiles/Server.dir/Sender.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Counter.h

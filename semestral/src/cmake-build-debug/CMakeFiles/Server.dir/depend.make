@@ -6,6 +6,7 @@ CMakeFiles/Server.dir/Accepter.cpp.o: ../Accepter.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Client.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/Accepter.cpp.o: ../Logger.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Message.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Reciever.h
@@ -20,6 +21,7 @@ CMakeFiles/Server.dir/Client.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Client.cpp
 CMakeFiles/Server.dir/Client.cpp.o: ../Client.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/Client.cpp.o: ../Logger.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Message.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Reciever.h
@@ -35,6 +37,13 @@ CMakeFiles/Server.dir/Epoller.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Epoller.cpp.o: ../Epoller.cpp
 CMakeFiles/Server.dir/Epoller.cpp.o: ../Epoller.h
 CMakeFiles/Server.dir/Epoller.cpp.o: ../Message.h
+
+CMakeFiles/Server.dir/HTTPRequest.cpp.o: ../HTTPRequest.cpp
+CMakeFiles/Server.dir/HTTPRequest.cpp.o: ../HTTPRequest.h
+CMakeFiles/Server.dir/HTTPRequest.cpp.o: ../HTTPRespond.h
+
+CMakeFiles/Server.dir/HTTPRespond.cpp.o: ../HTTPRespond.cpp
+CMakeFiles/Server.dir/HTTPRespond.cpp.o: ../HTTPRespond.h
 
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../HTTPServer.cpp
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../HTTPServer.h
@@ -57,10 +66,12 @@ CMakeFiles/Server.dir/Queuer.cpp.o: ../Queuer.h
 
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/Reciever.cpp.o: ../Logger.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Message.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.cpp
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.h
+CMakeFiles/Server.dir/Reciever.cpp.o: ../Sender.h
 
 CMakeFiles/Server.dir/Sender.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Sender.cpp.o: ../Counter.h

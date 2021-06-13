@@ -15,8 +15,8 @@ public:
 
     void Reset();
 
-protected:
     bool multiplex(int epolld) override;
+protected:
 };
 
 

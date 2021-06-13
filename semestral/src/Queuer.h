@@ -59,7 +59,6 @@ public:
         //std::cout<<msg->msg<<std::endl;
     }
 
-protected:
     bool multiplex(int epolld) override{
 
         epoll_event ev{};
@@ -69,6 +68,7 @@ protected:
         return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
 
     }
+protected:
     std::queue<T> m_queue;
     std::mutex m_mtx;
 };
