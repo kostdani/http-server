@@ -8,13 +8,10 @@
 Reciever::Reciever(Logger *l,int descriptor,sockaddr_in addr): Actor(descriptor) {
     m_logger=l;
     m_addr=addr;
-    m_sender=new Sender(dup(descriptor));
 }
 
 bool Reciever::multiplex(int epolld) {
 
-    if(!m_sender->multiplex(epolld))
-        return false;
     epoll_event ev{};
     ev.data.ptr = this;
     ev.events = EPOLLIN | EPOLLET;
@@ -24,6 +21,11 @@ bool Reciever::multiplex(int epolld) {
 
 
 void Reciever::onInput() {
+    if(!m_sender){
+        m_sender=new Sender(dup(m_descriptor));
+        AddActor(m_sender);
+    }
+
     char buf[4096]{};
     while(true){
         int len = read(m_descriptor, buf, 256);
@@ -39,7 +41,7 @@ void Reciever::onInput() {
                 HTTPRequest req(m_logger,m_sender,m_str);
                 req.m_log.host=inet_ntoa(m_addr.sin_addr);
 
-                auto f=new DirectoryContent("/home/kostdani");
+                auto f=new DirectoryContent("/home/kostdani/");
                 f->Push(req);
                 AddActor(f);
                 m_str="";

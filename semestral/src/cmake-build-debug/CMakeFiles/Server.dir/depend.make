@@ -16,6 +16,7 @@ CMakeFiles/Server.dir/Accepter.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Reciever.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Sender.h
 CMakeFiles/Server.dir/Accepter.cpp.o: ../Timer.h
+CMakeFiles/Server.dir/Accepter.cpp.o: ../VirtualDirrectoryContent.h
 
 CMakeFiles/Server.dir/Actor.cpp.o: ../Actor.cpp
 CMakeFiles/Server.dir/Actor.cpp.o: ../Actor.h
@@ -35,6 +36,7 @@ CMakeFiles/Server.dir/Client.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Reciever.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Sender.h
 CMakeFiles/Server.dir/Client.cpp.o: ../Timer.h
+CMakeFiles/Server.dir/Client.cpp.o: ../VirtualDirrectoryContent.h
 
 CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../ContentGenerator.cpp
@@ -105,6 +107,7 @@ CMakeFiles/Server.dir/HTTPServer.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../Reciever.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../Sender.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../Timer.h
+CMakeFiles/Server.dir/HTTPServer.cpp.o: ../VirtualDirrectoryContent.h
 
 CMakeFiles/Server.dir/Logger.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Logger.cpp.o: ../Counter.h
@@ -134,6 +137,7 @@ CMakeFiles/Server.dir/Reciever.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.cpp
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Sender.h
+CMakeFiles/Server.dir/Reciever.cpp.o: ../VirtualDirrectoryContent.h
 
 CMakeFiles/Server.dir/Sender.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Sender.cpp.o: ../Counter.h
@@ -158,6 +162,17 @@ CMakeFiles/Server.dir/Timer.cpp.o: ../Message.h
 CMakeFiles/Server.dir/Timer.cpp.o: ../Timer.cpp
 CMakeFiles/Server.dir/Timer.cpp.o: ../Timer.h
 
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../ContentGenerator.h
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../HTTPRequest.h
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../Logger.h
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../Message.h
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../Queuer.h
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../Sender.h
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../VirtualDirrectoryContent.cpp
+CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../VirtualDirrectoryContent.h
+
 CMakeFiles/Server.dir/main.cpp.o: ../Accepter.h
 CMakeFiles/Server.dir/main.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/main.cpp.o: ../Client.h
@@ -174,5 +189,6 @@ CMakeFiles/Server.dir/main.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/main.cpp.o: ../Reciever.h
 CMakeFiles/Server.dir/main.cpp.o: ../Sender.h
 CMakeFiles/Server.dir/main.cpp.o: ../Timer.h
+CMakeFiles/Server.dir/main.cpp.o: ../VirtualDirrectoryContent.h
 CMakeFiles/Server.dir/main.cpp.o: ../main.cpp
 

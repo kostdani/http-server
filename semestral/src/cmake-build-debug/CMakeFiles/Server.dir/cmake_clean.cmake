@@ -16,6 +16,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Server.dir/Sender.cpp.o"
   "CMakeFiles/Server.dir/TerminatorContent.cpp.o"
   "CMakeFiles/Server.dir/Timer.cpp.o"
+  "CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o"
   "CMakeFiles/Server.dir/main.cpp.o"
   "Server"
   "Server.pdb"

@@ -14,6 +14,7 @@
 
 #include "FileContent.h"
 #include "DirectoryContent.h"
+#include "VirtualDirrectoryContent.h"
 class Reciever : public Actor{
 public:
     Reciever(Logger *l,int descriptor,sockaddr_in addr);

@@ -184,6 +184,12 @@
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Timer.h">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/main.cpp">
 			<Option target="Server"/>
 		</Unit>

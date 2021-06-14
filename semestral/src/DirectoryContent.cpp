@@ -40,10 +40,13 @@ void DirectoryContent::showdirrectory(HTTPRequest req) {
         p.append(s);
         struct stat buf;
         stat(p.c_str(),&buf);
-
         char *date = asctime(localtime(&buf.st_mtime));
         res.append("<tr><td>")
+                .append(" <a href=\"")
                 .append(s)
+                .append("\" title=\"\">")
+                .append(s)
+                .append("</a>")
                 .append("</td><td>")
                 .append(date,strlen(date)-1)
                 .append("</td></tr>\n");

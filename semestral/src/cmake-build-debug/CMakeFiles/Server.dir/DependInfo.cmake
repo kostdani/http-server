@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kostdani/kostdani/semestral/src/Sender.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Sender.cpp.o"
   "/home/kostdani/kostdani/semestral/src/TerminatorContent.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/TerminatorContent.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Timer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Timer.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o"
   "/home/kostdani/kostdani/semestral/src/main.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

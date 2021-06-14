@@ -601,6 +601,33 @@ Timer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Timer.cpp.s
 .PHONY : Timer.cpp.s
 
+VirtualDirrectoryContent.o: VirtualDirrectoryContent.cpp.o
+
+.PHONY : VirtualDirrectoryContent.o
+
+# target to build an object file
+VirtualDirrectoryContent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o
+.PHONY : VirtualDirrectoryContent.cpp.o
+
+VirtualDirrectoryContent.i: VirtualDirrectoryContent.cpp.i
+
+.PHONY : VirtualDirrectoryContent.i
+
+# target to preprocess a source file
+VirtualDirrectoryContent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.i
+.PHONY : VirtualDirrectoryContent.cpp.i
+
+VirtualDirrectoryContent.s: VirtualDirrectoryContent.cpp.s
+
+.PHONY : VirtualDirrectoryContent.s
+
+# target to generate assembly for a file
+VirtualDirrectoryContent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.s
+.PHONY : VirtualDirrectoryContent.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -688,6 +715,9 @@ help:
 	@echo "... Timer.o"
 	@echo "... Timer.i"
 	@echo "... Timer.s"
+	@echo "... VirtualDirrectoryContent.o"
+	@echo "... VirtualDirrectoryContent.i"
+	@echo "... VirtualDirrectoryContent.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

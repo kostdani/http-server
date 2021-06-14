@@ -12,19 +12,20 @@ Parse(bytearray);
 }
 
 bool HTTPRequest::ParseHead(std::string rawstring){
+    m_log.request=rawstring;
     std::stringstream str(rawstring);
 
     getline(str,method,' ');
     getline(str,uri,' ');
     getline(str,version,'\0');
-    m_log.request=rawstring;
     return true;
 }
 bool HTTPRequest::AddHeader(std::string header){
     std::stringstream str(header);
     std::string key,val;
     getline(str,key,':');
-    getline(str,val,'\n');
+    str>>std::skipws>>val;
+    //getline(str,val,'\n');
     headers[key]=val;
     return true;
 }
@@ -44,13 +45,18 @@ bool HTTPRequest::Parse(std::string rawstring){
     while(true){
         std::string header;
         getline(str,header,'\r');
-        if(str.get()!='\n')
-            return false;
+        str.get();
         if(header.empty()){
-            return true;
+            break;
         }
         AddHeader(header);
     }
+
+    std::string host=headers["Host"];
+    host.append(uri);
+    uri=host;
+    headers["Host"]="";
+    return true;
 }
 
 void HTTPRequest::Finish() {
