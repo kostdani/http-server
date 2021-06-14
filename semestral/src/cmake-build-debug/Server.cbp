@@ -112,6 +112,12 @@
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Counter.h">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/DirectoryContent.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/DirectoryContent.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Epoller.cpp">
 			<Option target="Server"/>
 		</Unit>

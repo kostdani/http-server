@@ -277,6 +277,33 @@ Counter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Counter.cpp.s
 .PHONY : Counter.cpp.s
 
+DirectoryContent.o: DirectoryContent.cpp.o
+
+.PHONY : DirectoryContent.o
+
+# target to build an object file
+DirectoryContent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/DirectoryContent.cpp.o
+.PHONY : DirectoryContent.cpp.o
+
+DirectoryContent.i: DirectoryContent.cpp.i
+
+.PHONY : DirectoryContent.i
+
+# target to preprocess a source file
+DirectoryContent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/DirectoryContent.cpp.i
+.PHONY : DirectoryContent.cpp.i
+
+DirectoryContent.s: DirectoryContent.cpp.s
+
+.PHONY : DirectoryContent.s
+
+# target to generate assembly for a file
+DirectoryContent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/DirectoryContent.cpp.s
+.PHONY : DirectoryContent.cpp.s
+
 Epoller.o: Epoller.cpp.o
 
 .PHONY : Epoller.o
@@ -598,6 +625,9 @@ help:
 	@echo "... Counter.o"
 	@echo "... Counter.i"
 	@echo "... Counter.s"
+	@echo "... DirectoryContent.o"
+	@echo "... DirectoryContent.i"
+	@echo "... DirectoryContent.s"
 	@echo "... Epoller.o"
 	@echo "... Epoller.i"
 	@echo "... Epoller.s"

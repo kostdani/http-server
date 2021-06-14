@@ -9,9 +9,11 @@
 #include "Logger.h"
 #include "Sender.h"
 #include "HTTPRequest.h"
-#include "FileContent.h"
 #include <netdb.h>
 #include <arpa/inet.h>
+
+#include "FileContent.h"
+#include "DirectoryContent.h"
 class Reciever : public Actor{
 public:
     Reciever(Logger *l,int descriptor,sockaddr_in addr);

@@ -129,7 +129,7 @@ bool HTTPServer::LoadConfig(std::string filename) {
                 return false;
             }
             configmap[key]=val;
-            std::cout<<key<<"   "<<val<<std::endl;
+            //std::cout<<key<<"   "<<val<<std::endl;
         }
 
     }
