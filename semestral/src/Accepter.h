@@ -10,15 +10,26 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
-
+/// Actor that accept new clients
+///
+/// This actor estabilishes connection with client and creates Reciever actor
 class Accepter : public Actor{
 public:
-    Accepter(Logger *l,ContentGenerator *content,sockaddr_in addr);
+    /// Basic constructor
+    /// @param logger Logger which will be used to log
+    /// @param content Content generator which will be used by created recievers
+    Accepter(Logger *logger,ContentGenerator *content,sockaddr_in addr);
 
-    Accepter(Logger *l,ContentGenerator *content,const char * ip="127.0.0.1",int port=80);
+    /// Constructor with string
+    /// Converts string ip to sockaddr_in and calls basic constructor
+    /// @see Accepter(Logger *,ContentGenerator *,sockaddr_in)
+    Accepter(Logger *logger,ContentGenerator *content,const char * ip="127.0.0.1",int port=80);
 
     void onInput(int threadi) override;
 
+    /// Accept new connection
+    /// Tries to estabilish connection with new client
+    /// @returns pointer to new Reciver if accept was sucessful otherwise returns nullptr
     Reciever *Accept();
 
     bool multiplex(int epolld) override;

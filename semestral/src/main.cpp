@@ -13,10 +13,16 @@ std::string samplerawrequest("GET / HTTP/1.0\n"
                     "Host: 127.0.0.1:8080\n\n");
 
 
-int main() {
+int main(int argc,char **argv) {
+    
+    if(argc!=2){
+        printf("To use specify cfg file like this: ./Server config.cfg\n" );
+        return 1;
+    }
+    std::string cfgpath(argv[1]);
     HTTPServer serv;
     printf("Starting server...\n");
-    if(!serv.LoadConfig("server.cfg")|| !serv.Start()){
+    if(!serv.LoadConfig(cfgpath)|| !serv.Start()){
         printf("cant start server.\n");
         return 1;
     }

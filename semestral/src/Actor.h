@@ -10,31 +10,47 @@
 #include <iostream>
 #include <functional>
 
+/// Virtual class parent of all actors
+///
+/// Actor is an object getting events which can be tracked by epoll
+/// technically it's a wrapper for unix descriptor
 class Actor {
 public:
-    // Constructor
+    /// Constructor
+    /// @param descriptor Descriptor to be wrapped
     Actor(int descriptor);
-    // Destructor
+    /// Destructor
+    /// Closes descriptor and frees memory if needed
     virtual ~Actor();
-    // No copy
-    Actor(const Actor&) =delete;
-    Actor& operator=(const Actor&)=delete;
-    // Checks if decriptor is ok
+
+    /// Function that closes descriptor
+    void Close();
+
+    /// Checks if decriptor is ok
     bool Check();
 
-    void Close();
-    // Create new actor
+    Actor(const Actor&) =delete;
+    Actor& operator=(const Actor&)=delete;
+
+    /// Add new actor
+    /// Puts the actor to be listened by same epoll as this
+    /// @param newActor Actor to be added
     virtual bool AddActor(Actor * newActor);
 
-    // method to call on input event
+    /// A method that implements the behavior of an actor on input event
     virtual void onInput(int threadi);
-    // method to call on output event
+
+    /// A method that implements the behavior of an actor on output event
     virtual void onOutput(int threadi);
-    // method to call on error event
+
+    /// A method that implements the behavior of an actor on output event
     virtual void onError(int threadi);
 
     friend class Epoller;
 
+    /// Multiplexes actor on epoll
+    /// @param epolld epoll file descriptor
+    /// @returns true if multiplexd sucessfuly othewise false
     virtual bool multiplex(int epolld);
 protected:
     Actor *m_parent=0;

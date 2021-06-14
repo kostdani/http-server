@@ -1,4 +1,4 @@
-# Semestrální práce
+# HTTP Server
 
 V tomto adresáři doporučujeme vyvíjet vaší semestrální práci. Struktura semestrální práce a tedy i tohoto adresář by měla odpovídat informacím na [Courses PA2 - Semestrální práce](https://courses.fit.cvut.cz/BI-PA2/semestral.html).
 
