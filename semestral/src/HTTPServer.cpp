@@ -50,7 +50,7 @@ void HTTPServer::threadfunction(int threadi) {
 }
 
 void clearstring(std::string &str){
-    for (int i = 0; i < str.length(); ++i) {
+    for (size_t i = 0; i < str.length(); ++i) {
         if(isspace(str[i])){
             str.erase(i,1);
             i--;

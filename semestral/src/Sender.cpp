@@ -19,11 +19,11 @@ bool Sender::multiplex(int epolld) {
 
 void Sender::onInput(int theardi) {
     if(last.length()-n>=0){
-        size_t r=write(m_socketfd,last.c_str()+n,last.length()-n);
+        ssize_t r=write(m_socketfd,last.c_str()+n,last.length()-n);
         if(r==-1){
             printf("error %d",errno);
             return;
-        }else if(r<last.length()-n){
+        }else if(r<(ssize_t)last.length()-n){
             n+=r;
             return;
         }else{
@@ -55,7 +55,7 @@ void Sender::handler(std::string msg) {
     if(n==-1){
         printf("error %d",errno);
         return;
-    }else if(n<msg.length()){
+    }else if(n<(ssize_t)msg.length()){
         last=msg;
     }else{
         n=0;

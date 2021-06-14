@@ -21,7 +21,7 @@ public:
 protected:
     int m_socketfd=-1;
     std::string last;
-    size_t n=0;
+    ssize_t n=0;
 
 };
 
