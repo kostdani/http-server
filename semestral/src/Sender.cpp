@@ -19,7 +19,7 @@ bool Sender::multiplex(int epolld) {
 
 void Sender::onInput(int theardi) {
     if(last.length()-n>=0){
-        int r=write(m_socketfd,last.c_str()+n,last.length()-n);
+        size_t r=write(m_socketfd,last.c_str()+n,last.length()-n);
         if(r==-1){
             printf("error %d",errno);
             return;

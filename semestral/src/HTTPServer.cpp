@@ -64,9 +64,10 @@ bool HTTPServer::LoadThreads(std::map<std::string, std::string> &cfgmap) {
     if(it!=cfgmap.end()){
 
         int threads=std::stoi(it->second);
-        if(threads>0)
-            thrn=threads;
-        else
+        if(threads>0) {
+            thrn = threads;
+            return true;
+        }else
             return false;
 
     }else{
