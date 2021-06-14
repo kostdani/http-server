@@ -56,6 +56,7 @@ CMakeFiles/Server.dir/DirectoryContent.cpp.o: ../ContentGenerator.h
 CMakeFiles/Server.dir/DirectoryContent.cpp.o: ../Counter.h
 CMakeFiles/Server.dir/DirectoryContent.cpp.o: ../DirectoryContent.cpp
 CMakeFiles/Server.dir/DirectoryContent.cpp.o: ../DirectoryContent.h
+CMakeFiles/Server.dir/DirectoryContent.cpp.o: ../FileContent.h
 CMakeFiles/Server.dir/DirectoryContent.cpp.o: ../HTTPRequest.h
 CMakeFiles/Server.dir/DirectoryContent.cpp.o: ../Logger.h
 CMakeFiles/Server.dir/DirectoryContent.cpp.o: ../Message.h
@@ -140,6 +141,17 @@ CMakeFiles/Server.dir/Sender.cpp.o: ../Message.h
 CMakeFiles/Server.dir/Sender.cpp.o: ../Queuer.h
 CMakeFiles/Server.dir/Sender.cpp.o: ../Sender.cpp
 CMakeFiles/Server.dir/Sender.cpp.o: ../Sender.h
+
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../ContentGenerator.h
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../HTTPRequest.h
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../Logger.h
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../Message.h
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../Queuer.h
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../Sender.h
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../TerminatorContent.cpp
+CMakeFiles/Server.dir/TerminatorContent.cpp.o: ../TerminatorContent.h
 
 CMakeFiles/Server.dir/Timer.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Timer.cpp.o: ../Message.h

@@ -6,6 +6,7 @@
 #define SERVER_DIRECTORYCONTENT_H
 
 #include "ContentGenerator.h"
+#include "FileContent.h"
 #include <dirent.h>
 #include <set>
 #include <sys/stat.h>
@@ -17,6 +18,8 @@ public:
 
     void handler(HTTPRequest msg) override;
 private:
+
+    void showdirrectory(HTTPRequest msg);
     std::string m_dirname;
 };
 

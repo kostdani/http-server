@@ -547,6 +547,33 @@ Sender.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Sender.cpp.s
 .PHONY : Sender.cpp.s
 
+TerminatorContent.o: TerminatorContent.cpp.o
+
+.PHONY : TerminatorContent.o
+
+# target to build an object file
+TerminatorContent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/TerminatorContent.cpp.o
+.PHONY : TerminatorContent.cpp.o
+
+TerminatorContent.i: TerminatorContent.cpp.i
+
+.PHONY : TerminatorContent.i
+
+# target to preprocess a source file
+TerminatorContent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/TerminatorContent.cpp.i
+.PHONY : TerminatorContent.cpp.i
+
+TerminatorContent.s: TerminatorContent.cpp.s
+
+.PHONY : TerminatorContent.s
+
+# target to generate assembly for a file
+TerminatorContent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/TerminatorContent.cpp.s
+.PHONY : TerminatorContent.cpp.s
+
 Timer.o: Timer.cpp.o
 
 .PHONY : Timer.o
@@ -655,6 +682,9 @@ help:
 	@echo "... Sender.o"
 	@echo "... Sender.i"
 	@echo "... Sender.s"
+	@echo "... TerminatorContent.o"
+	@echo "... TerminatorContent.i"
+	@echo "... TerminatorContent.s"
 	@echo "... Timer.o"
 	@echo "... Timer.i"
 	@echo "... Timer.s"

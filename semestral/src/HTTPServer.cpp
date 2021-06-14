@@ -13,12 +13,6 @@ bool HTTPServer::Start() {
     m_stopper=new Counter();
     m_epoller.AddActor(m_stopper);
 
-    m_logger=new Logger("serv.log");
-    m_epoller.AddActor(m_logger);
-
-    Accepter *ac=new Accepter(m_logger,"127.0.0.1",8080);
-    m_epoller.AddActor(ac);
-
     m_stop=false;
     for (int i = 0; i < thrn; ++i) {
         m_threads.emplace_back(&HTTPServer::threadfunction,this);
@@ -84,14 +78,18 @@ bool HTTPServer::LoadLogfile(std::map<std::string, std::string> &cfgmap) {
     auto it=cfgmap.find("logfile");
     if(it!=cfgmap.end()){
         clearstring(it->second);
-        m_logger=new Logger(it->second);
-        m_epoller.AddActor(m_logger);
-        return true;
+        std::ofstream logfile(it->second);
+        if(!logfile.is_open()){
+            printf("wrong logfile\n");
+            return false;
+        }
+        m_logger=new Logger(logfile);
     }else{
-        printf("no logfile\n");
-        return false;
+        m_logger=new Logger(std::cout);
     }
 
+    m_epoller.AddActor(m_logger);
+    return true;
 }
 
 bool HTTPServer::LoadListen(std::map<std::string, std::string> &cfgmap) {

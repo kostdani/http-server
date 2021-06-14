@@ -8,7 +8,7 @@ DirectoryContent::DirectoryContent(std::string dirname) {
     m_dirname=dirname;
 }
 
-void DirectoryContent::handler(HTTPRequest req) {
+void DirectoryContent::showdirrectory(HTTPRequest req) {
 
     DIR* dir= opendir(m_dirname.c_str());
     if(!dir)
@@ -62,4 +62,29 @@ void DirectoryContent::handler(HTTPRequest req) {
     req.m_log.status="200";
     req.m_log.bytes=std::to_string(res.length());
     req.Finish();
+}
+
+void DirectoryContent::handler(HTTPRequest req) {
+    if(req.uri=="/"){
+        showdirrectory(req);
+    }else{
+        printf("subdirrectory\n");
+        std::string subpath=m_dirname;
+        subpath.append(req.uri);
+        struct stat sb;
+
+        if (stat(subpath.c_str(), &sb) == 0 ){
+            req.uri="/";
+            if(S_ISDIR(sb.st_mode)) {
+                DirectoryContent subdir(subpath);
+                subdir.Push(req);
+                subdir.onInput();
+            }else if(S_ISREG(sb.st_mode)){
+                FileContent subfile(subpath);
+                subfile.Push(req);
+                subfile.onInput();
+            }
+        }
+
+    }
 }

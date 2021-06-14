@@ -39,7 +39,7 @@ void Reciever::onInput() {
                 HTTPRequest req(m_logger,m_sender,m_str);
                 req.m_log.host=inet_ntoa(m_addr.sin_addr);
 
-                auto f=new DirectoryContent("/home/kostdani/Documents");
+                auto f=new DirectoryContent("/home/kostdani");
                 f->Push(req);
                 AddActor(f);
                 m_str="";

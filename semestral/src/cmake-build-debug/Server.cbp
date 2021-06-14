@@ -172,6 +172,12 @@
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Sender.h">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/TerminatorContent.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/TerminatorContent.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Timer.cpp">
 			<Option target="Server"/>
 		</Unit>

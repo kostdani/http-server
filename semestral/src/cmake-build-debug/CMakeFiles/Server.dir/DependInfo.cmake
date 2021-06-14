@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kostdani/kostdani/semestral/src/Queuer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Queuer.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Reciever.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Reciever.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Sender.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Sender.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/TerminatorContent.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/TerminatorContent.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Timer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Timer.cpp.o"
   "/home/kostdani/kostdani/semestral/src/main.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.o"
   )

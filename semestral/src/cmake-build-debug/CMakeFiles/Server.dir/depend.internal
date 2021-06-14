@@ -57,6 +57,7 @@ CMakeFiles/Server.dir/DirectoryContent.cpp.o
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/DirectoryContent.cpp
  /home/kostdani/kostdani/semestral/src/DirectoryContent.h
+ /home/kostdani/kostdani/semestral/src/FileContent.h
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/Logger.h
  /home/kostdani/kostdani/semestral/src/Message.h
@@ -141,6 +142,17 @@ CMakeFiles/Server.dir/Sender.cpp.o
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Sender.cpp
  /home/kostdani/kostdani/semestral/src/Sender.h
+CMakeFiles/Server.dir/TerminatorContent.cpp.o
+ /home/kostdani/kostdani/semestral/src/Actor.h
+ /home/kostdani/kostdani/semestral/src/ContentGenerator.h
+ /home/kostdani/kostdani/semestral/src/Counter.h
+ /home/kostdani/kostdani/semestral/src/HTTPRequest.h
+ /home/kostdani/kostdani/semestral/src/Logger.h
+ /home/kostdani/kostdani/semestral/src/Message.h
+ /home/kostdani/kostdani/semestral/src/Queuer.h
+ /home/kostdani/kostdani/semestral/src/Sender.h
+ /home/kostdani/kostdani/semestral/src/TerminatorContent.cpp
+ /home/kostdani/kostdani/semestral/src/TerminatorContent.h
 CMakeFiles/Server.dir/Timer.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Message.h
