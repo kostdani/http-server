@@ -4,7 +4,6 @@
 
 #ifndef SERVER_ACTOR_H
 #define SERVER_ACTOR_H
-#include "Message.h"
 #include <unistd.h>
 #include <sys/epoll.h>
 #include <fcntl.h>
@@ -35,8 +34,6 @@ public:
     virtual void onError(int threadi);
 
     friend class Epoller;
-
-    std::function<void(Message *)> handler=[](Message *){};
 
     virtual bool multiplex(int epolld);
 protected:

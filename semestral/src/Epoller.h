@@ -6,6 +6,7 @@
 #define SERVER_EPOLLER_H
 #include "Actor.h"
 #include <set>
+#include <mutex>
 class Epoller : public Actor{
 public:
     Epoller();
@@ -18,6 +19,7 @@ public:
 
 protected:
     std::set<Actor *> m_actors;
+    std::mutex m_mtx;
 };
 
 

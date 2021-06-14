@@ -26,7 +26,6 @@ public:
 protected:
     Sender *m_sender=0;
     sockaddr_in m_addr;
-    Queuer<Message *> *m_q;
     std::string m_str="";
     Logger *m_logger=0;
     bool multiplex(int epolld) override;

@@ -6,7 +6,6 @@
 #define SERVER_ACCEPTER_H
 #include "Actor.h"
 #include "Reciever.h"
-#include "Client.h"
 #include "Logger.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>

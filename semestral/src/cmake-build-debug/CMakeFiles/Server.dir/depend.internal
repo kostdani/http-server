@@ -5,33 +5,16 @@ CMakeFiles/Server.dir/Accepter.cpp.o
  /home/kostdani/kostdani/semestral/src/Accepter.cpp
  /home/kostdani/kostdani/semestral/src/Accepter.h
  /home/kostdani/kostdani/semestral/src/Actor.h
- /home/kostdani/kostdani/semestral/src/Client.h
  /home/kostdani/kostdani/semestral/src/ContentGenerator.h
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Reciever.h
  /home/kostdani/kostdani/semestral/src/Sender.h
- /home/kostdani/kostdani/semestral/src/Timer.h
 CMakeFiles/Server.dir/Actor.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.cpp
  /home/kostdani/kostdani/semestral/src/Actor.h
- /home/kostdani/kostdani/semestral/src/Message.h
-CMakeFiles/Server.dir/Client.cpp.o
- /home/kostdani/kostdani/semestral/src/Actor.h
- /home/kostdani/kostdani/semestral/src/Client.cpp
- /home/kostdani/kostdani/semestral/src/Client.h
- /home/kostdani/kostdani/semestral/src/ContentGenerator.h
- /home/kostdani/kostdani/semestral/src/Counter.h
- /home/kostdani/kostdani/semestral/src/HTTPRequest.h
- /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
- /home/kostdani/kostdani/semestral/src/Queuer.h
- /home/kostdani/kostdani/semestral/src/Reciever.h
- /home/kostdani/kostdani/semestral/src/Sender.h
- /home/kostdani/kostdani/semestral/src/Timer.h
 CMakeFiles/Server.dir/ContentGenerator.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/ContentGenerator.cpp
@@ -39,14 +22,12 @@ CMakeFiles/Server.dir/ContentGenerator.cpp.o
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Sender.h
 CMakeFiles/Server.dir/Counter.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Counter.cpp
  /home/kostdani/kostdani/semestral/src/Counter.h
- /home/kostdani/kostdani/semestral/src/Message.h
 CMakeFiles/Server.dir/DirectoryContent.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/ContentGenerator.h
@@ -56,14 +37,12 @@ CMakeFiles/Server.dir/DirectoryContent.cpp.o
  /home/kostdani/kostdani/semestral/src/FileContent.h
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Sender.h
 CMakeFiles/Server.dir/Epoller.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Epoller.cpp
  /home/kostdani/kostdani/semestral/src/Epoller.h
- /home/kostdani/kostdani/semestral/src/Message.h
 CMakeFiles/Server.dir/FileContent.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/ContentGenerator.h
@@ -72,7 +51,6 @@ CMakeFiles/Server.dir/FileContent.cpp.o
  /home/kostdani/kostdani/semestral/src/FileContent.h
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Sender.h
 CMakeFiles/Server.dir/HTTPRequest.cpp.o
@@ -81,13 +59,11 @@ CMakeFiles/Server.dir/HTTPRequest.cpp.o
  /home/kostdani/kostdani/semestral/src/HTTPRequest.cpp
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Sender.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o
  /home/kostdani/kostdani/semestral/src/Accepter.h
  /home/kostdani/kostdani/semestral/src/Actor.h
- /home/kostdani/kostdani/semestral/src/Client.h
  /home/kostdani/kostdani/semestral/src/ContentGenerator.h
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/DirectoryContent.h
@@ -97,27 +73,20 @@ CMakeFiles/Server.dir/HTTPServer.cpp.o
  /home/kostdani/kostdani/semestral/src/HTTPServer.cpp
  /home/kostdani/kostdani/semestral/src/HTTPServer.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Reciever.h
  /home/kostdani/kostdani/semestral/src/Sender.h
  /home/kostdani/kostdani/semestral/src/TerminatorContent.h
- /home/kostdani/kostdani/semestral/src/Timer.h
  /home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.h
 CMakeFiles/Server.dir/Logger.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/Logger.cpp
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
-CMakeFiles/Server.dir/Message.cpp.o
- /home/kostdani/kostdani/semestral/src/Message.cpp
- /home/kostdani/kostdani/semestral/src/Message.h
 CMakeFiles/Server.dir/Queuer.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Counter.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.cpp
  /home/kostdani/kostdani/semestral/src/Queuer.h
 CMakeFiles/Server.dir/Reciever.cpp.o
@@ -126,7 +95,6 @@ CMakeFiles/Server.dir/Reciever.cpp.o
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Reciever.cpp
  /home/kostdani/kostdani/semestral/src/Reciever.h
@@ -134,7 +102,6 @@ CMakeFiles/Server.dir/Reciever.cpp.o
 CMakeFiles/Server.dir/Sender.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
  /home/kostdani/kostdani/semestral/src/Counter.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Sender.cpp
  /home/kostdani/kostdani/semestral/src/Sender.h
@@ -144,14 +111,12 @@ CMakeFiles/Server.dir/TerminatorContent.cpp.o
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Sender.h
  /home/kostdani/kostdani/semestral/src/TerminatorContent.cpp
  /home/kostdani/kostdani/semestral/src/TerminatorContent.h
 CMakeFiles/Server.dir/Timer.cpp.o
  /home/kostdani/kostdani/semestral/src/Actor.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Timer.cpp
  /home/kostdani/kostdani/semestral/src/Timer.h
 CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o
@@ -160,7 +125,6 @@ CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Sender.h
  /home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.cpp
@@ -168,7 +132,6 @@ CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o
 CMakeFiles/Server.dir/main.cpp.o
  /home/kostdani/kostdani/semestral/src/Accepter.h
  /home/kostdani/kostdani/semestral/src/Actor.h
- /home/kostdani/kostdani/semestral/src/Client.h
  /home/kostdani/kostdani/semestral/src/ContentGenerator.h
  /home/kostdani/kostdani/semestral/src/Counter.h
  /home/kostdani/kostdani/semestral/src/DirectoryContent.h
@@ -177,7 +140,6 @@ CMakeFiles/Server.dir/main.cpp.o
  /home/kostdani/kostdani/semestral/src/HTTPRequest.h
  /home/kostdani/kostdani/semestral/src/HTTPServer.h
  /home/kostdani/kostdani/semestral/src/Logger.h
- /home/kostdani/kostdani/semestral/src/Message.h
  /home/kostdani/kostdani/semestral/src/Queuer.h
  /home/kostdani/kostdani/semestral/src/Reciever.h
  /home/kostdani/kostdani/semestral/src/Sender.h

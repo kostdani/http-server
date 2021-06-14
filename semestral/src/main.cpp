@@ -20,9 +20,6 @@ int main() {
         printf("cant start server.\n");
         return 1;
     }
-
-    std::cout << "Press enter to stop server" << std::endl;
-    std::cin.ignore();
-    serv.Stop();
+    printf("Server stopped\n");
     return 0;
 }

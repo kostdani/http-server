@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Server.dir/Accepter.cpp.o"
   "CMakeFiles/Server.dir/Actor.cpp.o"
-  "CMakeFiles/Server.dir/Client.cpp.o"
   "CMakeFiles/Server.dir/ContentGenerator.cpp.o"
   "CMakeFiles/Server.dir/Counter.cpp.o"
   "CMakeFiles/Server.dir/DirectoryContent.cpp.o"
@@ -10,7 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Server.dir/HTTPRequest.cpp.o"
   "CMakeFiles/Server.dir/HTTPServer.cpp.o"
   "CMakeFiles/Server.dir/Logger.cpp.o"
-  "CMakeFiles/Server.dir/Message.cpp.o"
   "CMakeFiles/Server.dir/Queuer.cpp.o"
   "CMakeFiles/Server.dir/Reciever.cpp.o"
   "CMakeFiles/Server.dir/Sender.cpp.o"

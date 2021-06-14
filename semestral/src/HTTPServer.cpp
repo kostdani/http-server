@@ -102,11 +102,8 @@ bool HTTPServer::LoadListen(std::map<std::string, std::string> &cfgmap) {
         getline(ss,ip,':');
         getline(ss,port);
         int iport=std::stoi(port);
-    //auto c = new DirectoryContent("/home/kostdani/");
-        auto c=new TerminatorContent(m_stop,m_threads);
-        m_epoller.AddActor(c);
 
-        auto ac=new Accepter(m_logger,c,ip.c_str(),iport);
+        auto ac=new Accepter(m_logger,m_content,ip.c_str(),iport);
         m_epoller.AddActor(ac);
         return true;
     }else{
@@ -122,6 +119,8 @@ bool HTTPServer::LoadVirtualfs(std::map<std::string, std::string> &cfgmap)  {
         std::stringstream ss(it->second);
         std::string t;
         getline(ss,t,'{');
+        auto virtualdir=new VirtualDirrectoryContent();
+        m_epoller.AddActor(virtualdir);
         while(true) {
             std::string line;
             getline(ss, line, ',');
@@ -132,8 +131,22 @@ bool HTTPServer::LoadVirtualfs(std::map<std::string, std::string> &cfgmap)  {
             getline(str,url,'=');
             getline(str,content,'}');
             //str>>url>>content;
-            std::cout<<url<<"  "<<content<<std::endl;
+            if(content[0]=='\"'){
+                std::stringstream stream(content);
+                std::string path;
+                getline(stream,path,'\"');
+                getline(stream,path,'\"');
+                auto dir=new DirectoryContent(path);
+                m_epoller.AddActor(dir);
+                virtualdir->AddLocation(url,dir);
+            }else if(content=="terminator"){
+                auto term=new TerminatorContent(m_stop,m_threads);
+                m_epoller.AddActor(term);
+                virtualdir->AddLocation(url,term);
+            }
+            //std::cout<<url<<"  "<<content<<std::endl;
         }
+        m_content=virtualdir;
         return true;
     }else{
         return false;
@@ -162,7 +175,7 @@ bool HTTPServer::LoadConfig(std::string filename) {
 
     }
 
-return LoadThreads(configmap) && LoadLogfile(configmap) && LoadListen(configmap) &&  LoadVirtualfs(configmap);
+return LoadThreads(configmap) && LoadLogfile(configmap) &&  LoadVirtualfs(configmap) && LoadListen(configmap);
 
 
 }

@@ -12,24 +12,29 @@ void VirtualDirrectoryContent::AddLocation(std::string location, ContentGenerato
     m_locations[location]=generator;
 }
 
-void VirtualDirrectoryContent::handler(HTTPRequest req) {
-    std::string loc;
-    std::stringstream uristream(req.uri);
-    getline(uristream,loc,'/');
-    if(loc.empty()){
-        printf("empty loc\n");
-        return;
-    }else{
-        auto it=m_locations.find(loc);
-        if(it==m_locations.end()){
-            printf("not found location\n");
-            return;
+// shortens path to next '/'
+bool shortenpath(std::string& path){
+    for(int i=path.length();i>=0;--i){
+        if(path[i]=='/'){
+            std::string npath(path.c_str(),i);
+            path=npath;
+            return true;
         }
-
-        req.headers["Host"].append("/").append(loc);
-        std::string cuturi;
-        getline(uristream,cuturi,'\0');
-        req.uri=cuturi;
-        it->second->Push(req);
     }
+    return false;
+}
+
+void VirtualDirrectoryContent::handler(HTTPRequest req) {
+    std::string url=req.uri;
+    do{
+        auto it=m_locations.find(url);
+        if(it!=m_locations.end()){
+            req.headers["Host"].append("/").append(url);
+            std::string newuri(req.uri.c_str()+url.length());
+            req.uri=newuri;
+            it->second->Push(req);
+            break;
+        }
+    }while(shortenpath(url));
+
 }

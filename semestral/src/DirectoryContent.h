@@ -17,6 +17,7 @@ public:
 
 
     void handler(HTTPRequest msg) override;
+    bool multiplex(int epolld) override;
 private:
 
     void showdirrectory(HTTPRequest msg);

@@ -20,20 +20,14 @@ epoll_event Epoller::getEvent() {
 
 bool Epoller::AddActor(Actor *newActor) {
     if (newActor && newActor->Check()) {
+        m_mtx.lock();
         newActor->m_parent = this;
-        //ev.events = newActor->m_events;
-        /*
-        epoll_event ev{};
-        ev.data.ptr = newActor;
-        ev.events = newActor->flags();
-        if (epoll_ctl(m_descriptor, EPOLL_CTL_ADD, newActor->m_descriptor, &ev) == 0) {
-            m_actors.insert(newActor);
-            return true;
-        }*/
         if(newActor->multiplex(m_descriptor)){
             m_actors.insert(newActor);
+            m_mtx.unlock();
             return true;
         }
+        m_mtx.unlock();
     }
     return false;
 }

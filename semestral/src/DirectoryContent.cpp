@@ -71,7 +71,6 @@ void DirectoryContent::handler(HTTPRequest req) {
     if(req.uri=="/"){
         showdirrectory(req);
     }else{
-        printf("subdirrectory\n");
         std::string subpath=m_dirname;
         subpath.append(req.uri);
         struct stat sb;
@@ -90,4 +89,13 @@ void DirectoryContent::handler(HTTPRequest req) {
         }
 
     }
+}
+
+bool DirectoryContent::multiplex(int epolld) {
+
+    epoll_event ev{};
+    ev.data.ptr = this;
+    ev.events = EPOLLIN ;
+
+    return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
 }

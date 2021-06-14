@@ -11,8 +11,6 @@ Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
 Reciever.h
 /home/kostdani/kostdani/semestral/src/Reciever.h
-Client.h
-/home/kostdani/kostdani/semestral/src/Client.h
 Logger.h
 /home/kostdani/kostdani/semestral/src/Logger.h
 sys/socket.h
@@ -21,8 +19,6 @@ arpa/inet.h
 -
 
 /home/kostdani/kostdani/semestral/src/Actor.h
-Message.h
-/home/kostdani/kostdani/semestral/src/Message.h
 unistd.h
 -
 sys/epoll.h
@@ -32,20 +28,6 @@ fcntl.h
 iostream
 -
 functional
--
-
-/home/kostdani/kostdani/semestral/src/Client.h
-Queuer.h
-/home/kostdani/kostdani/semestral/src/Queuer.h
-Reciever.h
-/home/kostdani/kostdani/semestral/src/Reciever.h
-Sender.h
-/home/kostdani/kostdani/semestral/src/Sender.h
-Timer.h
-/home/kostdani/kostdani/semestral/src/Timer.h
-sys/socket.h
--
-arpa/inet.h
 -
 
 /home/kostdani/kostdani/semestral/src/ContentGenerator.h
@@ -59,6 +41,10 @@ Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
 sys/eventfd.h
 -
+
+/home/kostdani/kostdani/semestral/src/DirectoryContent.cpp
+DirectoryContent.h
+/home/kostdani/kostdani/semestral/src/DirectoryContent.h
 
 /home/kostdani/kostdani/semestral/src/DirectoryContent.h
 ContentGenerator.h
@@ -78,6 +64,8 @@ string.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
 set
+-
+mutex
 -
 
 /home/kostdani/kostdani/semestral/src/FileContent.h
@@ -101,10 +89,6 @@ map
 -
 ctime
 -
-
-/home/kostdani/kostdani/semestral/src/HTTPServer.cpp
-HTTPServer.h
-/home/kostdani/kostdani/semestral/src/HTTPServer.h
 
 /home/kostdani/kostdani/semestral/src/HTTPServer.h
 Epoller.h
@@ -140,15 +124,9 @@ Queuer.h
 iostream
 -
 
-/home/kostdani/kostdani/semestral/src/Message.h
-string
--
-
 /home/kostdani/kostdani/semestral/src/Queuer.h
 Counter.h
 /home/kostdani/kostdani/semestral/src/Counter.h
-Message.h
-/home/kostdani/kostdani/semestral/src/Message.h
 queue
 -
 mutex
@@ -191,4 +169,26 @@ sys/timerfd.h
 /home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.h
 ContentGenerator.h
 /home/kostdani/kostdani/semestral/src/ContentGenerator.h
+
+/home/kostdani/kostdani/semestral/src/main.cpp
+iostream
+-
+Epoller.h
+/home/kostdani/kostdani/semestral/src/Epoller.h
+Accepter.h
+/home/kostdani/kostdani/semestral/src/Accepter.h
+Counter.h
+/home/kostdani/kostdani/semestral/src/Counter.h
+Timer.h
+/home/kostdani/kostdani/semestral/src/Timer.h
+Sender.h
+/home/kostdani/kostdani/semestral/src/Sender.h
+Logger.h
+/home/kostdani/kostdani/semestral/src/Logger.h
+thread
+-
+FileContent.h
+/home/kostdani/kostdani/semestral/src/FileContent.h
+HTTPServer.h
+/home/kostdani/kostdani/semestral/src/HTTPServer.h
 

@@ -196,33 +196,6 @@ Actor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Actor.cpp.s
 .PHONY : Actor.cpp.s
 
-Client.o: Client.cpp.o
-
-.PHONY : Client.o
-
-# target to build an object file
-Client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Client.cpp.o
-.PHONY : Client.cpp.o
-
-Client.i: Client.cpp.i
-
-.PHONY : Client.i
-
-# target to preprocess a source file
-Client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Client.cpp.i
-.PHONY : Client.cpp.i
-
-Client.s: Client.cpp.s
-
-.PHONY : Client.s
-
-# target to generate assembly for a file
-Client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Client.cpp.s
-.PHONY : Client.cpp.s
-
 ContentGenerator.o: ContentGenerator.cpp.o
 
 .PHONY : ContentGenerator.o
@@ -439,33 +412,6 @@ Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Logger.cpp.s
 .PHONY : Logger.cpp.s
 
-Message.o: Message.cpp.o
-
-.PHONY : Message.o
-
-# target to build an object file
-Message.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Message.cpp.o
-.PHONY : Message.cpp.o
-
-Message.i: Message.cpp.i
-
-.PHONY : Message.i
-
-# target to preprocess a source file
-Message.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Message.cpp.i
-.PHONY : Message.cpp.i
-
-Message.s: Message.cpp.s
-
-.PHONY : Message.s
-
-# target to generate assembly for a file
-Message.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Message.cpp.s
-.PHONY : Message.cpp.s
-
 Queuer.o: Queuer.cpp.o
 
 .PHONY : Queuer.o
@@ -670,9 +616,6 @@ help:
 	@echo "... Actor.o"
 	@echo "... Actor.i"
 	@echo "... Actor.s"
-	@echo "... Client.o"
-	@echo "... Client.i"
-	@echo "... Client.s"
 	@echo "... ContentGenerator.o"
 	@echo "... ContentGenerator.i"
 	@echo "... ContentGenerator.s"
@@ -697,9 +640,6 @@ help:
 	@echo "... Logger.o"
 	@echo "... Logger.i"
 	@echo "... Logger.s"
-	@echo "... Message.o"
-	@echo "... Message.i"
-	@echo "... Message.s"
 	@echo "... Queuer.o"
 	@echo "... Queuer.i"
 	@echo "... Queuer.s"
