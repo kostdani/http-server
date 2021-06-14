@@ -9,6 +9,7 @@ compile: src/build/main.o src/build/Accepter.o src/build/Actor.o src/build/Conso
 
 
 doc: Doxyfile README.md src/Accepter.h src/Epoller.h src/Reciever.h src/Actor.h src/FileContent.h src/ScriptContent.h src/ConsoleLogger.h src/HTTPRequest.h src/Sender.h src/ContentGenerator.h src/HTTPServer.h src/TerminatorContent.h src/Counter.h src/Logger.h src/Timer.h src/DirectoryContent.h src/Queuer.h src/VirtualDirrectoryContent.h
+	mkdir doc
 	doxygen Doxyfile
 
 
