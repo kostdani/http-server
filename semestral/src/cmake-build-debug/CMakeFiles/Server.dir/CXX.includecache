@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/kostdani/kostdani/semestral/src/Accepter.cpp
+Accepter.h
+/home/kostdani/kostdani/semestral/src/Accepter.h
+
 /home/kostdani/kostdani/semestral/src/Accepter.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
@@ -29,6 +33,18 @@ iostream
 -
 functional
 -
+
+/home/kostdani/kostdani/semestral/src/ConsoleLogger.cpp
+ConsoleLogger.h
+/home/kostdani/kostdani/semestral/src/ConsoleLogger.h
+
+/home/kostdani/kostdani/semestral/src/ConsoleLogger.h
+Logger.h
+/home/kostdani/kostdani/semestral/src/Logger.h
+
+/home/kostdani/kostdani/semestral/src/ContentGenerator.cpp
+ContentGenerator.h
+/home/kostdani/kostdani/semestral/src/ContentGenerator.h
 
 /home/kostdani/kostdani/semestral/src/ContentGenerator.h
 HTTPRequest.h
@@ -68,11 +84,19 @@ set
 mutex
 -
 
+/home/kostdani/kostdani/semestral/src/FileContent.cpp
+FileContent.h
+/home/kostdani/kostdani/semestral/src/FileContent.h
+
 /home/kostdani/kostdani/semestral/src/FileContent.h
 ContentGenerator.h
 /home/kostdani/kostdani/semestral/src/ContentGenerator.h
 fstream
 -
+
+/home/kostdani/kostdani/semestral/src/HTTPRequest.cpp
+HTTPRequest.h
+/home/kostdani/kostdani/semestral/src/HTTPRequest.h
 
 /home/kostdani/kostdani/semestral/src/HTTPRequest.h
 Sender.h
@@ -90,6 +114,10 @@ map
 ctime
 -
 
+/home/kostdani/kostdani/semestral/src/HTTPServer.cpp
+HTTPServer.h
+/home/kostdani/kostdani/semestral/src/HTTPServer.h
+
 /home/kostdani/kostdani/semestral/src/HTTPServer.h
 Epoller.h
 /home/kostdani/kostdani/semestral/src/Epoller.h
@@ -99,6 +127,8 @@ Accepter.h
 /home/kostdani/kostdani/semestral/src/Accepter.h
 Logger.h
 /home/kostdani/kostdani/semestral/src/Logger.h
+ConsoleLogger.h
+/home/kostdani/kostdani/semestral/src/ConsoleLogger.h
 ContentGenerator.h
 /home/kostdani/kostdani/semestral/src/ContentGenerator.h
 FileContent.h
@@ -118,10 +148,16 @@ fstream
 map
 -
 
+/home/kostdani/kostdani/semestral/src/Logger.cpp
+Logger.h
+/home/kostdani/kostdani/semestral/src/Logger.h
+
 /home/kostdani/kostdani/semestral/src/Logger.h
 Queuer.h
 /home/kostdani/kostdani/semestral/src/Queuer.h
 iostream
+-
+fstream
 -
 
 /home/kostdani/kostdani/semestral/src/Queuer.h
@@ -131,6 +167,10 @@ queue
 -
 mutex
 -
+
+/home/kostdani/kostdani/semestral/src/Reciever.cpp
+Reciever.h
+/home/kostdani/kostdani/semestral/src/Reciever.h
 
 /home/kostdani/kostdani/semestral/src/Reciever.h
 Actor.h
@@ -150,9 +190,21 @@ arpa/inet.h
 ContentGenerator.h
 /home/kostdani/kostdani/semestral/src/ContentGenerator.h
 
+/home/kostdani/kostdani/semestral/src/ScriptContent.cpp
+ScriptContent.h
+/home/kostdani/kostdani/semestral/src/ScriptContent.h
+
+/home/kostdani/kostdani/semestral/src/ScriptContent.h
+ContentGenerator.h
+/home/kostdani/kostdani/semestral/src/ContentGenerator.h
+
 /home/kostdani/kostdani/semestral/src/Sender.h
 Queuer.h
 /home/kostdani/kostdani/semestral/src/Queuer.h
+
+/home/kostdani/kostdani/semestral/src/TerminatorContent.cpp
+TerminatorContent.h
+/home/kostdani/kostdani/semestral/src/TerminatorContent.h
 
 /home/kostdani/kostdani/semestral/src/TerminatorContent.h
 ContentGenerator.h
@@ -165,6 +217,10 @@ Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
 sys/timerfd.h
 -
+
+/home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.cpp
+VirtualDirrectoryContent.h
+/home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.h
 
 /home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.h
 ContentGenerator.h

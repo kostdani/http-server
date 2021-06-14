@@ -6,13 +6,14 @@
 #define SERVER_LOGGER_H
 #include "Queuer.h"
 #include <iostream>
+#include <fstream>
 class Logger: public Queuer< std::string >{
 public:
-    Logger(std::ostream& out);
+    Logger(std::string logfilename);
 
     void handler(std::string msg) override;
 protected:
-    std::ostream & m_out;
+    std::string m_logfile;
 };
 
 

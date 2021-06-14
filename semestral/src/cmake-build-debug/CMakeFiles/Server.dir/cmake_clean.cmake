@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Server.dir/Accepter.cpp.o"
   "CMakeFiles/Server.dir/Actor.cpp.o"
+  "CMakeFiles/Server.dir/ConsoleLogger.cpp.o"
   "CMakeFiles/Server.dir/ContentGenerator.cpp.o"
   "CMakeFiles/Server.dir/Counter.cpp.o"
   "CMakeFiles/Server.dir/DirectoryContent.cpp.o"
@@ -11,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Server.dir/Logger.cpp.o"
   "CMakeFiles/Server.dir/Queuer.cpp.o"
   "CMakeFiles/Server.dir/Reciever.cpp.o"
+  "CMakeFiles/Server.dir/ScriptContent.cpp.o"
   "CMakeFiles/Server.dir/Sender.cpp.o"
   "CMakeFiles/Server.dir/TerminatorContent.cpp.o"
   "CMakeFiles/Server.dir/Timer.cpp.o"

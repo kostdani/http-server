@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kostdani/kostdani/semestral/src/Accepter.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Accepter.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Actor.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Actor.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/ConsoleLogger.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/ConsoleLogger.cpp.o"
   "/home/kostdani/kostdani/semestral/src/ContentGenerator.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/ContentGenerator.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Counter.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Counter.cpp.o"
   "/home/kostdani/kostdani/semestral/src/DirectoryContent.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/DirectoryContent.cpp.o"
@@ -16,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kostdani/kostdani/semestral/src/Logger.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Logger.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Queuer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Queuer.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Reciever.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Reciever.cpp.o"
+  "/home/kostdani/kostdani/semestral/src/ScriptContent.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/ScriptContent.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Sender.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Sender.cpp.o"
   "/home/kostdani/kostdani/semestral/src/TerminatorContent.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/TerminatorContent.cpp.o"
   "/home/kostdani/kostdani/semestral/src/Timer.cpp" "/home/kostdani/kostdani/semestral/src/cmake-build-debug/CMakeFiles/Server.dir/Timer.cpp.o"

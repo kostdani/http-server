@@ -94,6 +94,12 @@
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Actor.h">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/ConsoleLogger.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/ConsoleLogger.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/ContentGenerator.cpp">
 			<Option target="Server"/>
 		</Unit>
@@ -152,6 +158,12 @@
 			<Option target="Server"/>
 		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Reciever.h">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/ScriptContent.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/kostdani/kostdani/semestral/src/ScriptContent.h">
 			<Option target="Server"/>
 		</Unit>
 		<Unit filename="/home/kostdani/kostdani/semestral/src/Sender.cpp">

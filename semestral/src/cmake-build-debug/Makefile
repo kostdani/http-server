@@ -196,6 +196,33 @@ Actor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Actor.cpp.s
 .PHONY : Actor.cpp.s
 
+ConsoleLogger.o: ConsoleLogger.cpp.o
+
+.PHONY : ConsoleLogger.o
+
+# target to build an object file
+ConsoleLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/ConsoleLogger.cpp.o
+.PHONY : ConsoleLogger.cpp.o
+
+ConsoleLogger.i: ConsoleLogger.cpp.i
+
+.PHONY : ConsoleLogger.i
+
+# target to preprocess a source file
+ConsoleLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/ConsoleLogger.cpp.i
+.PHONY : ConsoleLogger.cpp.i
+
+ConsoleLogger.s: ConsoleLogger.cpp.s
+
+.PHONY : ConsoleLogger.s
+
+# target to generate assembly for a file
+ConsoleLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/ConsoleLogger.cpp.s
+.PHONY : ConsoleLogger.cpp.s
+
 ContentGenerator.o: ContentGenerator.cpp.o
 
 .PHONY : ContentGenerator.o
@@ -466,6 +493,33 @@ Reciever.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Reciever.cpp.s
 .PHONY : Reciever.cpp.s
 
+ScriptContent.o: ScriptContent.cpp.o
+
+.PHONY : ScriptContent.o
+
+# target to build an object file
+ScriptContent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/ScriptContent.cpp.o
+.PHONY : ScriptContent.cpp.o
+
+ScriptContent.i: ScriptContent.cpp.i
+
+.PHONY : ScriptContent.i
+
+# target to preprocess a source file
+ScriptContent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/ScriptContent.cpp.i
+.PHONY : ScriptContent.cpp.i
+
+ScriptContent.s: ScriptContent.cpp.s
+
+.PHONY : ScriptContent.s
+
+# target to generate assembly for a file
+ScriptContent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/ScriptContent.cpp.s
+.PHONY : ScriptContent.cpp.s
+
 Sender.o: Sender.cpp.o
 
 .PHONY : Sender.o
@@ -616,6 +670,9 @@ help:
 	@echo "... Actor.o"
 	@echo "... Actor.i"
 	@echo "... Actor.s"
+	@echo "... ConsoleLogger.o"
+	@echo "... ConsoleLogger.i"
+	@echo "... ConsoleLogger.s"
 	@echo "... ContentGenerator.o"
 	@echo "... ContentGenerator.i"
 	@echo "... ContentGenerator.s"
@@ -646,6 +703,9 @@ help:
 	@echo "... Reciever.o"
 	@echo "... Reciever.i"
 	@echo "... Reciever.s"
+	@echo "... ScriptContent.o"
+	@echo "... ScriptContent.i"
+	@echo "... ScriptContent.s"
 	@echo "... Sender.o"
 	@echo "... Sender.i"
 	@echo "... Sender.s"

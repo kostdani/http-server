@@ -79,14 +79,9 @@ bool HTTPServer::LoadLogfile(std::map<std::string, std::string> &cfgmap) {
     auto it=cfgmap.find("logfile");
     if(it!=cfgmap.end()){
         clearstring(it->second);
-        std::ofstream logfile(it->second);
-        if(!logfile.is_open()){
-            printf("wrong logfile\n");
-            return false;
-        }
-        m_logger=new Logger(logfile);
+        m_logger=new Logger(it->second);
     }else{
-        m_logger=new Logger(std::cout);
+        m_logger=new ConsoleLogger();
     }
 
     m_epoller.AddActor(m_logger);

@@ -15,6 +15,13 @@ CMakeFiles/Server.dir/Accepter.cpp.o: ../Sender.h
 CMakeFiles/Server.dir/Actor.cpp.o: ../Actor.cpp
 CMakeFiles/Server.dir/Actor.cpp.o: ../Actor.h
 
+CMakeFiles/Server.dir/ConsoleLogger.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/ConsoleLogger.cpp.o: ../ConsoleLogger.cpp
+CMakeFiles/Server.dir/ConsoleLogger.cpp.o: ../ConsoleLogger.h
+CMakeFiles/Server.dir/ConsoleLogger.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/ConsoleLogger.cpp.o: ../Logger.h
+CMakeFiles/Server.dir/ConsoleLogger.cpp.o: ../Queuer.h
+
 CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../ContentGenerator.cpp
 CMakeFiles/Server.dir/ContentGenerator.cpp.o: ../ContentGenerator.h
@@ -63,6 +70,7 @@ CMakeFiles/Server.dir/HTTPRequest.cpp.o: ../Sender.h
 
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../Accepter.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/HTTPServer.cpp.o: ../ConsoleLogger.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../ContentGenerator.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../Counter.h
 CMakeFiles/Server.dir/HTTPServer.cpp.o: ../DirectoryContent.h
@@ -99,6 +107,16 @@ CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.cpp
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Reciever.h
 CMakeFiles/Server.dir/Reciever.cpp.o: ../Sender.h
 
+CMakeFiles/Server.dir/ScriptContent.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/ScriptContent.cpp.o: ../ContentGenerator.h
+CMakeFiles/Server.dir/ScriptContent.cpp.o: ../Counter.h
+CMakeFiles/Server.dir/ScriptContent.cpp.o: ../HTTPRequest.h
+CMakeFiles/Server.dir/ScriptContent.cpp.o: ../Logger.h
+CMakeFiles/Server.dir/ScriptContent.cpp.o: ../Queuer.h
+CMakeFiles/Server.dir/ScriptContent.cpp.o: ../ScriptContent.cpp
+CMakeFiles/Server.dir/ScriptContent.cpp.o: ../ScriptContent.h
+CMakeFiles/Server.dir/ScriptContent.cpp.o: ../Sender.h
+
 CMakeFiles/Server.dir/Sender.cpp.o: ../Actor.h
 CMakeFiles/Server.dir/Sender.cpp.o: ../Counter.h
 CMakeFiles/Server.dir/Sender.cpp.o: ../Queuer.h
@@ -131,6 +149,7 @@ CMakeFiles/Server.dir/VirtualDirrectoryContent.cpp.o: ../VirtualDirrectoryConten
 
 CMakeFiles/Server.dir/main.cpp.o: ../Accepter.h
 CMakeFiles/Server.dir/main.cpp.o: ../Actor.h
+CMakeFiles/Server.dir/main.cpp.o: ../ConsoleLogger.h
 CMakeFiles/Server.dir/main.cpp.o: ../ContentGenerator.h
 CMakeFiles/Server.dir/main.cpp.o: ../Counter.h
 CMakeFiles/Server.dir/main.cpp.o: ../DirectoryContent.h

@@ -4,9 +4,14 @@
 
 #include "Logger.h"
 
-Logger::Logger(std::ostream& out):Queuer<std::string>(),m_out(out) {}
+Logger::Logger(std::string logfilename):Queuer<std::string>(){
+    m_logfile=logfilename;
+}
 
 void Logger::handler(std::string msg) {
-    m_out<<msg<<std::endl;
-    //std::cout<<"logger: "<<msg<<std::endl;
+
+    std::ofstream file(m_logfile,std::ios::app);
+    if(file.is_open()){
+        file<<msg<<std::endl;
+    }
 }
