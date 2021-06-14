@@ -16,8 +16,9 @@ sockaddr_in IPv4_converter(const char * ip,int port){
 }
 
 
-Accepter::Accepter(Logger *l,sockaddr_in addr): Actor(socket(PF_INET, SOCK_STREAM, 0)) {
+Accepter::Accepter(Logger *l,ContentGenerator *content,sockaddr_in addr): Actor(socket(PF_INET, SOCK_STREAM, 0)) {
     m_logger=l;
+    m_reqmanager=content;
     if(!l){
         throw "no logger\n";
     }
@@ -42,7 +43,7 @@ Accepter::Accepter(Logger *l,sockaddr_in addr): Actor(socket(PF_INET, SOCK_STREA
     }
 }
 
-Accepter::Accepter(Logger *l,const char *ip, int port) : Accepter(l,IPv4_converter(ip,port)){};
+Accepter::Accepter(Logger *l,ContentGenerator *content,const char *ip, int port) : Accepter(l,content,IPv4_converter(ip,port)){};
 
 Reciever * Accepter::Accept() {
     if(!Check())
@@ -54,10 +55,10 @@ Reciever * Accepter::Accept() {
     if(d==-1)
         return nullptr;
     else
-        return new Reciever(m_logger,d,addr);
+        return new Reciever(m_logger, d, addr, m_reqmanager);
 }
 
-void Accepter::onInput() {
+void Accepter::onInput(int threadi) {
     while(true) {
         Reciever *newcli = Accept();
         if(!newcli)

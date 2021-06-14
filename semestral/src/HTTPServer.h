@@ -9,6 +9,10 @@
 #include "Accepter.h"
 #include "Logger.h"
 #include "ContentGenerator.h"
+#include "FileContent.h"
+#include "TerminatorContent.h"
+#include "DirectoryContent.h"
+#include "VirtualDirrectoryContent.h"
 #include <thread>
 #include <vector>
 #include <fstream>
@@ -24,12 +28,13 @@ public:
     // Stops the server
     bool Stop();
 
-    void threadfunction();
+    void threadfunction(int threadi);
 
 protected:
     bool LoadThreads(std::map<std::string,std::string> &cfgmap);
     bool LoadLogfile(std::map<std::string,std::string> &cfgmap);
     bool LoadListen(std::map<std::string,std::string> &cfgmap);
+    bool LoadVirtualfs(std::map<std::string,std::string> &cfgmap);
     bool LoadLocations(std::map<std::string,std::string> &cfgmap);
     Logger *m_logger=0;
     bool m_stop=true;

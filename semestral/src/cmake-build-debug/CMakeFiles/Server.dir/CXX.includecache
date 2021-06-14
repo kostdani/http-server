@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/kostdani/kostdani/semestral/src/Accepter.h
+Actor.h
+/home/kostdani/kostdani/semestral/src/Actor.h
+Reciever.h
+/home/kostdani/kostdani/semestral/src/Reciever.h
+Client.h
+/home/kostdani/kostdani/semestral/src/Client.h
+Logger.h
+/home/kostdani/kostdani/semestral/src/Logger.h
+sys/socket.h
+-
+arpa/inet.h
+-
+
 /home/kostdani/kostdani/semestral/src/Actor.h
 Message.h
 /home/kostdani/kostdani/semestral/src/Message.h
@@ -18,6 +32,20 @@ fcntl.h
 iostream
 -
 functional
+-
+
+/home/kostdani/kostdani/semestral/src/Client.h
+Queuer.h
+/home/kostdani/kostdani/semestral/src/Queuer.h
+Reciever.h
+/home/kostdani/kostdani/semestral/src/Reciever.h
+Sender.h
+/home/kostdani/kostdani/semestral/src/Sender.h
+Timer.h
+/home/kostdani/kostdani/semestral/src/Timer.h
+sys/socket.h
+-
+arpa/inet.h
 -
 
 /home/kostdani/kostdani/semestral/src/ContentGenerator.h
@@ -46,6 +74,12 @@ sys/stat.h
 string.h
 -
 
+/home/kostdani/kostdani/semestral/src/Epoller.h
+Actor.h
+/home/kostdani/kostdani/semestral/src/Actor.h
+set
+-
+
 /home/kostdani/kostdani/semestral/src/FileContent.h
 ContentGenerator.h
 /home/kostdani/kostdani/semestral/src/ContentGenerator.h
@@ -68,6 +102,38 @@ map
 ctime
 -
 
+/home/kostdani/kostdani/semestral/src/HTTPServer.cpp
+HTTPServer.h
+/home/kostdani/kostdani/semestral/src/HTTPServer.h
+
+/home/kostdani/kostdani/semestral/src/HTTPServer.h
+Epoller.h
+/home/kostdani/kostdani/semestral/src/Epoller.h
+Counter.h
+/home/kostdani/kostdani/semestral/src/Counter.h
+Accepter.h
+/home/kostdani/kostdani/semestral/src/Accepter.h
+Logger.h
+/home/kostdani/kostdani/semestral/src/Logger.h
+ContentGenerator.h
+/home/kostdani/kostdani/semestral/src/ContentGenerator.h
+FileContent.h
+/home/kostdani/kostdani/semestral/src/FileContent.h
+TerminatorContent.h
+/home/kostdani/kostdani/semestral/src/TerminatorContent.h
+DirectoryContent.h
+/home/kostdani/kostdani/semestral/src/DirectoryContent.h
+VirtualDirrectoryContent.h
+/home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.h
+thread
+-
+vector
+-
+fstream
+-
+map
+-
+
 /home/kostdani/kostdani/semestral/src/Logger.h
 Queuer.h
 /home/kostdani/kostdani/semestral/src/Queuer.h
@@ -88,10 +154,6 @@ queue
 mutex
 -
 
-/home/kostdani/kostdani/semestral/src/Reciever.cpp
-Reciever.h
-/home/kostdani/kostdani/semestral/src/Reciever.h
-
 /home/kostdani/kostdani/semestral/src/Reciever.h
 Actor.h
 /home/kostdani/kostdani/semestral/src/Actor.h
@@ -107,16 +169,24 @@ netdb.h
 -
 arpa/inet.h
 -
-FileContent.h
-/home/kostdani/kostdani/semestral/src/FileContent.h
-DirectoryContent.h
-/home/kostdani/kostdani/semestral/src/DirectoryContent.h
-VirtualDirrectoryContent.h
-/home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.h
+ContentGenerator.h
+/home/kostdani/kostdani/semestral/src/ContentGenerator.h
 
 /home/kostdani/kostdani/semestral/src/Sender.h
 Queuer.h
 /home/kostdani/kostdani/semestral/src/Queuer.h
+
+/home/kostdani/kostdani/semestral/src/TerminatorContent.h
+ContentGenerator.h
+/home/kostdani/kostdani/semestral/src/ContentGenerator.h
+thread
+-
+
+/home/kostdani/kostdani/semestral/src/Timer.h
+Actor.h
+/home/kostdani/kostdani/semestral/src/Actor.h
+sys/timerfd.h
+-
 
 /home/kostdani/kostdani/semestral/src/VirtualDirrectoryContent.h
 ContentGenerator.h

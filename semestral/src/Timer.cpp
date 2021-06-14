@@ -19,7 +19,7 @@ void Timer::ResetTimer() {
     timerfd_settime(m_descriptor,0,&its,0);
 }
 
-void Timer::onInput() {
+void Timer::onInput(int threadi) {
     printf("timerhah\n");
     ResetTimer();
 }

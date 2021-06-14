@@ -41,7 +41,7 @@ public:
         return m_queue.empty();
     }
 
-    void onInput() override{
+    void onInput(int threadi) override{
 
         std::pair<T,bool> msg= {};
         while(true){

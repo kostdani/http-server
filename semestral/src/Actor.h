@@ -28,11 +28,11 @@ public:
     virtual bool AddActor(Actor * newActor);
 
     // method to call on input event
-    virtual void onInput();
+    virtual void onInput(int threadi);
     // method to call on output event
-    virtual void onOutput();
+    virtual void onOutput(int threadi);
     // method to call on error event
-    virtual void onError();
+    virtual void onError(int threadi);
 
     friend class Epoller;
 

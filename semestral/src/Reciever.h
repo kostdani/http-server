@@ -12,18 +12,16 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 
-#include "FileContent.h"
-#include "DirectoryContent.h"
-#include "VirtualDirrectoryContent.h"
+#include "ContentGenerator.h"
 class Reciever : public Actor{
 public:
-    Reciever(Logger *l,int descriptor,sockaddr_in addr);
+    Reciever(Logger *l, int descriptor, sockaddr_in addr, ContentGenerator *generator);
 
     std::string GetIP();
 
-    void onInput() override;
+    void onInput(int threadi) override;
 
-    void onError() override;
+    void onError(int threadi) override;
 
 protected:
     Sender *m_sender=0;
@@ -32,6 +30,7 @@ protected:
     std::string m_str="";
     Logger *m_logger=0;
     bool multiplex(int epolld) override;
+    ContentGenerator *m_reqmanager;
 };
 
 

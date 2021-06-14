@@ -12,8 +12,8 @@ public:
 
 
 
-    void onInput() override;
-    void onOutput() override;
+    void onInput(int theardi) override;
+    void onOutput(int theardi) override;
 
     void handler(std::string msg) override;
 

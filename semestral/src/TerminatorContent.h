@@ -11,9 +11,10 @@ public:
     TerminatorContent(bool &stopb,std::vector<std::thread> &thrvec);
 
 
-    void handler(HTTPRequest msg) override;
+    void onInput(int threadi) override;
 private:
-    std::string m_filename;
+    bool &m_stop;
+    std::vector<std::thread> &m_threads;
 };
 
 

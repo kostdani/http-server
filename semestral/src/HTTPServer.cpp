@@ -14,9 +14,10 @@ bool HTTPServer::Start() {
     m_epoller.AddActor(m_stopper);
 
     m_stop=false;
-    for (int i = 0; i < thrn; ++i) {
-        m_threads.emplace_back(&HTTPServer::threadfunction,this);
+    for (int i = 1; i < thrn; ++i) {
+        m_threads.emplace_back(&HTTPServer::threadfunction,this,i);
     }
+    threadfunction(0);
     return true;
 }
 
@@ -31,18 +32,18 @@ bool HTTPServer::Stop() {
     return false;
 }
 
-void HTTPServer::threadfunction() {
+void HTTPServer::threadfunction(int threadi) {
     while (!m_stop){
 
         auto ev= m_epoller.getEvent();
         Actor *actor=(Actor *)ev.data.ptr;
         if((ev.events&EPOLLERR)||(ev.events&EPOLLHUP)||(ev.events&EPOLLRDHUP)){
-            actor->onError();
+            actor->onError(threadi);
         }else{
             if(ev.events&EPOLLIN)
-                actor->onInput();
+                actor->onInput(threadi);
             if(ev.events&EPOLLOUT)
-                actor->onOutput();
+                actor->onOutput(threadi);
 
         }
     }
@@ -101,11 +102,40 @@ bool HTTPServer::LoadListen(std::map<std::string, std::string> &cfgmap) {
         getline(ss,ip,':');
         getline(ss,port);
         int iport=std::stoi(port);
-        auto ac=new Accepter(m_logger,ip.c_str(),iport);
+    //auto c = new DirectoryContent("/home/kostdani/");
+        auto c=new TerminatorContent(m_stop,m_threads);
+        m_epoller.AddActor(c);
+
+        auto ac=new Accepter(m_logger,c,ip.c_str(),iport);
         m_epoller.AddActor(ac);
         return true;
     }else{
         printf("no logfile\n");
+        return false;
+    }
+}
+
+bool HTTPServer::LoadVirtualfs(std::map<std::string, std::string> &cfgmap)  {
+    auto it=cfgmap.find("virtualfs");
+    if(it!=cfgmap.end()){
+        clearstring(it->second);
+        std::stringstream ss(it->second);
+        std::string t;
+        getline(ss,t,'{');
+        while(true) {
+            std::string line;
+            getline(ss, line, ',');
+            if(line.empty())
+                break;
+            std::string url,content;
+            std::stringstream str(line);
+            getline(str,url,'=');
+            getline(str,content,'}');
+            //str>>url>>content;
+            std::cout<<url<<"  "<<content<<std::endl;
+        }
+        return true;
+    }else{
         return false;
     }
 }
@@ -132,7 +162,7 @@ bool HTTPServer::LoadConfig(std::string filename) {
 
     }
 
-return LoadThreads(configmap) && LoadLogfile(configmap) && LoadListen(configmap);
+return LoadThreads(configmap) && LoadLogfile(configmap) && LoadListen(configmap) &&  LoadVirtualfs(configmap);
 
 
 }

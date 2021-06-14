@@ -17,7 +17,7 @@ public:
     // Resets timer
     void ResetTimer();
 
-    void onInput() override;
+    void onInput(int threadi) override;
 
 
     bool multiplex(int epolld) override;

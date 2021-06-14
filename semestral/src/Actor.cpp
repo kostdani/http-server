@@ -26,13 +26,13 @@ bool Actor::AddActor(Actor *newActor) {
     return false;
 }
 
-void Actor::onInput() {
+void Actor::onInput(int threadi) {
     printf("basicinput\n");
 }
-void Actor::onOutput() {
+void Actor::onOutput(int threadi) {
     printf("basicoutput\n");
 }
-void Actor::onError() {
+void Actor::onError(int threadi) {
     printf("basicerror\n");
 }
 

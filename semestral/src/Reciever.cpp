@@ -5,8 +5,9 @@
 #include "Reciever.h"
 
 
-Reciever::Reciever(Logger *l,int descriptor,sockaddr_in addr): Actor(descriptor) {
+Reciever::Reciever(Logger *l, int descriptor, sockaddr_in addr, ContentGenerator *generator) : Actor(descriptor) {
     m_logger=l;
+    m_reqmanager=generator;
     m_addr=addr;
 }
 
@@ -20,7 +21,7 @@ bool Reciever::multiplex(int epolld) {
 }
 
 
-void Reciever::onInput() {
+void Reciever::onInput(int threadi) {
     if(!m_sender){
         m_sender=new Sender(dup(m_descriptor));
         AddActor(m_sender);
@@ -41,9 +42,7 @@ void Reciever::onInput() {
                 HTTPRequest req(m_logger,m_sender,m_str);
                 req.m_log.host=inet_ntoa(m_addr.sin_addr);
 
-                auto f=new DirectoryContent("/home/kostdani/");
-                f->Push(req);
-                AddActor(f);
+                m_reqmanager->Push(req);
                 m_str="";
                 i+=2;
                 s=i+1;
@@ -57,7 +56,7 @@ void Reciever::onInput() {
     }
 }
 
-void Reciever::onError() {
+void Reciever::onError(int threadi) {
     printf("recieve error\n");
 }
 

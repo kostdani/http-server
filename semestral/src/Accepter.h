@@ -14,17 +14,18 @@
 
 class Accepter : public Actor{
 public:
-    Accepter(Logger *l,sockaddr_in addr);
+    Accepter(Logger *l,ContentGenerator *content,sockaddr_in addr);
 
-    Accepter(Logger *l,const char * ip="127.0.0.1",int port=80);
+    Accepter(Logger *l,ContentGenerator *content,const char * ip="127.0.0.1",int port=80);
 
-    void onInput() override;
+    void onInput(int threadi) override;
 
     Reciever *Accept();
 
     bool multiplex(int epolld) override;
 protected:
     Logger *m_logger=0;
+    ContentGenerator *m_reqmanager;
 };
 
 
