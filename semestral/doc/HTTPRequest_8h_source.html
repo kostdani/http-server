@@ -84,52 +84,45 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classHTTPRequest.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHTTPRequest.html">HTTPRequest</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classHTTPRequest.html">HTTPRequest</a>(<a class="code" href="classLogger.html">Logger</a> *l= <span class="keyword">nullptr</span>,<a class="code" href="classSender.html">Sender</a>*s= <span class="keyword">nullptr</span>,std::string bytearray=<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classHTTPRequest.html">HTTPRequest</a>(<a class="code" href="classLogger.html">Logger</a> *l= <span class="keyword">nullptr</span>,<a class="code" href="classSender.html">Sender</a>*s= <span class="keyword">nullptr</span>,std::string host=<span class="stringliteral">&quot;-&quot;</span>,std::string bytearray=<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> SetCode(<span class="keywordtype">int</span> code);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> Finish();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::string method;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::string uri;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::string version;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::map&lt;std::string,std::string&gt; headers;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classHTTPRequest_1_1HTTPRespond.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classHTTPRequest_1_1HTTPRespond.html">HTTPRespond</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classHTTPRequest_1_1HTTPRespond.html">HTTPRespond</a>(){}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        std::string code;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::string version;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::map&lt;std::string,std::string&gt; headers;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::string body;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classHTTPRequest_1_1HTTPRespond.html">HTTPRespond</a> respond;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classHTTPRequest_1_1HTTPLog.html">   36</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classHTTPRequest_1_1HTTPLog.html">HTTPLog</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classHTTPRequest_1_1HTTPLog.html">HTTPLog</a>(){}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::string GetHeader(<span class="keyword">const</span> std::string&amp; key);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string GetURI() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string GetMethod() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> SetUri(std::string uri);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> SetCode(std::string code);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> SetHeader(std::string key,std::string val);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> SetBody(std::string body);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> Finish();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::string l_date=<span class="stringliteral">&quot;-&quot;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::string l_host=<span class="stringliteral">&quot;-&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::string l_ident=<span class="stringliteral">&quot;-&quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::string l_authuser=<span class="stringliteral">&quot;-&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::string request;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string uri;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string method;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::string version;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::string host=<span class="stringliteral">&quot;-&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::string ident=<span class="stringliteral">&quot;-&quot;</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::string authuser=<span class="stringliteral">&quot;-&quot;</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::string date=<span class="stringliteral">&quot;-&quot;</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::string request=<span class="stringliteral">&quot;-&quot;</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::string status=<span class="stringliteral">&quot;-&quot;</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::string bytes=<span class="stringliteral">&quot;-&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    };</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classHTTPRequest_1_1HTTPLog.html">HTTPLog</a> m_log;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classLogger.html">Logger</a> *m_logger;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classSender.html">Sender</a> *m_sender;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> ParseHead(std::string rawstring);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> AddHeader(std::string header);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span> Parse(std::string rawstring);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SERVER_HTTPREQUEST_H</span></div>
-<div class="ttc" id="aclassHTTPRequest_1_1HTTPLog_html"><div class="ttname"><a href="classHTTPRequest_1_1HTTPLog.html">HTTPRequest::HTTPLog</a></div><div class="ttdef"><b>Definition:</b> HTTPRequest.h:36</div></div>
-<div class="ttc" id="aclassHTTPRequest_1_1HTTPRespond_html"><div class="ttname"><a href="classHTTPRequest_1_1HTTPRespond.html">HTTPRequest::HTTPRespond</a></div><div class="ttdef"><b>Definition:</b> HTTPRequest.h:26</div></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string code;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::string respond_body;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::map&lt;std::string,std::string&gt; request_headers;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::map&lt;std::string,std::string&gt; respond_headers;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classLogger.html">Logger</a> *m_logger;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classSender.html">Sender</a> *m_sender;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> ParseHead();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> AddHeader(std::string header);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">bool</span> Parse(std::string rawstring);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SERVER_HTTPREQUEST_H</span></div>
 <div class="ttc" id="aclassHTTPRequest_html"><div class="ttname"><a href="classHTTPRequest.html">HTTPRequest</a></div><div class="ttdef"><b>Definition:</b> HTTPRequest.h:14</div></div>
 <div class="ttc" id="aclassLogger_html"><div class="ttname"><a href="classLogger.html">Logger</a></div><div class="ttdef"><b>Definition:</b> Logger.h:10</div></div>
 <div class="ttc" id="aclassSender_html"><div class="ttname"><a href="classSender.html">Sender</a></div><div class="ttdef"><b>Definition:</b> Sender.h:12</div></div>

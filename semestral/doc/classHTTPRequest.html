@@ -62,54 +62,42 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classHTTPRequest-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">HTTPRequest Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPRequest_1_1HTTPLog.html">HTTPLog</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPRequest_1_1HTTPRespond.html">HTTPRespond</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a71c7a5b4aa7e1f09e676dac47bdbcb3a"><td class="memItemLeft" align="right" valign="top"><a id="a71c7a5b4aa7e1f09e676dac47bdbcb3a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>HTTPRequest</b> (<a class="el" href="classLogger.html">Logger</a> *l=nullptr, <a class="el" href="classSender.html">Sender</a> *s=nullptr, std::string bytearray=&quot;&quot;)</td></tr>
-<tr class="separator:a71c7a5b4aa7e1f09e676dac47bdbcb3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4661f304c6897c30fb2531169f3e2aa1"><td class="memItemLeft" align="right" valign="top"><a id="a4661f304c6897c30fb2531169f3e2aa1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetCode</b> (int code)</td></tr>
-<tr class="separator:a4661f304c6897c30fb2531169f3e2aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefb63b75d5de9d7a2398073a5d946c16"><td class="memItemLeft" align="right" valign="top"><a id="aefb63b75d5de9d7a2398073a5d946c16"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>HTTPRequest</b> (<a class="el" href="classLogger.html">Logger</a> *l=nullptr, <a class="el" href="classSender.html">Sender</a> *s=nullptr, std::string host=&quot;-&quot;, std::string bytearray=&quot;&quot;)</td></tr>
+<tr class="separator:aefb63b75d5de9d7a2398073a5d946c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af9cb790daa6b43abb1d912aa81335f"><td class="memItemLeft" align="right" valign="top"><a id="a7af9cb790daa6b43abb1d912aa81335f"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetHeader</b> (const std::string &amp;key)</td></tr>
+<tr class="separator:a7af9cb790daa6b43abb1d912aa81335f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b53730ff8392d0ff3e6412ed7d17af5"><td class="memItemLeft" align="right" valign="top"><a id="a2b53730ff8392d0ff3e6412ed7d17af5"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetURI</b> () const</td></tr>
+<tr class="separator:a2b53730ff8392d0ff3e6412ed7d17af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95da22ce57bda9b4d58db3f8a8e5d30d"><td class="memItemLeft" align="right" valign="top"><a id="a95da22ce57bda9b4d58db3f8a8e5d30d"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetMethod</b> () const</td></tr>
+<tr class="separator:a95da22ce57bda9b4d58db3f8a8e5d30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda5049f253cb297a7c6b0792c3d66d0"><td class="memItemLeft" align="right" valign="top"><a id="acda5049f253cb297a7c6b0792c3d66d0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetUri</b> (std::string uri)</td></tr>
+<tr class="separator:acda5049f253cb297a7c6b0792c3d66d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60d2faad76ac21e88b35fbd3e1311475"><td class="memItemLeft" align="right" valign="top"><a id="a60d2faad76ac21e88b35fbd3e1311475"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetCode</b> (std::string code)</td></tr>
+<tr class="separator:a60d2faad76ac21e88b35fbd3e1311475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9318f4130f1c99513014e6c636bd643"><td class="memItemLeft" align="right" valign="top"><a id="ab9318f4130f1c99513014e6c636bd643"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetHeader</b> (std::string key, std::string val)</td></tr>
+<tr class="separator:ab9318f4130f1c99513014e6c636bd643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3655b94bffb0f291fab57be657c50e9"><td class="memItemLeft" align="right" valign="top"><a id="af3655b94bffb0f291fab57be657c50e9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetBody</b> (std::string body)</td></tr>
+<tr class="separator:af3655b94bffb0f291fab57be657c50e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae28914e9fa3679f47ca5d2bb9868dda5"><td class="memItemLeft" align="right" valign="top"><a id="ae28914e9fa3679f47ca5d2bb9868dda5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Finish</b> ()</td></tr>
 <tr class="separator:ae28914e9fa3679f47ca5d2bb9868dda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aea3f63a0a74e245957a61942a59755ec"><td class="memItemLeft" align="right" valign="top"><a id="aea3f63a0a74e245957a61942a59755ec"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>method</b></td></tr>
-<tr class="separator:aea3f63a0a74e245957a61942a59755ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb8b77ba5cffb2dfcafdf23088856ca7"><td class="memItemLeft" align="right" valign="top"><a id="adb8b77ba5cffb2dfcafdf23088856ca7"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>uri</b></td></tr>
-<tr class="separator:adb8b77ba5cffb2dfcafdf23088856ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43bc8f1491f1e18d513426ee581a35fa"><td class="memItemLeft" align="right" valign="top"><a id="a43bc8f1491f1e18d513426ee581a35fa"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>version</b></td></tr>
-<tr class="separator:a43bc8f1491f1e18d513426ee581a35fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a123bc150d33d3e6465eee2bac81185aa"><td class="memItemLeft" align="right" valign="top"><a id="a123bc150d33d3e6465eee2bac81185aa"></a>
-std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>headers</b></td></tr>
-<tr class="separator:a123bc150d33d3e6465eee2bac81185aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a789fbda9a5fd3a9dc0a7c4d5091d2642"><td class="memItemLeft" align="right" valign="top"><a id="a789fbda9a5fd3a9dc0a7c4d5091d2642"></a>
-<a class="el" href="classHTTPRequest_1_1HTTPRespond.html">HTTPRespond</a>&#160;</td><td class="memItemRight" valign="bottom"><b>respond</b></td></tr>
-<tr class="separator:a789fbda9a5fd3a9dc0a7c4d5091d2642"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11d9961756f78dc9a4f328e267b933c9"><td class="memItemLeft" align="right" valign="top"><a id="a11d9961756f78dc9a4f328e267b933c9"></a>
-<a class="el" href="classHTTPRequest_1_1HTTPLog.html">HTTPLog</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_log</b></td></tr>
-<tr class="separator:a11d9961756f78dc9a4f328e267b933c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="HTTPRequest_8h_source.html">HTTPRequest.h</a></li>
