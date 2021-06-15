@@ -69,4 +69,4 @@ src/build/VirtualDirrectoryContent.o: src/VirtualDirrectoryContent.cpp src/Virtu
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf build Server
+	rm -rf src/build/* Server
