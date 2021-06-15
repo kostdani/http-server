@@ -14,7 +14,6 @@ void DirectoryContent::showdirrectory(HTTPRequest req) {
     if(!dir)
         return;
     struct dirent* entity;
-//        entity= readdir(dir);
     std::set<std::string> subfiles;
     while((entity= readdir(dir))){
         if( strcmp(entity->d_name,".") && strcmp(entity->d_name,"..")){
@@ -23,8 +22,6 @@ void DirectoryContent::showdirrectory(HTTPRequest req) {
                 fname.append("/");
             subfiles.insert(fname);
         }
-
-//            printf("%s\n",entity->d_name);
     }
 
     std::string res("<!DOCTYPE html>\n"
@@ -33,34 +30,41 @@ void DirectoryContent::showdirrectory(HTTPRequest req) {
                     "\n"
                     "<h1>Directory view</h1>"
                     "<table>\n"
-                    "<tr><th>Name</th><th>Date modified</th></tr>\n");
+                    "<tr><th>Name</th><th>Type</th><th>Size</th><th>Date modified</th></tr>\n");
 
     for(auto s:subfiles){
         std::string p=m_dirname;
         p.append(s);
         struct stat buf;
         stat(p.c_str(),&buf);
-        char *date = asctime(localtime(&buf.st_mtime));
-        res.append("<tr><td>")
-                .append(" <a href=\"")
-                .append(s)
-                .append("\" title=\"\">")
-                .append(s)
-                .append("</a>")
-                .append("</td><td>")
-                .append(date,strlen(date)-1)
-                .append("</td></tr>\n");
-        //            printf("%s : %s",s.c_str(),date);
-        //printf("\n %s\n", date);
+        std::string type,size;
+        if(S_ISDIR(buf.st_mode)) {
+            type="D";
+            size="-";
+        }else if(S_ISREG(buf.st_mode)){
+            type="F";
+            size=std::to_string(buf.st_size);
+        }else{
+            type="U";
+            size=std::to_string(buf.st_size);
+        }
+
+        std::string date(asctime(localtime(&buf.st_mtime)));
+        res+=("<tr><td> <a href=\""+s+="\" title=\"\">"+s+"</a></td><td>"+type+"</td><td>"+size+"</td><td>"+date+"</td></tr>\n");
     }
-    res.append("</table>\n"
-               "</body>\n"
-               "</html>");
+    res+="</table>\n"
+         "</body>\n"
+         "</html>";
     closedir(dir);
     Ok(req,res);
 }
 
 void DirectoryContent::handler(HTTPRequest req) {
+    if(req.method!="GET"){
+        NotImplemented(req);
+        return;
+    }
+
     if(req.uri=="/"){
         showdirrectory(req);
     }else{

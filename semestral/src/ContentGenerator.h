@@ -16,6 +16,8 @@ protected:
     void Forbidden(HTTPRequest req);
 
     void Ok(HTTPRequest req,std::string body);
+
+    void NotImplemented(HTTPRequest req);
 };
 
 

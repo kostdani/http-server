@@ -8,7 +8,7 @@
 #include "Counter.h"
 #include "Accepter.h"
 #include "Logger.h"
-#include "ConsoleLogger.h"
+#include "FileLogger.h"
 #include "ContentGenerator.h"
 #include "FileContent.h"
 #include "TerminatorContent.h"

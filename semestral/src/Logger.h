@@ -9,11 +9,9 @@
 #include <fstream>
 class Logger: public Queuer< std::string >{
 public:
-    Logger(std::string logfilename);
+    Logger();
 
     void handler(std::string msg) override;
-protected:
-    std::string m_logfile;
 };
 
 

@@ -53,9 +53,8 @@ bool HTTPRequest::Parse(std::string rawstring){
         std::string header;
         getline(str,header,'\r');
         str.get();
-        if(header.empty()){
+        if(header.empty())
             break;
-        }
         AddHeader(header);
     }
 
@@ -67,35 +66,12 @@ bool HTTPRequest::Parse(std::string rawstring){
 }
 
 void HTTPRequest::Finish() {
-    std::string res=version;
-    res.append(" ")
-            .append(respond.code)
-            .append("\n");
+    std::string res=version+" "+respond.code+"\n";
     for(auto h:respond.headers){
-        res.append(h.first)
-                .append(": ")
-                .append(h.second)
-                .append("\n");
+        res+=(h.first+": "+h.second+"\n");
     }
-    res.append("\n")
-            .append(respond.body);
-    //std::cout<<"to sender: \n\n"<<res<<std::endl;
+    res+=("\n"+respond.body);
     m_sender->Push(res);
-
-    std::string log;
-    log.append(m_log.host)
-    .append(" ")
-    .append(m_log.ident)
-    .append(" ")
-    .append(m_log.authuser)
-    .append(" [")
-    .append(m_log.date)
-    .append("] \"")
-    .append(m_log.request)
-    .append("\" ")
-    .append(m_log.status)
-    .append(" ")
-    .append(m_log.bytes);
-    //std::cout<<"tologger: "<<log<<std::endl;
+    std::string log=m_log.host+" "+m_log.ident+" "+m_log.authuser+" ["+m_log.date+"] \""+m_log.request+"\" "+m_log.status+" "+m_log.bytes;
     m_logger->Push(log);
 }
