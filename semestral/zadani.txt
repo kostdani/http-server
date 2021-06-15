@@ -1,0 +1,7 @@
+# HTTP Server
+
+Vytvořímme jednoduchý vícevláknový HTTP server s načítáním konfigurace a logováním.
+
+Uživatel může spustit server z příkazového řádku s zadáním konfiguračního souboru.
+například: ./Server config.cfg
+
