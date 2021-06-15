@@ -30,7 +30,7 @@ public:
     /// Accept new connection
     /// Tries to estabilish connection with new client
     /// @returns pointer to new Reciver if accept was sucessful otherwise returns nullptr
-    Reciever *Accept();
+    Reciever *Accept() const;
 
     bool multiplex(int epolld) override;
 protected:

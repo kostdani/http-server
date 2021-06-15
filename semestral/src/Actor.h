@@ -27,7 +27,7 @@ public:
     void Close();
 
     /// Checks if decriptor is ok
-    bool Check();
+    bool Check() const;
 
     Actor(const Actor&) =delete;
     Actor& operator=(const Actor&)=delete;

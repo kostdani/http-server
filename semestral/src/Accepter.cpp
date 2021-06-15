@@ -45,7 +45,7 @@ Accepter::Accepter(Logger *l,ContentGenerator *content,sockaddr_in addr): Actor(
 
 Accepter::Accepter(Logger *l,ContentGenerator *content,const char *ip, int port) : Accepter(l,content,IPv4_converter(ip,port)){};
 
-Reciever * Accepter::Accept() {
+Reciever * Accepter::Accept() const{
     if(!Check())
         return nullptr;
     sockaddr_in addr={};

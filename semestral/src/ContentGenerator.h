@@ -11,13 +11,13 @@ public:
     ContentGenerator()=default;
 
 protected:
-    void NotFound(HTTPRequest req);
+    void NotFound(HTTPRequest req) const;
 
-    void Forbidden(HTTPRequest req);
+    void Forbidden(HTTPRequest req) const;
 
-    void Ok(HTTPRequest req,std::string body);
+    void Ok(HTTPRequest req,std::string body) const;
 
-    void NotImplemented(HTTPRequest req);
+    void NotImplemented(HTTPRequest req) const;
 };
 
 

@@ -15,15 +15,15 @@ class HTTPRequest {
 public:
     HTTPRequest(Logger *l= nullptr,Sender*s= nullptr,std::string host="-",std::string bytearray="");
 
-    std::string GetHeader(const std::string& key);
+    std::string GetHeader(const std::string& key) const;
     std::string GetURI() const;
     std::string GetMethod() const;
 
 
-    void SetUri(std::string uri);
-    void SetCode(std::string code);
-    void SetHeader(std::string key,std::string val);
-    void SetBody(std::string body);
+    void SetUri(const std::string& uri);
+    void SetCode(const std::string& code);
+    void SetHeader(const std::string& key,const std::string& val);
+    void SetBody(const std::string& body);
 
     void Finish();
 private:

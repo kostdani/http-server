@@ -10,7 +10,6 @@ class FileContent: public ContentGenerator{
 public:
     FileContent(std::string filename);
 
-
     void handler(HTTPRequest msg) override;
 private:
     std::string m_filename;

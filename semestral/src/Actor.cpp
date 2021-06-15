@@ -9,7 +9,7 @@ Actor::Actor(int descriptor){
 
 }
 
-bool Actor::Check() {
+bool Actor::Check() const{
     return m_descriptor!=-1;
 }
 

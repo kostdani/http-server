@@ -78,19 +78,23 @@ std::string HTTPRequest::GetURI() const {
 std::string HTTPRequest::GetMethod() const {
     return method;
 }
-std::string HTTPRequest::GetHeader(const std::string& key) {
-    return request_headers[key];
+std::string HTTPRequest::GetHeader(const std::string& key) const{
+    auto it=request_headers.find(key);
+    if(it==request_headers.end())
+        return "";
+    else
+        return it->second;
 }
-void HTTPRequest::SetCode(std::string c) {
+void HTTPRequest::SetCode(const std::string& c) {
     code=c;
 }
-void HTTPRequest::SetBody(std::string body) {
+void HTTPRequest::SetBody(const std::string& body) {
     SetHeader("Content-Length",std::to_string(body.length()));
     respond_body=body;
 }
-void HTTPRequest::SetHeader(std::string key, std::string val) {
+void HTTPRequest::SetHeader(const std::string& key, const std::string& val) {
     respond_headers[key]=val;
 }
-void HTTPRequest::SetUri(std::string u) {
+void HTTPRequest::SetUri(const std::string& u) {
     uri=u;
 }

@@ -15,8 +15,6 @@ doc: Doxyfile README.md src/Accepter.h src/Epoller.h src/Reciever.h src/Actor.h 
 	mkdir -p doc
 	doxygen $<
 
-
-
 src/build/main.o: src/main.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
