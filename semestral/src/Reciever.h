@@ -11,13 +11,17 @@
 #include "HTTPRequest.h"
 #include <netdb.h>
 #include <arpa/inet.h>
-
 #include "ContentGenerator.h"
+
+/// Reciever actor
+///
+/// Class wrapper for client tcp socket
 class Reciever : public Actor{
 public:
     Reciever(Logger *l, int descriptor, sockaddr_in addr, ContentGenerator *generator);
 
-    std::string GetIP();
+    /// Return client IP in string form
+    std::string GetIP() const;
 
     void onInput(int threadi) override;
 

@@ -10,7 +10,6 @@ class ScriptContent: public ContentGenerator{
 public:
     ScriptContent(std::string scriptname);
 
-
     void handler(HTTPRequest msg) override;
 private:
     std::string m_scriptname;

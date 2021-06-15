@@ -1,16 +1,19 @@
 CC=g++
 CFLAGS=-lpthread -Wall
 
-all: compile
-	./Server examples/server.cfg
+
+all: compile doc
+
+run:	compile
+	./kostdani examples/server.cfg
 
 compile: src/build/main.o src/build/Accepter.o src/build/Actor.o src/build/ConsoleLogger.o src/build/ContentGenerator.o src/build/Counter.o src/build/DirectoryContent.o src/build/Epoller.o src/build/FileContent.o src/build/HTTPRequest.o src/build/HTTPServer.o src/build/Logger.o src/build/Queuer.o src/build/Reciever.o src/build/Sender.o src/build/TerminatorContent.o src/build/Timer.o src/build/VirtualDirrectoryContent.o
-	$(CC) $(CFLAGS) $^ -o Server
+	$(CC) $(CFLAGS) $^ -o kostdani
 
 
 doc: Doxyfile README.md src/Accepter.h src/Epoller.h src/Reciever.h src/Actor.h src/FileContent.h src/ScriptContent.h src/ConsoleLogger.h src/HTTPRequest.h src/Sender.h src/ContentGenerator.h src/HTTPServer.h src/TerminatorContent.h src/Counter.h src/Logger.h src/Timer.h src/DirectoryContent.h src/Queuer.h src/VirtualDirrectoryContent.h
-	mkdir doc
-	doxygen Doxyfile
+	mkdir -p doc
+	doxygen $<
 
 
 
@@ -50,7 +53,7 @@ src/build/HTTPServer.o: src/HTTPServer.cpp src/HTTPServer.h
 src/build/Logger.o: src/Logger.cpp src/Logger.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-src/build/Queuer.o: src/Queuer.cpp src/Queuer.h
+src/build/Queuer.o: src/Queuer.cpp src/Queuer.h src/Queuer.ipp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 src/build/Reciever.o: src/Reciever.cpp src/Reciever.h
@@ -69,4 +72,4 @@ src/build/VirtualDirrectoryContent.o: src/VirtualDirrectoryContent.cpp src/Virtu
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf src/build/* Server
+	rm -rf src/build/* kostdani

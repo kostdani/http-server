@@ -5,3 +5,17 @@ Vytvořímme jednoduchý vícevláknový HTTP server s načítáním konfigurace
 Uživatel může spustit server z příkazového řádku s zadáním konfiguračního souboru.
 například: ./Server config.cfg
 
+## Config file structure
+
+Bílé znaky v konfiguračním souboru jsou ignorovány
+Konfigurační soubor se skládá z dvojic v podobě
+"key=value;"
+
+Podporované nastavení:
+- threads: value musí být celé kladne číslo
+definuje Chilo vlaken vytvořených serverem. Vlakna jsou zatíženy stejne, počet zahrnuje vlakno ze kterého je spuštěn server.
+Pokud není zadán, výchozí hodnota je 1
+- logfile: value ma být cesta k souboru kde budou uloženy logy
+Pokud není zadán, logy budou zapisovány do konzoly
+- listen: value  ma být ip a port naslouchání 
+Pokud není zadán, výchozí hodnota je "0.0.0.0:8080"

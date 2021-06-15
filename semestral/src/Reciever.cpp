@@ -60,6 +60,6 @@ void Reciever::onError(int threadi) {
     printf("recieve error\n");
 }
 
-std::string Reciever::GetIP() {
+std::string Reciever::GetIP() const {
     return  inet_ntoa(m_addr.sin_addr);
 }

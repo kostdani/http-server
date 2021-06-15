@@ -49,6 +49,7 @@ public:
     friend class Epoller;
 
     /// Multiplexes actor on epoll
+    /// Tracks input and output events level triggered
     /// @param epolld epoll file descriptor
     /// @returns true if multiplexd sucessfuly othewise false
     virtual bool multiplex(int epolld);
