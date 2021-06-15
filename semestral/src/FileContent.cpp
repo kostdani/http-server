@@ -9,12 +9,13 @@ FileContent::FileContent(std::string filename):ContentGenerator() {
     m_filename=filename;
 }
  void FileContent::handler(HTTPRequest req) {
-     if(req.method!="GET"){
+
+     if(req.GetMethod()!="GET"){
          NotImplemented(req);
          return;
      }
 
-     if(req.uri=="/"){
+     if(req.GetURI()=="/"){
          std::ifstream infile {m_filename };
          std::string file_contents { std::istreambuf_iterator<char>(infile), std::istreambuf_iterator<char>() };
          Ok(req,file_contents);

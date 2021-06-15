@@ -19,8 +19,7 @@
 class Reciever : public Actor{
 public:
     Reciever(Logger *l, int descriptor, sockaddr_in addr, ContentGenerator *generator);
-
-    /// Return client IP in string form
+    /// Returns client IP in string form
     std::string GetIP() const;
 
     void onInput(int threadi) override;

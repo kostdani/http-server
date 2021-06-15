@@ -25,13 +25,12 @@ bool shortenpath(std::string& path){
 }
 
 void VirtualDirrectoryContent::handler(HTTPRequest req) {
-    std::string url=req.uri;
+    std::string url=req.GetURI();
     do{
         auto it=m_locations.find(url);
         if(it!=m_locations.end()){
-            req.headers["Host"].append("/").append(url);
-            std::string newuri(req.uri.c_str()+url.length());
-            req.uri=newuri;
+            std::string newuri(req.GetURI().c_str()+url.length());
+            req.SetUri(newuri);
             it->second->Push(req);
             return;
         }

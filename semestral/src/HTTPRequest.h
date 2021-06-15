@@ -13,43 +13,38 @@
 #include <ctime>
 class HTTPRequest {
 public:
-    HTTPRequest(Logger *l= nullptr,Sender*s= nullptr,std::string bytearray="");
+    HTTPRequest(Logger *l= nullptr,Sender*s= nullptr,std::string host="-",std::string bytearray="");
 
-    void SetCode(int code);
+    std::string GetHeader(const std::string& key);
+    std::string GetURI() const;
+    std::string GetMethod() const;
 
+
+    void SetUri(std::string uri);
+    void SetCode(std::string code);
+    void SetHeader(std::string key,std::string val);
+    void SetBody(std::string body);
 
     void Finish();
-    std::string method;
-    std::string uri;
-    std::string version;
-    std::map<std::string,std::string> headers;
-    class HTTPRespond {
-    public:
-        HTTPRespond(){}
-
-        std::string code;
-        std::string version;
-        std::map<std::string,std::string> headers;
-        std::string body;
-    };
-    HTTPRespond respond;
-    class HTTPLog {
-    public:
-        HTTPLog(){}
-
-        std::string host="-";
-        std::string ident="-";
-        std::string authuser="-";
-        std::string date="-";
-        std::string request="-";
-        std::string status="-";
-        std::string bytes="-";
-    };
-    HTTPLog m_log;
 private:
+    std::string l_date="-";
+    std::string l_host="-";
+    std::string l_ident="-";
+    std::string l_authuser="-";
+
+    std::string request;
+    std::string uri;
+    std::string method;
+    std::string version;
+
+
+    std::string code;
+    std::string respond_body;
+    std::map<std::string,std::string> request_headers;
+    std::map<std::string,std::string> respond_headers;
     Logger *m_logger;
     Sender *m_sender;
-    bool ParseHead(std::string rawstring);
+    bool ParseHead();
     bool AddHeader(std::string header);
     bool Parse(std::string rawstring);
 

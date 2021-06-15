@@ -60,20 +60,20 @@ void DirectoryContent::showdirrectory(HTTPRequest req) {
 }
 
 void DirectoryContent::handler(HTTPRequest req) {
-    if(req.method!="GET"){
+    if(req.GetMethod()!="GET"){
         NotImplemented(req);
         return;
     }
 
-    if(req.uri=="/"){
+    if(req.GetURI()=="/"){
         showdirrectory(req);
     }else{
         std::string subpath=m_dirname;
-        subpath.append(req.uri);
+        subpath.append(req.GetURI());
         struct stat sb;
 
         if (stat(subpath.c_str(), &sb) == 0 ){
-            req.uri="/";
+            req.SetUri("/");
             if(S_ISDIR(sb.st_mode)) {
                 DirectoryContent subdir(subpath);
                 subdir.Push(req);

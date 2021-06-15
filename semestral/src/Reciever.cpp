@@ -39,8 +39,7 @@ void Reciever::onInput(int threadi) {
         for (int i=s; i < len; ++i) {
             if(buf[i]=='\n'&& i+1<len && buf[i+1]=='\r'){
                 m_str.append(buf+s,i-s+1);
-                HTTPRequest req(m_logger,m_sender,m_str);
-                req.m_log.host=inet_ntoa(m_addr.sin_addr);
+                HTTPRequest req(m_logger,m_sender,inet_ntoa(m_addr.sin_addr),m_str);
 
                 m_reqmanager->Push(req);
                 m_str="";
