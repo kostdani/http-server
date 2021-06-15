@@ -57,14 +57,7 @@ void DirectoryContent::showdirrectory(HTTPRequest req) {
                "</body>\n"
                "</html>");
     closedir(dir);
-    req.respond.version=req.version;
-    req.respond.code="200 OK";
-    req.respond.body=res;
-    req.respond.headers["Content-Length"]=std::to_string(res.length());
-
-    req.m_log.status="200";
-    req.m_log.bytes=std::to_string(res.length());
-    req.Finish();
+    Ok(req,res);
 }
 
 void DirectoryContent::handler(HTTPRequest req) {

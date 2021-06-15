@@ -10,10 +10,12 @@ class ContentGenerator: public Queuer<HTTPRequest>{
 public:
     ContentGenerator()=default;
 
+protected:
     void NotFound(HTTPRequest req);
 
     void Forbidden(HTTPRequest req);
-protected:
+
+    void Ok(HTTPRequest req,std::string body);
 };
 
 

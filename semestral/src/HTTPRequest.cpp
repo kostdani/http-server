@@ -24,6 +24,7 @@ bool HTTPRequest::ParseHead(std::string rawstring){
     uri=noparamsuri;
 
     getline(str,version,'\0');
+    respond.version=version;
     return true;
 }
 bool HTTPRequest::AddHeader(std::string header){
