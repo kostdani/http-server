@@ -33,8 +33,9 @@ void VirtualDirrectoryContent::handler(HTTPRequest req) {
             std::string newuri(req.uri.c_str()+url.length());
             req.uri=newuri;
             it->second->Push(req);
-            break;
+            return;
         }
     }while(shortenpath(url));
 
+    NotFound(req);
 }

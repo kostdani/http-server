@@ -9,6 +9,10 @@
 class ContentGenerator: public Queuer<HTTPRequest>{
 public:
     ContentGenerator()=default;
+
+    void NotFound(HTTPRequest req);
+
+    void Forbidden(HTTPRequest req);
 protected:
 };
 

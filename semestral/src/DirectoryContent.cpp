@@ -81,13 +81,16 @@ void DirectoryContent::handler(HTTPRequest req) {
                 DirectoryContent subdir(subpath);
                 subdir.Push(req);
                 subdir.onInput(0);
+                return;
             }else if(S_ISREG(sb.st_mode)){
                 FileContent subfile(subpath);
                 subfile.Push(req);
                 subfile.onInput(0);
+                return;
             }
         }
 
+        NotFound(req);
     }
 }
 

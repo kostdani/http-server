@@ -20,12 +20,10 @@ FileContent::FileContent(std::string filename):ContentGenerator() {
                  req.m_log.status="200";
                  req.m_log.bytes=std::to_string(file_contents.length());
 
-
-
                  req.Finish();
                  //std::cout<<file_contents<<std::endl;
              }else {
-                 printf("not implemented\n");
+                 NotFound(req);
              }
 
 }

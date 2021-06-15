@@ -17,6 +17,12 @@ bool HTTPRequest::ParseHead(std::string rawstring){
 
     getline(str,method,' ');
     getline(str,uri,' ');
+
+    std::stringstream ss(uri);
+    std::string noparamsuri;
+    getline(ss,noparamsuri,'?');
+    uri=noparamsuri;
+
     getline(str,version,'\0');
     return true;
 }
