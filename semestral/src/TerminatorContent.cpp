@@ -16,3 +16,7 @@ void TerminatorContent::onInput(int threadi) {
     }
 
 }
+
+bool TerminatorContent::multiplex(int epolld) {
+    return Counter::multiplex(epolld);
+}

@@ -11,6 +11,8 @@ public:
     TerminatorContent(bool &stopb,std::vector<std::thread> &thrvec);
 
     void onInput(int threadi) override;
+
+    bool multiplex(int epolld) override;
 private:
     bool &m_stop;
     std::vector<std::thread> &m_threads;

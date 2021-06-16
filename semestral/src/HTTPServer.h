@@ -29,9 +29,9 @@ public:
     // Stops the server
     bool Stop();
 
-    void threadfunction(int threadi);
 
 protected:
+    void threadfunction(int threadi);
     bool LoadThreads(std::map<std::string,std::string> &cfgmap);
     bool LoadLogfile(std::map<std::string,std::string> &cfgmap);
     bool LoadListen(std::map<std::string,std::string> &cfgmap);

@@ -7,6 +7,8 @@
 #include "Queuer.h"
 #include <iostream>
 #include <fstream>
+
+/// Log managing actor
 class Logger: public Queuer< std::string >{
 public:
     Logger();

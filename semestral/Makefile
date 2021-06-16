@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-lpthread -Wall
+CFLAGS=-lpthread -Wall -fsanitize=address
 
 
 all: compile doc
@@ -11,7 +11,7 @@ compile: src/build/main.o src/build/Accepter.o src/build/Actor.o src/build/FileL
 	$(CC) $(CFLAGS) $^ -o kostdani
 
 
-doc: Doxyfile README.md src/Accepter.h src/Epoller.h src/Reciever.h src/Actor.h src/FileContent.h src/ScriptContent.h src/FileLogger.h src/HTTPRequest.h src/Sender.h src/ContentGenerator.h src/HTTPServer.h src/TerminatorContent.h src/Counter.h src/Logger.h src/Timer.h src/DirectoryContent.h src/Queuer.h src/VirtualDirrectoryContent.h
+doc: Doxyfile README.md src/Accepter.h src/Epoller.h src/Reciever.h src/Actor.h src/FileContent.h src/FileLogger.h src/HTTPRequest.h src/Sender.h src/ContentGenerator.h src/HTTPServer.h src/TerminatorContent.h src/Counter.h src/Logger.h src/Timer.h src/DirectoryContent.h src/Queuer.h src/VirtualDirrectoryContent.h
 	mkdir -p doc
 	doxygen $<
 

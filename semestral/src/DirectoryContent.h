@@ -10,7 +10,7 @@
 #include <dirent.h>
 #include <set>
 #include <sys/stat.h>
-#include <string.h>
+#include <cstring>
 class DirectoryContent: public ContentGenerator{
 public:
     DirectoryContent(std::string dirname);

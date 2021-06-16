@@ -6,6 +6,8 @@
 #define SERVER_FILECONTENT_H
 #include "ContentGenerator.h"
 #include <fstream>
+
+/// Content generator associated with file
 class FileContent: public ContentGenerator{
 public:
     FileContent(std::string filename);

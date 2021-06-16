@@ -27,10 +27,10 @@ public:
     void onError(int threadi) override;
 
 protected:
-    Sender *m_sender=0;
+    Sender *m_sender=nullptr;
+    Logger *m_logger=nullptr;
     sockaddr_in m_addr;
-    std::string m_str="";
-    Logger *m_logger=0;
+    std::string m_str;
     bool multiplex(int epolld) override;
     ContentGenerator *m_reqmanager;
 };

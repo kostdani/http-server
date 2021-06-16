@@ -7,21 +7,21 @@
 #include "Counter.h"
 #include <queue>
 #include <mutex>
-
+/// Queue actor
+///
+/// Actor used to manage queue of messages and react on them
 template <class T>
 class Queuer : public Counter {
 public:
     Queuer();
-   // ~Queuer();
 
+    /// Pushes new message to queue
     void Push(T msg);
-
+    /// Gets last message from queue if there
     std::pair<T,bool> Pop();
 
-    bool Empty() const;
-
     void onInput(int threadi) override;
-
+    /// Virtual function to implement reaction on messages
     virtual void handler(T msg);
 
     bool multiplex(int epolld) override;

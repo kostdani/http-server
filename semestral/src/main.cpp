@@ -14,7 +14,6 @@ std::string samplerawrequest("GET / HTTP/1.0\n"
 
 
 int main(int argc,char **argv) {
-    
     if(argc!=2){
         printf("To use specify cfg file like this: ./Server config.cfg\n" );
         return 1;

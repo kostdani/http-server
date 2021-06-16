@@ -63,7 +63,7 @@ void Accepter::onInput(int threadi) {
         Reciever *newcli = Accept();
         if(!newcli)
             break;
-        m_logger->Push("Accepted new client: "+newcli->GetIP());
+        //m_logger->Push("Accepted new client: "+newcli->GetIP());
         AddActor(newcli);
     }
 
