@@ -33,11 +33,6 @@ std::pair<T,bool> Queuer<T>::Pop(){
 }
 
 template <class T>
-bool Queuer<T>::Empty() const{
-    return m_queue.empty();
-}
-
-template <class T>
 void Queuer<T>::onInput(int threadi){
 
     std::pair<T,bool> msg= {};
