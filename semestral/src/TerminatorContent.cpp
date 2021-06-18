@@ -13,7 +13,7 @@ void TerminatorContent::Run(int threadi) {
         m_stop=true;
         for (auto & thr:m_threads)
             thr.join();
-
+        m_threads.clear();
     }
 
 }
