@@ -12,6 +12,8 @@ public:
 
     void onInput(int threadi) override;
 
+    void handler(HTTPRequest& msg) override{}
+
     bool multiplex(int epolld) override;
 private:
     bool &m_stop;

@@ -16,13 +16,13 @@ public:
     Queuer();
 
     /// Pushes new message to queue
-    void Push(T msg);
+    void Push(const T& msg);
     /// Gets last message from queue if there
     std::pair<T,bool> Pop();
 
     void onInput(int threadi) override;
     /// Virtual function to implement reaction on messages
-    virtual void handler(T msg);
+    virtual void handler(T& msg)=0;
 
     bool multiplex(int epolld) override;
 protected:

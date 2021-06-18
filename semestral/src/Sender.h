@@ -9,7 +9,7 @@
 /// Sender actor
 ///
 /// Sends data to client
-class Sender: public Queuer<std::string >{
+class Sender: public Queuer<std::string>{
 public:
     /// @param descriptor tcp socket of client
     Sender(int descriptor);
@@ -18,7 +18,7 @@ public:
 
     void onOutput(int theardi) override;
     /// Sends msg to client if possible
-    void handler(std::string msg) override;
+    void handler(std::string& msg) override;
     /// Tracks input events on queue and output events on socket, level triggered
     bool multiplex(int epolld) override;
 protected:

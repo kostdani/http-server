@@ -13,7 +13,7 @@ class Logger: public Queuer< std::string >{
 public:
     Logger();
 
-    void handler(std::string msg) override;
+    void handler(std::string& msg) override;
 };
 
 

@@ -13,7 +13,9 @@
 #include <ctime>
 class HTTPRequest {
 public:
-    HTTPRequest(Logger *l= nullptr,Sender*s= nullptr,std::string host="-",std::string bytearray="");
+    HTTPRequest()=default;
+
+    HTTPRequest(Logger *l,Sender*s,const std::string& host,const std::string& bytearray);
 
     std::string GetHeader(const std::string& key) const;
     std::string GetURI() const;
@@ -27,26 +29,25 @@ public:
 
     void Finish();
 private:
-    std::string l_date="-";
-    std::string l_host="-";
-    std::string l_ident="-";
-    std::string l_authuser="-";
-
-    std::string request;
-    std::string uri;
-    std::string method;
-    std::string version;
-
-
-    std::string code;
-    std::string respond_body;
-    std::map<std::string,std::string> request_headers;
-    std::map<std::string,std::string> respond_headers;
+    std::string m_date="-";
+    std::string m_host="-";
+    std::string m_ident="-";
+    std::string m_authuser="-";
+    std::string m_request;
+    std::string m_uri;
+    std::string m_uriparams;
+    std::string m_method;
+    std::string m_version;
+    std::string m_code;
+    std::string m_respond_body;
+    std::map<std::string,std::string> m_request_headers;
+    std::map<std::string,std::string> m_respond_headers;
     Logger *m_logger;
     Sender *m_sender;
-    bool ParseHead();
-    bool AddHeader(std::string header);
-    bool Parse(std::string rawstring);
+
+    bool ParseHead(const std::string& head);
+    bool ParseHeader(const std::string& header);
+    bool Parse(const std::string& rawstring);
 
 };
 

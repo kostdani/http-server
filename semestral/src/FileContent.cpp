@@ -5,10 +5,9 @@
 #include "FileContent.h"
 
 
-FileContent::FileContent(std::string filename):ContentGenerator() {
-    m_filename=filename;
-}
- void FileContent::handler(HTTPRequest req) {
+FileContent::FileContent(const std::string& filename):ContentGenerator(), m_filename(filename) {}
+
+ void FileContent::handler(HTTPRequest& req) {
 
      if(req.GetMethod()!="GET"){
          NotImplemented(req);

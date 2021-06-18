@@ -4,11 +4,9 @@
 
 #include "DirectoryContent.h"
 
-DirectoryContent::DirectoryContent(std::string dirname) {
-    m_dirname=dirname;
-}
+DirectoryContent::DirectoryContent(const std::string& dirname):ContentGenerator(), m_dirname(dirname) {}
 
-void DirectoryContent::showdirrectory(HTTPRequest req) {
+void DirectoryContent::showdirrectory(HTTPRequest& req) {
 
     DIR* dir= opendir(m_dirname.c_str());
     if(!dir)
@@ -59,7 +57,7 @@ void DirectoryContent::showdirrectory(HTTPRequest req) {
     Ok(req,res);
 }
 
-void DirectoryContent::handler(HTTPRequest req) {
+void DirectoryContent::handler(HTTPRequest& req) {
     if(req.GetMethod()!="GET"){
         NotImplemented(req);
         return;

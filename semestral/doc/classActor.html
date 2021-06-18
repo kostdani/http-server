@@ -79,22 +79,21 @@ Inheritance diagram for Actor:</div>
   <img src="classActor.png" usemap="#Actor_map" alt=""/>
   <map id="Actor_map" name="Actor_map">
 <area href="classAccepter.html" alt="Accepter" shape="rect" coords="0,56,154,80"/>
-<area href="classCounter.html" alt="Counter" shape="rect" coords="492,56,646,80"/>
-<area href="classEpoller.html" alt="Epoller" shape="rect" coords="656,56,810,80"/>
-<area href="classReciever.html" alt="Reciever" shape="rect" coords="820,56,974,80"/>
-<area href="classTimer.html" alt="Timer" shape="rect" coords="984,56,1138,80"/>
+<area href="classCounter.html" alt="Counter" shape="rect" coords="410,56,564,80"/>
+<area href="classEpoller.html" alt="Epoller" shape="rect" coords="574,56,728,80"/>
+<area href="classReciever.html" alt="Reciever" shape="rect" coords="738,56,892,80"/>
+<area href="classTimer.html" alt="Timer" shape="rect" coords="902,56,1056,80"/>
 <area href="classQueuer.html" alt="Queuer&lt; std::string &gt;" shape="rect" coords="82,112,236,136"/>
-<area href="classQueuer.html" alt="Queuer&lt; HTTPRequest &gt;" shape="rect" coords="492,112,646,136"/>
-<area href="classQueuer.html" alt="Queuer&lt; T &gt;" shape="rect" coords="656,112,810,136"/>
-<area href="classLogger.html" alt="Logger" shape="rect" coords="0,168,154,192"/>
+<area href="classQueuer.html" alt="Queuer&lt; HTTPRequest &gt;" shape="rect" coords="410,112,564,136"/>
+<area href="classQueuer.html" alt="Queuer&lt; T &gt;" shape="rect" coords="574,112,728,136"/>
+<area href="classLogger.html" title="Log managing actor." alt="Logger" shape="rect" coords="0,168,154,192"/>
 <area href="classSender.html" alt="Sender" shape="rect" coords="164,168,318,192"/>
-<area href="classContentGenerator.html" alt="ContentGenerator" shape="rect" coords="492,168,646,192"/>
+<area href="classContentGenerator.html" title="Actor which generates responds for http requests." alt="ContentGenerator" shape="rect" coords="410,168,564,192"/>
 <area href="classFileLogger.html" alt="FileLogger" shape="rect" coords="0,224,154,248"/>
 <area href="classDirectoryContent.html" alt="DirectoryContent" shape="rect" coords="164,224,318,248"/>
-<area href="classFileContent.html" alt="FileContent" shape="rect" coords="328,224,482,248"/>
-<area href="classScriptContent.html" alt="ScriptContent" shape="rect" coords="492,224,646,248"/>
-<area href="classTerminatorContent.html" alt="TerminatorContent" shape="rect" coords="656,224,810,248"/>
-<area href="classVirtualDirrectoryContent.html" alt="VirtualDirrectoryContent" shape="rect" coords="820,224,974,248"/>
+<area href="classFileContent.html" title="Content generator associated with file." alt="FileContent" shape="rect" coords="328,224,482,248"/>
+<area href="classTerminatorContent.html" alt="TerminatorContent" shape="rect" coords="492,224,646,248"/>
+<area href="classVirtualDirrectoryContent.html" alt="VirtualDirrectoryContent" shape="rect" coords="656,224,810,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -108,10 +107,10 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a5058e17d4d0afd4f1a5ac2c369c453f5">Close</a> ()</td></tr>
 <tr class="memdesc:a5058e17d4d0afd4f1a5ac2c369c453f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that closes descriptor. <br /></td></tr>
 <tr class="separator:a5058e17d4d0afd4f1a5ac2c369c453f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9f39bb77542e2f7a90b01a75d83d3e4"><td class="memItemLeft" align="right" valign="top"><a id="ac9f39bb77542e2f7a90b01a75d83d3e4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ac9f39bb77542e2f7a90b01a75d83d3e4">Check</a> ()</td></tr>
-<tr class="memdesc:ac9f39bb77542e2f7a90b01a75d83d3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if decriptor is ok. <br /></td></tr>
-<tr class="separator:ac9f39bb77542e2f7a90b01a75d83d3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05fc5016cdd57221addf7a83252b7576"><td class="memItemLeft" align="right" valign="top"><a id="a05fc5016cdd57221addf7a83252b7576"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a05fc5016cdd57221addf7a83252b7576">Check</a> () const</td></tr>
+<tr class="memdesc:a05fc5016cdd57221addf7a83252b7576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if decriptor is ok. <br /></td></tr>
+<tr class="separator:a05fc5016cdd57221addf7a83252b7576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22f32e3ce430a9f5c6dc9eab2ed7224c"><td class="memItemLeft" align="right" valign="top"><a id="a22f32e3ce430a9f5c6dc9eab2ed7224c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Actor</b> (const <a class="el" href="classActor.html">Actor</a> &amp;)=delete</td></tr>
 <tr class="separator:a22f32e3ce430a9f5c6dc9eab2ed7224c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -270,7 +269,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Epoller</b></td></tr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if multiplexd sucessfuly othewise false </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classTimer.html#ac0cbe12dd95ca109791878125e943bf6">Timer</a>, <a class="el" href="classSender.html#af55dcf4ce39267e289f1267c0dabe830">Sender</a>, <a class="el" href="classReciever.html#a792e68a0789928ec102ede7085b387f2">Reciever</a>, <a class="el" href="classQueuer.html#a83fc5887e7b7bd6163ae2e0d209b79f1">Queuer&lt; T &gt;</a>, <a class="el" href="classQueuer.html#a83fc5887e7b7bd6163ae2e0d209b79f1">Queuer&lt; std::string &gt;</a>, <a class="el" href="classQueuer.html#a83fc5887e7b7bd6163ae2e0d209b79f1">Queuer&lt; HTTPRequest &gt;</a>, <a class="el" href="classDirectoryContent.html#a7de07a5a359d6b789f3149c47dd0c211">DirectoryContent</a>, <a class="el" href="classCounter.html#aca831c46e1016294f2b7fa389d344153">Counter</a>, and <a class="el" href="classAccepter.html#a540faa1b5871d81a8185a5295b04ba73">Accepter</a>.</p>
+<p>Reimplemented in <a class="el" href="classTimer.html#ac0cbe12dd95ca109791878125e943bf6">Timer</a>, <a class="el" href="classTerminatorContent.html#a87487867de66178079de79f93f6f9260">TerminatorContent</a>, <a class="el" href="classSender.html#af55dcf4ce39267e289f1267c0dabe830">Sender</a>, <a class="el" href="classReciever.html#a792e68a0789928ec102ede7085b387f2">Reciever</a>, <a class="el" href="classQueuer.html#a83fc5887e7b7bd6163ae2e0d209b79f1">Queuer&lt; T &gt;</a>, <a class="el" href="classQueuer.html#a83fc5887e7b7bd6163ae2e0d209b79f1">Queuer&lt; std::string &gt;</a>, <a class="el" href="classQueuer.html#a83fc5887e7b7bd6163ae2e0d209b79f1">Queuer&lt; HTTPRequest &gt;</a>, <a class="el" href="classDirectoryContent.html#a7de07a5a359d6b789f3149c47dd0c211">DirectoryContent</a>, <a class="el" href="classCounter.html#aca831c46e1016294f2b7fa389d344153">Counter</a>, and <a class="el" href="classAccepter.html#a540faa1b5871d81a8185a5295b04ba73">Accepter</a>.</p>
 
 </div>
 </div>

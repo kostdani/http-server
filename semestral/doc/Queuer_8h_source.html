@@ -78,22 +78,16 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Counter.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classQueuer.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classQueuer.html">Queuer</a> : <span class="keyword">public</span> <a class="code" href="classCounter.html">Counter</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classQueuer.html">Queuer</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;   <span class="comment">// ~Queuer();</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> Push(T msg);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::pair&lt;T,bool&gt; Pop();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> Empty() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classQueuer.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classQueuer.html">Queuer</a> : <span class="keyword">public</span> <a class="code" href="classCounter.html">Counter</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classQueuer.html">Queuer</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classQueuer.html#a90817aeebcccbe9efdca38bd855e3409">   19</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classQueuer.html#a90817aeebcccbe9efdca38bd855e3409">Push</a>(T msg);</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classQueuer.html#a5705e1089c22e5d10e80abe2bf37e2a8">   21</a></span>&#160;    std::pair&lt;T,bool&gt; <a class="code" href="classQueuer.html#a5705e1089c22e5d10e80abe2bf37e2a8">Pop</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classQueuer.html#aac8f13ee112fd1d323af0c15083a99e0">   23</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classQueuer.html#aac8f13ee112fd1d323af0c15083a99e0">onInput</a>(<span class="keywordtype">int</span> threadi) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> handler(T msg);</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classQueuer.html#a619fb481eeb58b84d5f5eeba98d47c6b">   25</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classQueuer.html#a619fb481eeb58b84d5f5eeba98d47c6b">handler</a>(T msg);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classQueuer.html#a83fc5887e7b7bd6163ae2e0d209b79f1">   27</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classQueuer.html#a83fc5887e7b7bd6163ae2e0d209b79f1">multiplex</a>(<span class="keywordtype">int</span> epolld) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">protected</span>:</div>
@@ -105,8 +99,11 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SERVER_QUEUER_H</span></div>
 <div class="ttc" id="aclassCounter_html"><div class="ttname"><a href="classCounter.html">Counter</a></div><div class="ttdef"><b>Definition:</b> Counter.h:13</div></div>
-<div class="ttc" id="aclassQueuer_html"><div class="ttname"><a href="classQueuer.html">Queuer</a></div><div class="ttdef"><b>Definition:</b> Queuer.h:12</div></div>
+<div class="ttc" id="aclassQueuer_html"><div class="ttname"><a href="classQueuer.html">Queuer</a></div><div class="ttdef"><b>Definition:</b> Queuer.h:14</div></div>
+<div class="ttc" id="aclassQueuer_html_a5705e1089c22e5d10e80abe2bf37e2a8"><div class="ttname"><a href="classQueuer.html#a5705e1089c22e5d10e80abe2bf37e2a8">Queuer::Pop</a></div><div class="ttdeci">std::pair&lt; T, bool &gt; Pop()</div><div class="ttdoc">Gets last message from queue if there.</div></div>
+<div class="ttc" id="aclassQueuer_html_a619fb481eeb58b84d5f5eeba98d47c6b"><div class="ttname"><a href="classQueuer.html#a619fb481eeb58b84d5f5eeba98d47c6b">Queuer::handler</a></div><div class="ttdeci">virtual void handler(T msg)</div><div class="ttdoc">Virtual function to implement reaction on messages.</div></div>
 <div class="ttc" id="aclassQueuer_html_a83fc5887e7b7bd6163ae2e0d209b79f1"><div class="ttname"><a href="classQueuer.html#a83fc5887e7b7bd6163ae2e0d209b79f1">Queuer::multiplex</a></div><div class="ttdeci">bool multiplex(int epolld) override</div><div class="ttdoc">Tracks input events level triggered.</div></div>
+<div class="ttc" id="aclassQueuer_html_a90817aeebcccbe9efdca38bd855e3409"><div class="ttname"><a href="classQueuer.html#a90817aeebcccbe9efdca38bd855e3409">Queuer::Push</a></div><div class="ttdeci">void Push(T msg)</div><div class="ttdoc">Pushes new message to queue.</div></div>
 <div class="ttc" id="aclassQueuer_html_aac8f13ee112fd1d323af0c15083a99e0"><div class="ttname"><a href="classQueuer.html#aac8f13ee112fd1d323af0c15083a99e0">Queuer::onInput</a></div><div class="ttdeci">void onInput(int threadi) override</div><div class="ttdoc">A method that implements the behavior of an actor on input event.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

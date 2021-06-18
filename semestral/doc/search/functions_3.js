@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['handler_64',['handler',['../classSender.html#ac2b630bdd87a554348afe19fcd4a21b7',1,'Sender']]]
+  ['getevent_67',['getEvent',['../classEpoller.html#a3de6d552c3c426ba7de8d4a9d99955df',1,'Epoller']]],
+  ['getip_68',['GetIP',['../classReciever.html#a25d87ec81e0575f3fd78804d258207d8',1,'Reciever']]]
 ];

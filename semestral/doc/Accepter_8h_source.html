@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAccepter.html#ade2480a1a917a4d51c51b3b96627f230">onInput</a>(<span class="keywordtype">int</span> threadi) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classReciever.html">Reciever</a> *<a class="code" href="classAccepter.html#af5c68e5783e361c6e9d38e083ec1f99c">Accept</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classReciever.html">Reciever</a> *<a class="code" href="classAccepter.html#ad09de4a5c8384c7e1d127f6b06a45815">Accept</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classAccepter.html#a540faa1b5871d81a8185a5295b04ba73">multiplex</a>(<span class="keywordtype">int</span> epolld) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">protected</span>:</div>
@@ -102,11 +102,11 @@ $(function() {
 <div class="ttc" id="aclassAccepter_html"><div class="ttname"><a href="classAccepter.html">Accepter</a></div><div class="ttdef"><b>Definition:</b> Accepter.h:16</div></div>
 <div class="ttc" id="aclassAccepter_html_a35a57891ebfd6e8ce65a18f2699fa552"><div class="ttname"><a href="classAccepter.html#a35a57891ebfd6e8ce65a18f2699fa552">Accepter::Accepter</a></div><div class="ttdeci">Accepter(Logger *logger, ContentGenerator *content, sockaddr_in addr)</div><div class="ttdef"><b>Definition:</b> Accepter.cpp:19</div></div>
 <div class="ttc" id="aclassAccepter_html_a540faa1b5871d81a8185a5295b04ba73"><div class="ttname"><a href="classAccepter.html#a540faa1b5871d81a8185a5295b04ba73">Accepter::multiplex</a></div><div class="ttdeci">bool multiplex(int epolld) override</div><div class="ttdef"><b>Definition:</b> Accepter.cpp:74</div></div>
+<div class="ttc" id="aclassAccepter_html_ad09de4a5c8384c7e1d127f6b06a45815"><div class="ttname"><a href="classAccepter.html#ad09de4a5c8384c7e1d127f6b06a45815">Accepter::Accept</a></div><div class="ttdeci">Reciever * Accept() const</div><div class="ttdef"><b>Definition:</b> Accepter.cpp:48</div></div>
 <div class="ttc" id="aclassAccepter_html_ade2480a1a917a4d51c51b3b96627f230"><div class="ttname"><a href="classAccepter.html#ade2480a1a917a4d51c51b3b96627f230">Accepter::onInput</a></div><div class="ttdeci">void onInput(int threadi) override</div><div class="ttdoc">A method that implements the behavior of an actor on input event.</div><div class="ttdef"><b>Definition:</b> Accepter.cpp:61</div></div>
-<div class="ttc" id="aclassAccepter_html_af5c68e5783e361c6e9d38e083ec1f99c"><div class="ttname"><a href="classAccepter.html#af5c68e5783e361c6e9d38e083ec1f99c">Accepter::Accept</a></div><div class="ttdeci">Reciever * Accept()</div><div class="ttdef"><b>Definition:</b> Accepter.cpp:48</div></div>
 <div class="ttc" id="aclassActor_html"><div class="ttname"><a href="classActor.html">Actor</a></div><div class="ttdef"><b>Definition:</b> Actor.h:17</div></div>
-<div class="ttc" id="aclassContentGenerator_html"><div class="ttname"><a href="classContentGenerator.html">ContentGenerator</a></div><div class="ttdef"><b>Definition:</b> ContentGenerator.h:9</div></div>
-<div class="ttc" id="aclassLogger_html"><div class="ttname"><a href="classLogger.html">Logger</a></div><div class="ttdef"><b>Definition:</b> Logger.h:10</div></div>
+<div class="ttc" id="aclassContentGenerator_html"><div class="ttname"><a href="classContentGenerator.html">ContentGenerator</a></div><div class="ttdoc">Actor which generates responds for http requests.</div><div class="ttdef"><b>Definition:</b> ContentGenerator.h:11</div></div>
+<div class="ttc" id="aclassLogger_html"><div class="ttname"><a href="classLogger.html">Logger</a></div><div class="ttdoc">Log managing actor.</div><div class="ttdef"><b>Definition:</b> Logger.h:12</div></div>
 <div class="ttc" id="aclassReciever_html"><div class="ttname"><a href="classReciever.html">Reciever</a></div><div class="ttdef"><b>Definition:</b> Reciever.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

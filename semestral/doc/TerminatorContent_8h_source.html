@@ -82,15 +82,18 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classTerminatorContent.html">TerminatorContent</a>(<span class="keywordtype">bool</span> &amp;stopb,std::vector&lt;std::thread&gt; &amp;thrvec);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerminatorContent.html#aff608109b808c09ffc7ced291c850434">onInput</a>(<span class="keywordtype">int</span> threadi) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> &amp;m_stop;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::vector&lt;std::thread&gt; &amp;m_threads;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SERVER_TERMINATORCONTENT_H</span></div>
-<div class="ttc" id="aclassContentGenerator_html"><div class="ttname"><a href="classContentGenerator.html">ContentGenerator</a></div><div class="ttdef"><b>Definition:</b> ContentGenerator.h:9</div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTerminatorContent.html#a87487867de66178079de79f93f6f9260">multiplex</a>(<span class="keywordtype">int</span> epolld) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">bool</span> &amp;m_stop;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector&lt;std::thread&gt; &amp;m_threads;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SERVER_TERMINATORCONTENT_H</span></div>
+<div class="ttc" id="aclassContentGenerator_html"><div class="ttname"><a href="classContentGenerator.html">ContentGenerator</a></div><div class="ttdoc">Actor which generates responds for http requests.</div><div class="ttdef"><b>Definition:</b> ContentGenerator.h:11</div></div>
 <div class="ttc" id="aclassTerminatorContent_html"><div class="ttname"><a href="classTerminatorContent.html">TerminatorContent</a></div><div class="ttdef"><b>Definition:</b> TerminatorContent.h:9</div></div>
+<div class="ttc" id="aclassTerminatorContent_html_a87487867de66178079de79f93f6f9260"><div class="ttname"><a href="classTerminatorContent.html#a87487867de66178079de79f93f6f9260">TerminatorContent::multiplex</a></div><div class="ttdeci">bool multiplex(int epolld) override</div><div class="ttdoc">Tracks input events level triggered.</div><div class="ttdef"><b>Definition:</b> TerminatorContent.cpp:20</div></div>
 <div class="ttc" id="aclassTerminatorContent_html_aff608109b808c09ffc7ced291c850434"><div class="ttname"><a href="classTerminatorContent.html#aff608109b808c09ffc7ced291c850434">TerminatorContent::onInput</a></div><div class="ttdeci">void onInput(int threadi) override</div><div class="ttdoc">A method that implements the behavior of an actor on input event.</div><div class="ttdef"><b>Definition:</b> TerminatorContent.cpp:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

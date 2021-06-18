@@ -4,7 +4,7 @@
 
 #include "ContentGenerator.h"
 
-void ContentGenerator::NotFound(HTTPRequest req)  const{
+void ContentGenerator::NotFound(HTTPRequest& req)  const{
     req.SetCode("404 Not Found");
     req.SetBody("<div id=\"main\">\n"
                      "    \t<div class=\"fof\">\n"
@@ -14,7 +14,7 @@ void ContentGenerator::NotFound(HTTPRequest req)  const{
     req.Finish();
 }
 
-void ContentGenerator::Forbidden(HTTPRequest req)  const{
+void ContentGenerator::Forbidden(HTTPRequest& req)  const{
     req.SetCode("403 Forbidden");
     req.SetBody("<div id=\"main\">\n"
                      "    \t<div class=\"fof\">\n"
@@ -24,7 +24,7 @@ void ContentGenerator::Forbidden(HTTPRequest req)  const{
     req.Finish();
 }
 
-void ContentGenerator::NotImplemented(HTTPRequest req)  const{
+void ContentGenerator::NotImplemented(HTTPRequest& req)  const{
     req.SetCode("501 Not Implemented");
     req.SetBody("<div id=\"main\">\n"
                      "    \t<div class=\"fof\">\n"
@@ -34,7 +34,7 @@ void ContentGenerator::NotImplemented(HTTPRequest req)  const{
     req.Finish();
 }
 
-void ContentGenerator::Ok(HTTPRequest req,std::string body)  const{
+void ContentGenerator::Ok(HTTPRequest& req,const std::string& body)  const{
     req.SetCode("200 OK");
     req.SetBody(body);
     req.Finish();

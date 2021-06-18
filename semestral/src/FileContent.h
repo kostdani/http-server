@@ -10,9 +10,9 @@
 /// Content generator associated with file
 class FileContent: public ContentGenerator{
 public:
-    FileContent(std::string filename);
+    FileContent(const std::string& filename);
 
-    void handler(HTTPRequest msg) override;
+    void handler(HTTPRequest& msg) override;
 private:
     std::string m_filename;
 };

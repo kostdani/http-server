@@ -20,7 +20,7 @@ bool HTTPServer::Start() {
     threadfunction(0);
     return true;
 }
-
+/*
 bool HTTPServer::Stop() {
     if(!m_stop){
         m_stop= true;
@@ -31,7 +31,7 @@ bool HTTPServer::Stop() {
     }
     return false;
 }
-
+*/
 void HTTPServer::threadfunction(int threadi) {
     while (!m_stop){
 
@@ -49,17 +49,18 @@ void HTTPServer::threadfunction(int threadi) {
     }
 }
 
-void clearstring(std::string &str){
-    for (size_t i = 0; i < str.length(); ++i) {
-        if(isspace(str[i])){
-            str.erase(i,1);
-            i--;
+std::string clearstring(const std::string &str){
+    std::string res;
+    for (char i : str) {
+        if(!isspace(i)){
+            res.push_back(i);
         }
     }
+    return res;
 }
 
 
-bool HTTPServer::LoadThreads(std::map<std::string, std::string> &cfgmap) {
+bool HTTPServer::LoadThreads(const std::map<std::string, std::string> &cfgmap) {
     auto it=cfgmap.find("threads");
     if(it!=cfgmap.end()){
 
@@ -75,12 +76,12 @@ bool HTTPServer::LoadThreads(std::map<std::string, std::string> &cfgmap) {
     }
 }
 
-bool HTTPServer::LoadLogfile(std::map<std::string, std::string> &cfgmap) {
+bool HTTPServer::LoadLogfile(const std::map<std::string, std::string> &cfgmap) {
 
     auto it=cfgmap.find("logfile");
     if(it!=cfgmap.end()){
-        clearstring(it->second);
-        std::ofstream of(it->second);
+
+        std::ofstream of(clearstring(it->second));
         if(!of.is_open()){
             printf("Error: wrong loggerfile\n");
             return false;
@@ -95,11 +96,11 @@ bool HTTPServer::LoadLogfile(std::map<std::string, std::string> &cfgmap) {
     return true;
 }
 
-bool HTTPServer::LoadListen(std::map<std::string, std::string> &cfgmap) {
+bool HTTPServer::LoadListen(const std::map<std::string, std::string> &cfgmap) {
     auto it=cfgmap.find("listen");
     if(it!=cfgmap.end()){
-        clearstring(it->second);
-        std::stringstream ss(it->second);
+        //clearstring(it->second);
+        std::stringstream ss(clearstring(it->second));
         std::string ip,port;
         getline(ss,ip,':');
         getline(ss,port);
@@ -114,11 +115,11 @@ bool HTTPServer::LoadListen(std::map<std::string, std::string> &cfgmap) {
     }
 }
 
-bool HTTPServer::LoadVirtualfs(std::map<std::string, std::string> &cfgmap)  {
+bool HTTPServer::LoadVirtualfs(const std::map<std::string, std::string> &cfgmap)  {
     auto it=cfgmap.find("virtualfs");
     if(it!=cfgmap.end()){
-        clearstring(it->second);
-        std::stringstream ss(it->second);
+        //clearstring(it->second);
+        std::stringstream ss(clearstring(it->second));
         std::string t;
         getline(ss,t,'{');
         auto virtualdir=new VirtualDirrectoryContent();
@@ -155,23 +156,21 @@ bool HTTPServer::LoadVirtualfs(std::map<std::string, std::string> &cfgmap)  {
     }
 }
 
-bool HTTPServer::LoadConfig(std::string filename) {
+bool HTTPServer::LoadConfig(const std::string& filename) {
     std::map<std::string,std::string> configmap;
     std::ifstream file(filename);
     if(!file)
         return false;
     while(true){
         std::string key,val;
-        if(!getline(file,key,' ')||!getline(file,val,';')){
+        if(!getline(file,key,'=')||!getline(file,val,';')){
             break;
         }else{
-            clearstring(key);
-            auto it=configmap.find(key);
+            auto it=configmap.find(clearstring(key));
             if(it!=configmap.end()){
-                printf("wrong config");
                 return false;
             }
-            configmap[key]=val;
+            configmap[clearstring(key)]=val;
             //std::cout<<key<<"   "<<val<<std::endl;
         }
 

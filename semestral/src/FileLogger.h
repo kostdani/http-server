@@ -8,9 +8,9 @@
 
 class FileLogger: public Logger{
 public:
-    FileLogger(std::string logfilename);
+    FileLogger(const std::string& logfilename);
 
-    void handler(std::string msg) override;
+    void handler(std::string& msg) override;
 protected:
     std::string m_logfile;
 };

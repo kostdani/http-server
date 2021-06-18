@@ -9,7 +9,7 @@ template <class T>
 Queuer<T>::Queuer():Counter() {}
 
 template <class T>
-void Queuer<T>::Push(T msg){
+void Queuer<T>::Push(const T& msg){
     m_mtx.lock();
     m_queue.push(msg);
     Add(1);
@@ -34,21 +34,15 @@ std::pair<T,bool> Queuer<T>::Pop(){
 
 template <class T>
 void Queuer<T>::onInput(int threadi){
-
     std::pair<T,bool> msg= {};
     while(true){
         msg=Pop();
         if(!msg.second)
             break;
         handler(msg.first);
-//std::cout<<msg<<std::endl;
     }
 }
 
-template <class T>
-void Queuer<T>::handler(T msg){
-    //std::cout<<msg->msg<<std::endl;
-}
 
 template <class T>
 bool Queuer<T>::multiplex(int epolld){
@@ -58,7 +52,6 @@ bool Queuer<T>::multiplex(int epolld){
     ev.events = EPOLLIN | EPOLLET;
 
     return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
-
 }
 
 #endif

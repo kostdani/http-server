@@ -71,30 +71,30 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aefb63b75d5de9d7a2398073a5d946c16"><td class="memItemLeft" align="right" valign="top"><a id="aefb63b75d5de9d7a2398073a5d946c16"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>HTTPRequest</b> (<a class="el" href="classLogger.html">Logger</a> *l=nullptr, <a class="el" href="classSender.html">Sender</a> *s=nullptr, std::string host=&quot;-&quot;, std::string bytearray=&quot;&quot;)</td></tr>
-<tr class="separator:aefb63b75d5de9d7a2398073a5d946c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7af9cb790daa6b43abb1d912aa81335f"><td class="memItemLeft" align="right" valign="top"><a id="a7af9cb790daa6b43abb1d912aa81335f"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetHeader</b> (const std::string &amp;key)</td></tr>
-<tr class="separator:a7af9cb790daa6b43abb1d912aa81335f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48033166306a5c26c9fb46b890e78bc"><td class="memItemLeft" align="right" valign="top"><a id="aa48033166306a5c26c9fb46b890e78bc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>HTTPRequest</b> (<a class="el" href="classLogger.html">Logger</a> *l, <a class="el" href="classSender.html">Sender</a> *s, const std::string &amp;host, const std::string &amp;bytearray)</td></tr>
+<tr class="separator:aa48033166306a5c26c9fb46b890e78bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9331e83eebc5d4c82555114b880f1602"><td class="memItemLeft" align="right" valign="top"><a id="a9331e83eebc5d4c82555114b880f1602"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetHeader</b> (const std::string &amp;key) const</td></tr>
+<tr class="separator:a9331e83eebc5d4c82555114b880f1602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b53730ff8392d0ff3e6412ed7d17af5"><td class="memItemLeft" align="right" valign="top"><a id="a2b53730ff8392d0ff3e6412ed7d17af5"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetURI</b> () const</td></tr>
 <tr class="separator:a2b53730ff8392d0ff3e6412ed7d17af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95da22ce57bda9b4d58db3f8a8e5d30d"><td class="memItemLeft" align="right" valign="top"><a id="a95da22ce57bda9b4d58db3f8a8e5d30d"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetMethod</b> () const</td></tr>
 <tr class="separator:a95da22ce57bda9b4d58db3f8a8e5d30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acda5049f253cb297a7c6b0792c3d66d0"><td class="memItemLeft" align="right" valign="top"><a id="acda5049f253cb297a7c6b0792c3d66d0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetUri</b> (std::string uri)</td></tr>
-<tr class="separator:acda5049f253cb297a7c6b0792c3d66d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60d2faad76ac21e88b35fbd3e1311475"><td class="memItemLeft" align="right" valign="top"><a id="a60d2faad76ac21e88b35fbd3e1311475"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetCode</b> (std::string code)</td></tr>
-<tr class="separator:a60d2faad76ac21e88b35fbd3e1311475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9318f4130f1c99513014e6c636bd643"><td class="memItemLeft" align="right" valign="top"><a id="ab9318f4130f1c99513014e6c636bd643"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetHeader</b> (std::string key, std::string val)</td></tr>
-<tr class="separator:ab9318f4130f1c99513014e6c636bd643"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3655b94bffb0f291fab57be657c50e9"><td class="memItemLeft" align="right" valign="top"><a id="af3655b94bffb0f291fab57be657c50e9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetBody</b> (std::string body)</td></tr>
-<tr class="separator:af3655b94bffb0f291fab57be657c50e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb158e2caae7d6ed122f2503985e413"><td class="memItemLeft" align="right" valign="top"><a id="aafb158e2caae7d6ed122f2503985e413"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetUri</b> (const std::string &amp;uri)</td></tr>
+<tr class="separator:aafb158e2caae7d6ed122f2503985e413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc8d4b450bdb56f340d80c33aecee86"><td class="memItemLeft" align="right" valign="top"><a id="a8dc8d4b450bdb56f340d80c33aecee86"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetCode</b> (const std::string &amp;code)</td></tr>
+<tr class="separator:a8dc8d4b450bdb56f340d80c33aecee86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807c79ea29935f4af4621c3676d3f673"><td class="memItemLeft" align="right" valign="top"><a id="a807c79ea29935f4af4621c3676d3f673"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetHeader</b> (const std::string &amp;key, const std::string &amp;val)</td></tr>
+<tr class="separator:a807c79ea29935f4af4621c3676d3f673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710b0ddb1728b9e9e34382c27a16036d"><td class="memItemLeft" align="right" valign="top"><a id="a710b0ddb1728b9e9e34382c27a16036d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetBody</b> (const std::string &amp;body)</td></tr>
+<tr class="separator:a710b0ddb1728b9e9e34382c27a16036d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae28914e9fa3679f47ca5d2bb9868dda5"><td class="memItemLeft" align="right" valign="top"><a id="ae28914e9fa3679f47ca5d2bb9868dda5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Finish</b> ()</td></tr>
 <tr class="separator:ae28914e9fa3679f47ca5d2bb9868dda5"><td class="memSeparator" colspan="2">&#160;</td></tr>

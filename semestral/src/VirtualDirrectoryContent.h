@@ -10,8 +10,8 @@ class VirtualDirrectoryContent:public ContentGenerator {
 public:
     VirtualDirrectoryContent();
 
-    void AddLocation(std::string location,ContentGenerator *generator);
-    void handler(HTTPRequest msg) override;
+    void AddLocation(const std::string &location,ContentGenerator *generator);
+    void handler(HTTPRequest& msg) override;
 protected:
     std::map<std::string,ContentGenerator *> m_locations;
 };

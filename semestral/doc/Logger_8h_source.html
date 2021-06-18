@@ -78,17 +78,19 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Queuer.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classLogger.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLogger.html">Logger</a>: <span class="keyword">public</span> <a class="code" href="classQueuer.html">Queuer</a>&lt; std::string &gt;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classLogger.html">Logger</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> handler(std::string msg) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SERVER_LOGGER_H</span></div>
-<div class="ttc" id="aclassLogger_html"><div class="ttname"><a href="classLogger.html">Logger</a></div><div class="ttdef"><b>Definition:</b> Logger.h:10</div></div>
-<div class="ttc" id="aclassQueuer_html"><div class="ttname"><a href="classQueuer.html">Queuer</a></div><div class="ttdef"><b>Definition:</b> Queuer.h:12</div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classLogger.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLogger.html">Logger</a>: <span class="keyword">public</span> <a class="code" href="classQueuer.html">Queuer</a>&lt; std::string &gt;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classLogger.html">Logger</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLogger.html#ab34f31993d0194765ca8a1237732cdc0">handler</a>(std::string msg) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SERVER_LOGGER_H</span></div>
+<div class="ttc" id="aclassLogger_html"><div class="ttname"><a href="classLogger.html">Logger</a></div><div class="ttdoc">Log managing actor.</div><div class="ttdef"><b>Definition:</b> Logger.h:12</div></div>
+<div class="ttc" id="aclassLogger_html_ab34f31993d0194765ca8a1237732cdc0"><div class="ttname"><a href="classLogger.html#ab34f31993d0194765ca8a1237732cdc0">Logger::handler</a></div><div class="ttdeci">void handler(std::string msg) override</div><div class="ttdoc">Virtual function to implement reaction on messages.</div><div class="ttdef"><b>Definition:</b> Logger.cpp:10</div></div>
+<div class="ttc" id="aclassQueuer_html"><div class="ttname"><a href="classQueuer.html">Queuer</a></div><div class="ttdef"><b>Definition:</b> Queuer.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

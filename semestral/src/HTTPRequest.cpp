@@ -4,47 +4,52 @@
 
 #include "HTTPRequest.h"
 
-
-HTTPRequest::HTTPRequest(Logger* l,Sender *s,std::string h,std::string bytearray){
-    m_sender=s;
-    m_logger=l;
-    l_host=h;
+std::string TimeStamp(){
     char tbuf[30];
     std::time_t t = std::time(nullptr);
     std::strftime(tbuf, 30, "%d/%b/%Y:%H:%M:%S %z", std::localtime(&t));
-    l_date=tbuf;
+    return std::string (tbuf);
+}
+
+HTTPRequest::HTTPRequest(Logger* logger,Sender *sender,const std::string& host,const std::string& bytearray){
+    m_sender=sender;
+    m_logger=logger;
+    m_host=host;
+    m_date=TimeStamp();
     Parse(bytearray);
 }
 
-bool HTTPRequest::ParseHead(){
-    std::stringstream str(request);
+bool HTTPRequest::ParseHead(const std::string& head){
+    std::stringstream str(head);
+    m_request=head;
+    getline(str,m_method,' ');
+    getline(str,m_uri,' ');
 
-    getline(str,method,' ');
-    getline(str,uri,' ');
-
-    std::stringstream ss(uri);
+    std::stringstream ss(m_uri);
     std::string noparamsuri;
     getline(ss,noparamsuri,'?');
-    uri=noparamsuri;
+    getline(ss,m_uriparams);
+    m_uri=noparamsuri;
 
-    getline(str,version,'\0');
+    getline(str,m_version,'\0');
     return true;
 }
-bool HTTPRequest::AddHeader(std::string header){
+bool HTTPRequest::ParseHeader(const std::string& header){
     std::stringstream str(header);
     std::string key,val;
     getline(str,key,':');
     str>>std::skipws>>val;
-    request_headers[key]=val;
+    m_request_headers[key]=val;
     return true;
 }
-bool HTTPRequest::Parse(std::string rawstring){
+bool HTTPRequest::Parse(const std::string& rawstring){
 
     std::stringstream str(rawstring);
-    getline(str,request,'\r');
+    std::string head;
+    getline(str,head,'\r');
     if(str.get()!='\n')
         return false;
-    if(!ParseHead())
+    if(!ParseHead(head))
         return false;
     while(true){
         std::string header;
@@ -52,49 +57,49 @@ bool HTTPRequest::Parse(std::string rawstring){
         str.get();
         if(header.empty())
             break;
-        AddHeader(header);
+        ParseHeader(header);
     }
 
-    std::string host=request_headers["Host"];
-    uri=(host+uri);
+    std::string host=m_request_headers["Host"];
+    m_uri=(host+m_uri);
     return true;
 }
 
 void HTTPRequest::Finish() {
-    std::string res=version+" "+code+"\n";
-    for(auto h:respond_headers){
+    std::string res=m_version+" "+m_code+"\n";
+    for(auto h:m_respond_headers){
         res+=(h.first+": "+h.second+"\n");
     }
-    res+=("\n"+respond_body);
+    res+=("\n"+m_respond_body);
     m_sender->Push(res);
-    std::string log=l_host+" "+l_ident+" "+l_authuser+" ["+l_date+"] \""+request+"\" "+code+" "+std::to_string(res.length());
+    std::string log=m_host+" "+m_ident+" "+m_authuser+" ["+m_date+"] \""+m_request+"\" "+m_code+" "+std::to_string(res.length());
     m_logger->Push(log);
 }
 
 
 std::string HTTPRequest::GetURI() const {
-    return uri;
+    return m_uri;
 }
 std::string HTTPRequest::GetMethod() const {
-    return method;
+    return m_method;
 }
 std::string HTTPRequest::GetHeader(const std::string& key) const{
-    auto it=request_headers.find(key);
-    if(it==request_headers.end())
+    auto it=m_request_headers.find(key);
+    if(it==m_request_headers.end())
         return "";
     else
         return it->second;
 }
-void HTTPRequest::SetCode(const std::string& c) {
-    code=c;
+void HTTPRequest::SetCode(const std::string& code) {
+    m_code=code;
 }
 void HTTPRequest::SetBody(const std::string& body) {
     SetHeader("Content-Length",std::to_string(body.length()));
-    respond_body=body;
+    m_respond_body=body;
 }
 void HTTPRequest::SetHeader(const std::string& key, const std::string& val) {
-    respond_headers[key]=val;
+    m_respond_headers[key]=val;
 }
-void HTTPRequest::SetUri(const std::string& u) {
-    uri=u;
+void HTTPRequest::SetUri(const std::string& uri) {
+    m_uri=uri;
 }

@@ -68,6 +68,11 @@ $(function() {
 <div class="title">Logger Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Log managing actor.  
+ <a href="classLogger.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Logger_8h_source.html">Logger.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Logger:</div>
 <div class="dyncontent">
@@ -84,18 +89,18 @@ Inheritance diagram for Logger:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab34f31993d0194765ca8a1237732cdc0"><td class="memItemLeft" align="right" valign="top"><a id="ab34f31993d0194765ca8a1237732cdc0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handler</b> (std::string msg) override</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#ab34f31993d0194765ca8a1237732cdc0">handler</a> (std::string msg) override</td></tr>
+<tr class="memdesc:ab34f31993d0194765ca8a1237732cdc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function to implement reaction on messages. <br /></td></tr>
 <tr class="separator:ab34f31993d0194765ca8a1237732cdc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classQueuer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classQueuer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classQueuer.html">Queuer&lt; std::string &gt;</a></td></tr>
 <tr class="memitem:a90817aeebcccbe9efdca38bd855e3409 inherit pub_methods_classQueuer"><td class="memItemLeft" align="right" valign="top"><a id="a90817aeebcccbe9efdca38bd855e3409"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Push</b> (std::string msg)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQueuer.html#a90817aeebcccbe9efdca38bd855e3409">Push</a> (std::string msg)</td></tr>
+<tr class="memdesc:a90817aeebcccbe9efdca38bd855e3409 inherit pub_methods_classQueuer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes new message to queue. <br /></td></tr>
 <tr class="separator:a90817aeebcccbe9efdca38bd855e3409 inherit pub_methods_classQueuer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5705e1089c22e5d10e80abe2bf37e2a8 inherit pub_methods_classQueuer"><td class="memItemLeft" align="right" valign="top"><a id="a5705e1089c22e5d10e80abe2bf37e2a8"></a>
-std::pair&lt; std::string, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Pop</b> ()</td></tr>
+std::pair&lt; std::string, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQueuer.html#a5705e1089c22e5d10e80abe2bf37e2a8">Pop</a> ()</td></tr>
+<tr class="memdesc:a5705e1089c22e5d10e80abe2bf37e2a8 inherit pub_methods_classQueuer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets last message from queue if there. <br /></td></tr>
 <tr class="separator:a5705e1089c22e5d10e80abe2bf37e2a8 inherit pub_methods_classQueuer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51e0588460bab4910e79130614944e3c inherit pub_methods_classQueuer"><td class="memItemLeft" align="right" valign="top"><a id="a51e0588460bab4910e79130614944e3c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Empty</b> () const</td></tr>
-<tr class="separator:a51e0588460bab4910e79130614944e3c inherit pub_methods_classQueuer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac8f13ee112fd1d323af0c15083a99e0 inherit pub_methods_classQueuer"><td class="memItemLeft" align="right" valign="top"><a id="aac8f13ee112fd1d323af0c15083a99e0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onInput</b> (int threadi) override</td></tr>
 <tr class="memdesc:aac8f13ee112fd1d323af0c15083a99e0 inherit pub_methods_classQueuer"><td class="mdescLeft">&#160;</td><td class="mdescRight">A method that implements the behavior of an actor on input event. <br /></td></tr>
@@ -122,10 +127,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a5058e17d4d0afd4f1a5ac2c369c453f5">Close</a> ()</td></tr>
 <tr class="memdesc:a5058e17d4d0afd4f1a5ac2c369c453f5 inherit pub_methods_classActor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that closes descriptor. <br /></td></tr>
 <tr class="separator:a5058e17d4d0afd4f1a5ac2c369c453f5 inherit pub_methods_classActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9f39bb77542e2f7a90b01a75d83d3e4 inherit pub_methods_classActor"><td class="memItemLeft" align="right" valign="top"><a id="ac9f39bb77542e2f7a90b01a75d83d3e4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ac9f39bb77542e2f7a90b01a75d83d3e4">Check</a> ()</td></tr>
-<tr class="memdesc:ac9f39bb77542e2f7a90b01a75d83d3e4 inherit pub_methods_classActor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if decriptor is ok. <br /></td></tr>
-<tr class="separator:ac9f39bb77542e2f7a90b01a75d83d3e4 inherit pub_methods_classActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05fc5016cdd57221addf7a83252b7576 inherit pub_methods_classActor"><td class="memItemLeft" align="right" valign="top"><a id="a05fc5016cdd57221addf7a83252b7576"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a05fc5016cdd57221addf7a83252b7576">Check</a> () const</td></tr>
+<tr class="memdesc:a05fc5016cdd57221addf7a83252b7576 inherit pub_methods_classActor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if decriptor is ok. <br /></td></tr>
+<tr class="separator:a05fc5016cdd57221addf7a83252b7576 inherit pub_methods_classActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22f32e3ce430a9f5c6dc9eab2ed7224c inherit pub_methods_classActor"><td class="memItemLeft" align="right" valign="top"><a id="a22f32e3ce430a9f5c6dc9eab2ed7224c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Actor</b> (const <a class="el" href="classActor.html">Actor</a> &amp;)=delete</td></tr>
 <tr class="separator:a22f32e3ce430a9f5c6dc9eab2ed7224c inherit pub_methods_classActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,7 +165,9 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>m_mtx</b></td><
 int&#160;</td><td class="memItemRight" valign="bottom"><b>m_descriptor</b> =-1</td></tr>
 <tr class="separator:a5c4f062f67320f501a5087ece2c383d8 inherit pro_attribs_classActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Log managing actor. </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="Logger_8h_source.html">Logger.h</a></li>
 <li>src/Logger.cpp</li>
 </ul>

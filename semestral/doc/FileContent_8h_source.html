@@ -77,20 +77,21 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define SERVER_FILECONTENT_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;ContentGenerator.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classFileContent.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFileContent.html">FileContent</a>: <span class="keyword">public</span> <a class="code" href="classContentGenerator.html">ContentGenerator</a>{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classFileContent.html">FileContent</a>(std::string filename);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> handler(<a class="code" href="classHTTPRequest.html">HTTPRequest</a> msg) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::string m_filename;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classFileContent.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFileContent.html">FileContent</a>: <span class="keyword">public</span> <a class="code" href="classContentGenerator.html">ContentGenerator</a>{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classFileContent.html">FileContent</a>(std::string filename);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classFileContent.html#ac6b2d5edf2933f8b1dc66221b2597bd8">handler</a>(<a class="code" href="classHTTPRequest.html">HTTPRequest</a> msg) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::string m_filename;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SERVER_FILECONTENT_H</span></div>
-<div class="ttc" id="aclassContentGenerator_html"><div class="ttname"><a href="classContentGenerator.html">ContentGenerator</a></div><div class="ttdef"><b>Definition:</b> ContentGenerator.h:9</div></div>
-<div class="ttc" id="aclassFileContent_html"><div class="ttname"><a href="classFileContent.html">FileContent</a></div><div class="ttdef"><b>Definition:</b> FileContent.h:9</div></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SERVER_FILECONTENT_H</span></div>
+<div class="ttc" id="aclassContentGenerator_html"><div class="ttname"><a href="classContentGenerator.html">ContentGenerator</a></div><div class="ttdoc">Actor which generates responds for http requests.</div><div class="ttdef"><b>Definition:</b> ContentGenerator.h:11</div></div>
+<div class="ttc" id="aclassFileContent_html"><div class="ttname"><a href="classFileContent.html">FileContent</a></div><div class="ttdoc">Content generator associated with file.</div><div class="ttdef"><b>Definition:</b> FileContent.h:11</div></div>
+<div class="ttc" id="aclassFileContent_html_ac6b2d5edf2933f8b1dc66221b2597bd8"><div class="ttname"><a href="classFileContent.html#ac6b2d5edf2933f8b1dc66221b2597bd8">FileContent::handler</a></div><div class="ttdeci">void handler(HTTPRequest msg) override</div><div class="ttdoc">Virtual function to implement reaction on messages.</div><div class="ttdef"><b>Definition:</b> FileContent.cpp:11</div></div>
 <div class="ttc" id="aclassHTTPRequest_html"><div class="ttname"><a href="classHTTPRequest.html">HTTPRequest</a></div><div class="ttdef"><b>Definition:</b> HTTPRequest.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

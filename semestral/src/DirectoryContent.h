@@ -13,14 +13,14 @@
 #include <cstring>
 class DirectoryContent: public ContentGenerator{
 public:
-    DirectoryContent(std::string dirname);
+    DirectoryContent(const std::string& dirname);
 
-    void handler(HTTPRequest msg) override;
+    void handler(HTTPRequest& msg) override;
 
     bool multiplex(int epolld) override;
 private:
 
-    void showdirrectory(HTTPRequest msg);
+    void showdirrectory(HTTPRequest& msg);
     std::string m_dirname;
 };
 

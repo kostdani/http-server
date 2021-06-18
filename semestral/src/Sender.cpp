@@ -50,7 +50,7 @@ void Sender::onOutput(int theardi) {
     onInput(theardi);
 }
 
-void Sender::handler(std::string msg) {
+void Sender::handler(std::string& msg) {
     n=write(m_socketfd,msg.c_str(),msg.length());
     if(n==-1){
         printf("error %d",errno);

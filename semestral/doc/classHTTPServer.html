@@ -73,33 +73,30 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a912bce10d37189641720d265976d71ca"><td class="memItemLeft" align="right" valign="top"><a id="a912bce10d37189641720d265976d71ca"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadConfig</b> (std::string filename)</td></tr>
-<tr class="separator:a912bce10d37189641720d265976d71ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a295b78dd43a850461ef486e9c3c9be97"><td class="memItemLeft" align="right" valign="top"><a id="a295b78dd43a850461ef486e9c3c9be97"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadConfig</b> (const std::string &amp;filename)</td></tr>
+<tr class="separator:a295b78dd43a850461ef486e9c3c9be97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae430cce2533ac34c9383811c6fccf3d6"><td class="memItemLeft" align="right" valign="top"><a id="ae430cce2533ac34c9383811c6fccf3d6"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> ()</td></tr>
 <tr class="separator:ae430cce2533ac34c9383811c6fccf3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5addbe68fe44613ac059bdb770328b4b"><td class="memItemLeft" align="right" valign="top"><a id="a5addbe68fe44613ac059bdb770328b4b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Stop</b> ()</td></tr>
-<tr class="separator:a5addbe68fe44613ac059bdb770328b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a982a16a42b166eb93946dc14b87d98f2"><td class="memItemLeft" align="right" valign="top"><a id="a982a16a42b166eb93946dc14b87d98f2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>threadfunction</b> (int threadi)</td></tr>
-<tr class="separator:a982a16a42b166eb93946dc14b87d98f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a2556ef5271a9b27b47732356141d6506"><td class="memItemLeft" align="right" valign="top"><a id="a2556ef5271a9b27b47732356141d6506"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadThreads</b> (std::map&lt; std::string, std::string &gt; &amp;cfgmap)</td></tr>
-<tr class="separator:a2556ef5271a9b27b47732356141d6506"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05c83a866611c74dfe7ee3d7bea83a90"><td class="memItemLeft" align="right" valign="top"><a id="a05c83a866611c74dfe7ee3d7bea83a90"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadLogfile</b> (std::map&lt; std::string, std::string &gt; &amp;cfgmap)</td></tr>
-<tr class="separator:a05c83a866611c74dfe7ee3d7bea83a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71baf77a8e5cdf4ba57cae576401230a"><td class="memItemLeft" align="right" valign="top"><a id="a71baf77a8e5cdf4ba57cae576401230a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadListen</b> (std::map&lt; std::string, std::string &gt; &amp;cfgmap)</td></tr>
-<tr class="separator:a71baf77a8e5cdf4ba57cae576401230a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6529e52dd62e421d8a8da92eb54ae808"><td class="memItemLeft" align="right" valign="top"><a id="a6529e52dd62e421d8a8da92eb54ae808"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadVirtualfs</b> (std::map&lt; std::string, std::string &gt; &amp;cfgmap)</td></tr>
-<tr class="separator:a6529e52dd62e421d8a8da92eb54ae808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a982a16a42b166eb93946dc14b87d98f2"><td class="memItemLeft" align="right" valign="top"><a id="a982a16a42b166eb93946dc14b87d98f2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>threadfunction</b> (int threadi)</td></tr>
+<tr class="separator:a982a16a42b166eb93946dc14b87d98f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ecdad5d55257131cbd992f461fb7b2"><td class="memItemLeft" align="right" valign="top"><a id="af1ecdad5d55257131cbd992f461fb7b2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadThreads</b> (const std::map&lt; std::string, std::string &gt; &amp;cfgmap)</td></tr>
+<tr class="separator:af1ecdad5d55257131cbd992f461fb7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa44e4b94024e5e4c62be8bd0d31e496"><td class="memItemLeft" align="right" valign="top"><a id="afa44e4b94024e5e4c62be8bd0d31e496"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadLogfile</b> (const std::map&lt; std::string, std::string &gt; &amp;cfgmap)</td></tr>
+<tr class="separator:afa44e4b94024e5e4c62be8bd0d31e496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4c4393adc4c493e475fc75a2310cb4"><td class="memItemLeft" align="right" valign="top"><a id="a4d4c4393adc4c493e475fc75a2310cb4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadListen</b> (const std::map&lt; std::string, std::string &gt; &amp;cfgmap)</td></tr>
+<tr class="separator:a4d4c4393adc4c493e475fc75a2310cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac97d859edb15783ff375cccbf5e9ddbd"><td class="memItemLeft" align="right" valign="top"><a id="ac97d859edb15783ff375cccbf5e9ddbd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadVirtualfs</b> (const std::map&lt; std::string, std::string &gt; &amp;cfgmap)</td></tr>
+<tr class="separator:ac97d859edb15783ff375cccbf5e9ddbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>

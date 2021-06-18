@@ -23,19 +23,16 @@ public:
     // Constructor
     HTTPServer();
     // Load Config file
-    bool LoadConfig(std::string filename);
+    bool LoadConfig(const std::string& filename);
     // Starts the server
     bool Start();
-    // Stops the server
-    bool Stop();
-
 
 protected:
     void threadfunction(int threadi);
-    bool LoadThreads(std::map<std::string,std::string> &cfgmap);
-    bool LoadLogfile(std::map<std::string,std::string> &cfgmap);
-    bool LoadListen(std::map<std::string,std::string> &cfgmap);
-    bool LoadVirtualfs(std::map<std::string,std::string> &cfgmap);
+    bool LoadThreads(const std::map<std::string,std::string> &cfgmap);
+    bool LoadLogfile(const std::map<std::string,std::string> &cfgmap);
+    bool LoadListen(const std::map<std::string,std::string> &cfgmap);
+    bool LoadVirtualfs(const std::map<std::string,std::string> &cfgmap);
     Logger *m_logger=nullptr;
     bool m_stop=true;
     Counter *m_stopper= nullptr;

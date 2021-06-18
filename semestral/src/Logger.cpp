@@ -7,6 +7,6 @@
 Logger::Logger():Queuer<std::string>(){
 }
 
-void Logger::handler(std::string msg) {
+void Logger::handler(std::string& msg) {
     std::cout<<msg<<std::endl;
 }

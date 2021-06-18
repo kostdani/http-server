@@ -8,7 +8,7 @@ VirtualDirrectoryContent::VirtualDirrectoryContent() {
 
 }
 
-void VirtualDirrectoryContent::AddLocation(std::string location, ContentGenerator *generator) {
+void VirtualDirrectoryContent::AddLocation(const std::string& location, ContentGenerator *generator) {
     m_locations[location]=generator;
 }
 
@@ -24,7 +24,7 @@ bool shortenpath(std::string& path){
     return false;
 }
 
-void VirtualDirrectoryContent::handler(HTTPRequest req) {
+void VirtualDirrectoryContent::handler(HTTPRequest& req) {
     std::string url=req.GetURI();
     do{
         auto it=m_locations.find(url);
