@@ -21,7 +21,7 @@ bool Reciever::multiplex(int epolld) {
 }
 
 
-void Reciever::onInput(int threadi) {
+void Reciever::Run(int threadi) {
     if(!m_sender){
         m_sender=new Sender(dup(m_descriptor));
         AddActor(m_sender);
@@ -55,7 +55,7 @@ void Reciever::onInput(int threadi) {
     }
 }
 
-void Reciever::onError(int threadi) {
+void Reciever::Error(int threadi) {
     printf("recieve error\n");
 }
 

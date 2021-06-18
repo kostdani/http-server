@@ -38,13 +38,10 @@ public:
     virtual bool AddActor(Actor * newActor);
 
     /// A method that implements the behavior of an actor on input event
-    virtual void onInput(int threadi);
+    virtual void Run(int threadi)=0;
 
     /// A method that implements the behavior of an actor on output event
-    virtual void onOutput(int threadi);
-
-    /// A method that implements the behavior of an actor on output event
-    virtual void onError(int threadi);
+    virtual void Error(int threadi)=0;
 
     friend class Epoller;
 

@@ -10,7 +10,7 @@ class TerminatorContent : public ContentGenerator{
 public:
     TerminatorContent(bool &stopb,std::vector<std::thread> &thrvec);
 
-    void onInput(int threadi) override;
+    void Run(int threadi) override;
 
     void handler(HTTPRequest& msg) override{}
 

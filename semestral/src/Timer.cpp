@@ -19,12 +19,14 @@ void Timer::ResetTimer() {
     timerfd_settime(m_descriptor,0,&its,0);
 }
 
-void Timer::onInput(int threadi) {
+void Timer::Run(int threadi) {
     printf("timerhah\n");
     ResetTimer();
 }
 
+void Timer::Error(int threadi) {
 
+}
 
 bool Timer::multiplex(int epolld) {
 

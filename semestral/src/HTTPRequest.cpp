@@ -39,6 +39,8 @@ bool HTTPRequest::ParseHeader(const std::string& header){
     std::string key,val;
     getline(str,key,':');
     str>>std::skipws>>val;
+    if(m_request_headers.find(key)!=m_request_headers.end())
+        return false;
     m_request_headers[key]=val;
     return true;
 }
@@ -57,17 +59,17 @@ bool HTTPRequest::Parse(const std::string& rawstring){
         str.get();
         if(header.empty())
             break;
-        ParseHeader(header);
+        if(!ParseHeader(header))
+            return false;
     }
 
-    std::string host=m_request_headers["Host"];
-    m_uri=(host+m_uri);
+    m_uri=(GetHeader("Host")+m_uri);
     return true;
 }
 
 void HTTPRequest::Finish() {
     std::string res=m_version+" "+m_code+"\n";
-    for(auto h:m_respond_headers){
+    for(const auto& h:m_respond_headers){
         res+=(h.first+": "+h.second+"\n");
     }
     res+=("\n"+m_respond_body);

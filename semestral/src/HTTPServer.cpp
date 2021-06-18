@@ -10,8 +10,6 @@ HTTPServer::HTTPServer():m_epoller() {
 }
 
 bool HTTPServer::Start() {
-    m_stopper=new Counter();
-    m_epoller.AddActor(m_stopper);
 
     m_stop=false;
     for (int i = 1; i < thrn; ++i) {
@@ -38,13 +36,9 @@ void HTTPServer::threadfunction(int threadi) {
         auto ev= m_epoller.getEvent();
         Actor *actor=(Actor *)ev.data.ptr;
         if((ev.events&EPOLLERR)||(ev.events&EPOLLHUP)||(ev.events&EPOLLRDHUP)){
-            actor->onError(threadi);
+            actor->Error(threadi);
         }else{
-            if(ev.events&EPOLLIN)
-                actor->onInput(threadi);
-            if(ev.events&EPOLLOUT)
-                actor->onOutput(threadi);
-
+            actor->Run(threadi);
         }
     }
 }

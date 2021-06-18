@@ -35,7 +35,6 @@ protected:
     bool LoadVirtualfs(const std::map<std::string,std::string> &cfgmap);
     Logger *m_logger=nullptr;
     bool m_stop=true;
-    Counter *m_stopper= nullptr;
     Epoller m_epoller;
     std::vector<std::thread> m_threads;
     int thrn=1;

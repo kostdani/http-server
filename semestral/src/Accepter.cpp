@@ -5,7 +5,7 @@
 #include "Accepter.h"
 
 sockaddr_in IPv4_converter(const char * ip,int port){
-    sockaddr_in res;
+    sockaddr_in res{};
     if (inet_pton(AF_INET, ip, &res.sin_addr) <= 0)
     {
         throw "error: cant convert address\n";
@@ -16,11 +16,12 @@ sockaddr_in IPv4_converter(const char * ip,int port){
 }
 
 
-Accepter::Accepter(Logger *l,ContentGenerator *content,sockaddr_in addr): Actor(socket(PF_INET, SOCK_STREAM, 0)) {
-    m_logger=l;
+Accepter::Accepter(Logger *logger,ContentGenerator *content,sockaddr_in addr): Actor(socket(PF_INET, SOCK_STREAM, 0)) {
+    m_logger=logger;
     m_reqmanager=content;
-    if(!l){
-        throw "no logger\n";
+    if(!logger){
+        printf("No logger\n");
+        exit(1);
     }
     int status = fcntl(m_descriptor, F_SETFL, fcntl(m_descriptor, F_GETFL, 0) | O_NONBLOCK);
     if (status == -1){
@@ -43,7 +44,7 @@ Accepter::Accepter(Logger *l,ContentGenerator *content,sockaddr_in addr): Actor(
     }
 }
 
-Accepter::Accepter(Logger *l,ContentGenerator *content,const char *ip, int port) : Accepter(l,content,IPv4_converter(ip,port)){};
+Accepter::Accepter(Logger *logger,ContentGenerator *content,const char *ip, int port) : Accepter(logger,content,IPv4_converter(ip,port)){};
 
 Reciever * Accepter::Accept() const{
     if(!Check())
@@ -58,7 +59,7 @@ Reciever * Accepter::Accept() const{
         return new Reciever(m_logger, d, addr, m_reqmanager);
 }
 
-void Accepter::onInput(int threadi) {
+void Accepter::Run(int threadi) {
     while(true) {
         Reciever *newcli = Accept();
         if(!newcli)
@@ -69,6 +70,9 @@ void Accepter::onInput(int threadi) {
 
 }
 
+void Accepter::Error(int threadi) {
+
+}
 
 
 bool Accepter::multiplex(int epolld) {

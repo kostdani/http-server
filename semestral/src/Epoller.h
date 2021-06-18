@@ -27,6 +27,9 @@ public:
     /// @param newActor Actor to be added
     bool AddActor(Actor * newActor) override;
 
+    void Run(int threadi) override;
+
+    void Error(int threadi) override;
 protected:
     std::set<Actor *> m_actors;
     std::mutex m_mtx;

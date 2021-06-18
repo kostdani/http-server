@@ -17,7 +17,7 @@ bool Sender::multiplex(int epolld) {
 
 }
 
-void Sender::onInput(int theardi) {
+void Sender::Run(int theardi) {
     if(last.length()-n>=0){
         ssize_t r=write(m_socketfd,last.c_str()+n,last.length()-n);
         if(r==-1){
@@ -46,8 +46,8 @@ void Sender::onInput(int theardi) {
 
 }
 
-void Sender::onOutput(int theardi) {
-    onInput(theardi);
+void Sender::Error(int threadi) {
+    
 }
 
 void Sender::handler(std::string& msg) {

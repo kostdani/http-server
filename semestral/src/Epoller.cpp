@@ -33,4 +33,10 @@ bool Epoller::AddActor(Actor *newActor) {
 }
 
 
+void Epoller::Run(int threadi) {
 
+}
+
+void Epoller::Error(int threadi) {
+
+}

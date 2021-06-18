@@ -14,9 +14,9 @@ public:
     /// @param descriptor tcp socket of client
     Sender(int descriptor);
 
-    void onInput(int theardi) override;
+    void Run(int threadi) override;
 
-    void onOutput(int theardi) override;
+    void Error(int threadi) override;
     /// Sends msg to client if possible
     void handler(std::string& msg) override;
     /// Tracks input events on queue and output events on socket, level triggered

@@ -22,9 +22,9 @@ public:
     /// Returns client IP in string form
     std::string GetIP() const;
 
-    void onInput(int threadi) override;
+    void Run(int threadi) override;
 
-    void onError(int threadi) override;
+    void Error(int threadi) override;
 
 protected:
     Sender *m_sender=nullptr;

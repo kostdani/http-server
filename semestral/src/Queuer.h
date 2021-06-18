@@ -20,7 +20,9 @@ public:
     /// Gets last message from queue if there
     std::pair<T,bool> Pop();
 
-    void onInput(int threadi) override;
+    void Run(int threadi) override;
+
+    void Error(int threadi) override;
     /// Virtual function to implement reaction on messages
     virtual void handler(T& msg)=0;
 
