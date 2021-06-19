@@ -4,9 +4,9 @@
 
 #ifndef SERVER_DIRECTORYCONTENT_H
 #define SERVER_DIRECTORYCONTENT_H
-
 #include "ContentGenerator.h"
 #include "FileContent.h"
+#include "ScriptContent.h"
 #include <dirent.h>
 #include <set>
 #include <sys/stat.h>

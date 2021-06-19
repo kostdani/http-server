@@ -9,6 +9,7 @@
 #include "Accepter.h"
 #include "Logger.h"
 #include "FileLogger.h"
+#include "ScriptContent.h"
 #include "ContentGenerator.h"
 #include "FileContent.h"
 #include "TerminatorContent.h"

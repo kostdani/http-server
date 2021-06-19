@@ -27,6 +27,8 @@ public:
     /// Returns method of request
     std::string GetMethod() const;
 
+    std::string GetParams() const;
+
     /// Sets uri
     void SetUri(const std::string& uri);
     /// Sets status code of respond

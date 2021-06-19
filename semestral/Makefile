@@ -7,11 +7,11 @@ all: compile doc
 run:	compile
 	./kostdani examples/server.cfg
 
-compile: src/build/main.o src/build/Accepter.o src/build/Actor.o src/build/FileLogger.o src/build/ContentGenerator.o src/build/Counter.o src/build/DirectoryContent.o src/build/Epoller.o src/build/FileContent.o src/build/HTTPRequest.o src/build/HTTPServer.o src/build/Logger.o src/build/Queuer.o src/build/Reciever.o src/build/Sender.o src/build/TerminatorContent.o src/build/Timer.o src/build/VirtualDirrectoryContent.o
+compile: src/build/main.o src/build/Accepter.o src/build/Actor.o src/build/FileLogger.o src/build/ContentGenerator.o src/build/Counter.o src/build/DirectoryContent.o src/build/Epoller.o src/build/FileContent.o src/build/ScriptContent.o src/build/HTTPRequest.o src/build/HTTPServer.o src/build/Logger.o src/build/Queuer.o src/build/Reciever.o src/build/Sender.o src/build/TerminatorContent.o src/build/Timer.o src/build/VirtualDirrectoryContent.o
 	$(CC) $(CFLAGS) $^ -o kostdani
 
 
-doc: Doxyfile README.md src/Accepter.h src/Epoller.h src/Reciever.h src/Actor.h src/FileContent.h src/FileLogger.h src/HTTPRequest.h src/Sender.h src/ContentGenerator.h src/HTTPServer.h src/TerminatorContent.h src/Counter.h src/Logger.h src/Timer.h src/DirectoryContent.h src/Queuer.h src/VirtualDirrectoryContent.h
+doc: Doxyfile README.md src/Accepter.h src/Epoller.h src/Reciever.h src/Actor.h src/FileContent.h src/ScriptContent.h src/FileLogger.h src/HTTPRequest.h src/Sender.h src/ContentGenerator.h src/HTTPServer.h src/TerminatorContent.h src/Counter.h src/Logger.h src/Timer.h src/DirectoryContent.h src/Queuer.h src/VirtualDirrectoryContent.h
 	mkdir -p doc
 	doxygen $<
 
@@ -25,6 +25,9 @@ src/build/Actor.o: src/Actor.cpp src/Actor.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 src/build/FileLogger.o: src/FileLogger.cpp src/FileLogger.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+src/build/ScriptContent.o: src/ScriptContent.cpp src/ScriptContent.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 src/build/ContentGenerator.o: src/ContentGenerator.cpp src/ContentGenerator.h

@@ -99,6 +99,9 @@ std::string HTTPRequest::GetHeader(const std::string& key) const{
     else
         return it->second;
 }
+std::string HTTPRequest::GetParams() const {
+    return m_uriparams;
+}
 void HTTPRequest::SetCode(const std::string& code) {
     m_code=code;
 }

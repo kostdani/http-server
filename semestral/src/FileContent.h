@@ -13,7 +13,8 @@ public:
     FileContent(const std::string& filename);
 
     void handler(HTTPRequest& msg) override;
-private:
+
+protected:
     std::string m_filename;
 };
 
