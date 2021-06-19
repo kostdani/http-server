@@ -16,8 +16,6 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
     while((entity= readdir(dir))){
         if( strcmp(entity->d_name,".")!=0 ){
             std::string fname=entity->d_name;
-            if(entity->d_type==DT_DIR)
-                fname.append("/");
             files.insert(fname);
         }
     }
@@ -36,7 +34,10 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
         struct stat buf{};
         stat(p.c_str(),&buf);
         std::string type,size;
-        if(S_ISDIR(buf.st_mode)) {
+        std::string date(asctime(localtime(&buf.st_mtime)));
+        if(f==".."){
+            date="";
+        }else if(S_ISDIR(buf.st_mode)) {
             type="D";
             size="-";
         }else if(S_ISREG(buf.st_mode)){
@@ -46,8 +47,6 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
             type="U";
             size=std::to_string(buf.st_size);
         }
-
-        std::string date(asctime(localtime(&buf.st_mtime)));
         res+=("<tr><td> <a href=\""+f+"\" title=\"\">"+f+"</a></td><td>"+type+"</td><td>"+size+"</td><td>"+date+"</td></tr>\n");
     }
     res+="</table>\n"
