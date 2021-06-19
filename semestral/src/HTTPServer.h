@@ -18,6 +18,7 @@
 #include <vector>
 #include <fstream>
 #include <map>
+/// Main class implemeting loading config and starting server
 class HTTPServer {
 public:
     // Constructor

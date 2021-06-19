@@ -7,9 +7,7 @@
 #include "Counter.h"
 #include <queue>
 #include <mutex>
-/// Queue actor
-///
-/// Actor used to manage queue of messages and react on them
+/// Queue actor manage queue of messages and react on them
 template <class T>
 class Queuer : public Counter {
 public:

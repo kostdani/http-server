@@ -13,6 +13,7 @@
 #include <ctime>
 #include <algorithm>
 
+/// Class storing data about HTTP request
 class HTTPRequest {
 public:
     HTTPRequest()=default;

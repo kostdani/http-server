@@ -14,7 +14,7 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
     struct dirent* entity;
     std::set<std::string> files;
     while((entity= readdir(dir))){
-        if( strcmp(entity->d_name,".") && strcmp(entity->d_name,"..")){
+        if( strcmp(entity->d_name,".")!=0 ){
             std::string fname=entity->d_name;
             if(entity->d_type==DT_DIR)
                 fname.append("/");
@@ -56,6 +56,34 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
     Ok(req,res);
 }
 
+// Removes ../ from path
+std::string normalizepath(const std::string &orig){
+    std::stringstream ss(orig);
+    std::string word;
+    std::vector<std::string> vec;
+    while(getline(ss,word,'/')){
+        if(word==".."){
+            if(vec.empty()||vec.back()=="..")
+                vec.push_back(word);
+            else
+                vec.pop_back();
+        }else{
+            vec.push_back(word);
+        }
+    }
+    std::string res;
+    for(const auto &str:vec){
+        res+=(str+"/");
+    }
+    return res;
+}
+// checks if basepath+subpath is inside basepath
+bool isinside(const std::string& basepath, const std::string& subpath){
+    std::string fullpath= normalizepath(basepath+subpath);
+    return fullpath.find(basepath) == 0;
+}
+
+
 void DirectoryContent::handler(HTTPRequest& req) {
     if(req.GetMethod()!="GET"){
         NotImplemented(req);
@@ -64,9 +92,8 @@ void DirectoryContent::handler(HTTPRequest& req) {
 
     if(req.GetURI()=="/"){
         showdirrectory(req);
-    }else{
-        std::string subpath=m_dirname;
-        subpath.append(req.GetURI());
+    }else if(isinside(m_dirname,req.GetURI())){
+        std::string subpath=m_dirname+req.GetURI();
         struct stat sb{};
 
         stat(subpath.c_str(), &sb);
@@ -80,6 +107,8 @@ void DirectoryContent::handler(HTTPRequest& req) {
         }else{ // subpath not found
             NotFound(req);
         }
+    }else{
+        Forbidden(req);
     }
 }
 

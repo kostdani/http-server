@@ -19,3 +19,15 @@ Pokud není zadán, výchozí hodnota je 1
 Pokud není zadán, logy budou zapisovány do konzoly
 - listen: value  ma být ip a port naslouchání 
 Pokud není zadán, výchozí hodnota je "0.0.0.0:8080"
+
+
+## Kde mám polymorfismus?
+Abstraktní třída Actor má dvě virtuální metody: Run a Error, které jsou přetěženy v potomcích
+Metoda Run je odpovědná za provádění akcí aktérem v případě IO události. Například třída Receiver voláním této metody neblokujícím způsobem čte data ze soketu, dokud se vyčerpá
+Podobným způsobem metoda Error implementuje chování aktéra v případě přijetí chyby.
+Tyto polymorfní metody se volají v metodě threadfunc třídy HTTPServer. který přijímá z epollu další událost(IO nebo chyba) spojenou s aktérem a volá jeho odpovídající metodu
+
+Abstraktní třídy Queuer představující aktéra, který postupně zpracovává frontu zpráv(něco jako abstraktní automat), má virtuální metodu Handle, přetěžene varianty které ve třídách potomkách skutečně definují reakce automatu na každou zprávu.
+Například třída Logger v metodě handle zpracovává zápis přijatého logu do odpovídajícího streamu zatímco třídy generátory obsahu přijímají HTTP requesty a v metodě handle implementují logiku zpracování těchto requestu
+
+Třída Queuer navíc implementuje parametrický polymorfismus konkrétně v tom, že zprávy přijaté touto třídou mohou být jakéhokoli typu
