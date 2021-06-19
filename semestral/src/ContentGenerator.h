@@ -4,6 +4,8 @@
 
 #ifndef SERVER_CONTENTGENERATOR_H
 #define SERVER_CONTENTGENERATOR_H
+
+#include "HTTPConstants.h"
 #include "HTTPRequest.h"
 #include "Queuer.h"
 

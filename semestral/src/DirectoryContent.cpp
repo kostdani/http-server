@@ -26,8 +26,7 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
     std::string res("<!DOCTYPE html>\n"
                     "<html>\n"
                     "<body>\n"
-                    "\n"
-                    "<h1>Directory view</h1>"
+                    "<h1>Directory view</h1>\n"
                     "<table>\n"
                     "<tr><th>Name</th><th>Type</th><th>Size</th><th>Date modified</th></tr>\n");
 
@@ -58,7 +57,6 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
 }
 
 void DirectoryContent::handler(HTTPRequest& req) {
-
     if(req.GetMethod()!="GET"){
         NotImplemented(req);
         return;

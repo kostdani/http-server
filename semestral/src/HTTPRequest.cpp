@@ -20,16 +20,14 @@ HTTPRequest::HTTPRequest(Logger* logger,Sender *sender,const std::string& host,c
 }
 
 bool HTTPRequest::ParseHead(const std::string& head){
-    std::stringstream str(head);
     m_request=head;
+    std::stringstream str(head);
     getline(str,m_method,' ');
     getline(str,m_uri,' ');
 
     std::stringstream ss(m_uri);
-    std::string noparamsuri;
-    getline(ss,noparamsuri,'?');
+    getline(ss,m_uri,'?');
     getline(ss,m_uriparams);
-    m_uri=noparamsuri;
 
     getline(str,m_version,'\0');
     return true;
@@ -45,20 +43,21 @@ bool HTTPRequest::ParseHeader(const std::string& header){
     return true;
 }
 bool HTTPRequest::Parse(const std::string& rawstring){
-
     std::stringstream str(rawstring);
     std::string head;
-    getline(str,head,'\r');
-    if(str.get()!='\n')
-        return false;
+    getline(str,head,'\n');
+    if(head.back()=='\r')
+        head.pop_back();
     if(!ParseHead(head))
         return false;
     while(true){
         std::string header;
-        getline(str,header,'\r');
-        str.get();
+        getline(str,header,'\n');
+        if(header.back()=='\r')
+            header.pop_back();
         if(header.empty())
             break;
+
         if(!ParseHeader(header))
             return false;
     }
@@ -68,13 +67,21 @@ bool HTTPRequest::Parse(const std::string& rawstring){
 }
 
 void HTTPRequest::Finish() {
-    std::string res=m_version+" "+m_code+"\n";
-    for(const auto& h:m_respond_headers){
-        res+=(h.first+": "+h.second+"\n");
-    }
-    res+=("\n"+m_respond_body);
+    if(m_respond_body.empty())
+        SetBody("<!DOCTYPE html>\n"
+                "<html>\n"
+                "<body>\n"
+                "<h1>"+m_code+"</h1>"
+                              "</body>\n"
+                              "</html>");
+
+    std::string res=m_version+" "+m_code+"\r\n";
+    for(const auto& h:m_respond_headers)
+        res+=(h.first+": "+h.second+"\r\n");
+
+    res+=("\r\n"+m_respond_body);
     m_sender->Push(res);
-    std::string log=m_host+" "+m_ident+" "+m_authuser+" ["+m_date+"] \""+m_request+"\" "+m_code+" "+std::to_string(res.length());
+    std::string log=m_host+" "+m_ident+" "+m_authuser+" ["+m_date+"] \""+m_request+"\" "+m_code.substr(0,3)+" "+std::to_string(res.length());
     m_logger->Push(log);
 }
 

@@ -18,18 +18,6 @@ bool HTTPServer::Start() {
     threadfunction(0);
     return true;
 }
-/*
-bool HTTPServer::Stop() {
-    if(!m_stop){
-        m_stop= true;
-        m_stopper->Add(1);
-        for (auto & thr:m_threads)
-            thr.join();
-        return true;
-    }
-    return false;
-}
-*/
 void HTTPServer::threadfunction(int threadi) {
     while (!m_stop){
 
@@ -42,17 +30,6 @@ void HTTPServer::threadfunction(int threadi) {
         }
     }
 }
-
-std::string clearstring(const std::string &str){
-    std::string res;
-    for (char i : str) {
-        if(!isspace(i)){
-            res.push_back(i);
-        }
-    }
-    return res;
-}
-
 
 bool HTTPServer::LoadThreads(const std::map<std::string, std::string> &cfgmap) {
     auto it=cfgmap.find("threads");
@@ -75,7 +52,7 @@ bool HTTPServer::LoadLogfile(const std::map<std::string, std::string> &cfgmap) {
     auto it=cfgmap.find("logfile");
     if(it!=cfgmap.end()){
 
-        std::ofstream of(clearstring(it->second));
+        std::ofstream of(it->second);
         if(!of.is_open()){
             printf("Error: wrong loggerfile\n");
             return false;
@@ -93,8 +70,7 @@ bool HTTPServer::LoadLogfile(const std::map<std::string, std::string> &cfgmap) {
 bool HTTPServer::LoadListen(const std::map<std::string, std::string> &cfgmap) {
     auto it=cfgmap.find("listen");
     if(it!=cfgmap.end()){
-        //clearstring(it->second);
-        std::stringstream ss(clearstring(it->second));
+        std::stringstream ss(it->second);
         std::string ip,port;
         getline(ss,ip,':');
         getline(ss,port);
@@ -112,8 +88,7 @@ bool HTTPServer::LoadListen(const std::map<std::string, std::string> &cfgmap) {
 bool HTTPServer::LoadVirtualfs(const std::map<std::string, std::string> &cfgmap)  {
     auto it=cfgmap.find("virtualfs");
     if(it!=cfgmap.end()){
-        //clearstring(it->second);
-        std::stringstream ss(clearstring(it->second));
+        std::stringstream ss(it->second);
         std::string t;
         getline(ss,t,'{');
         auto virtualdir=new VirtualDirrectoryContent();
@@ -141,7 +116,6 @@ bool HTTPServer::LoadVirtualfs(const std::map<std::string, std::string> &cfgmap)
                 m_epoller.AddActor(term);
                 virtualdir->AddLocation(url,term);
             }
-            //std::cout<<url<<"  "<<content<<std::endl;
         }
         m_content=virtualdir;
         return true;
@@ -160,12 +134,13 @@ bool HTTPServer::LoadConfig(const std::string& filename) {
         if(!getline(file,key,'=')||!getline(file,val,';')){
             break;
         }else{
-            auto it=configmap.find(clearstring(key));
-            if(it!=configmap.end()){
+            key={key.begin(),std::remove_if( key.begin(), key.end(), isspace )};
+            val={val.begin(),std::remove_if( val.begin(), val.end(), isspace )};
+
+            auto it=configmap.find(key);
+            if(it!=configmap.end())
                 return false;
-            }
-            configmap[clearstring(key)]=val;
-            //std::cout<<key<<"   "<<val<<std::endl;
+            configmap[key]=val;
         }
 
     }

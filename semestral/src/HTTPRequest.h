@@ -11,6 +11,8 @@
 #include <iostream>
 #include <map>
 #include <ctime>
+#include <algorithm>
+
 class HTTPRequest {
 public:
     HTTPRequest()=default;
