@@ -10,17 +10,15 @@ Queuer<T>::Queuer():Counter() {}
 
 template <class T>
 void Queuer<T>::Push(const T& msg){
-    m_mtx.lock();
+    std::lock_guard<std::mutex> guard(m_mtx);
     m_queue.push(msg);
     Add(1);
-    m_mtx.unlock();
 }
 
 template <class T>
 std::pair<T,bool> Queuer<T>::Pop(){
-
     std::pair<T,bool> r= {};
-    m_mtx.lock();
+    std::lock_guard<std::mutex> guard(m_mtx);
     if(!m_queue.empty()){
         r.first=m_queue.front();
         r.second=true;
@@ -28,7 +26,6 @@ std::pair<T,bool> Queuer<T>::Pop(){
     }else{
         Reset();
     }
-    m_mtx.unlock();
     return r;
 }
 
@@ -48,13 +45,8 @@ void Queuer<T>::Error(int threadi){
 
 
 template <class T>
-bool Queuer<T>::multiplex(int epolld){
-
-    epoll_event ev{};
-    ev.data.ptr = this;
-    ev.events = EPOLLIN | EPOLLET;
-
-    return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
+uint32_t Queuer<T>::TrackedEvents() const {
+    return EPOLLIN | EPOLLET;
 }
 
 #endif

@@ -27,12 +27,11 @@ bool Actor::AddActor(Actor *newActor) {
 }
 
 
-bool Actor::multiplex(int epolld) {
+bool Actor::multiplex(int epolld){
 
     epoll_event ev{};
     ev.data.ptr = this;
-    ev.events = EPOLLIN | EPOLLOUT | EPOLLERR;
+    ev.events = TrackedEvents();
 
     return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
-
 }

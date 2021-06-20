@@ -29,7 +29,7 @@ protected:
     Logger *m_logger=nullptr;
     sockaddr_in m_addr;
     std::string m_str;
-    bool multiplex(int epolld) override;
+    uint32_t TrackedEvents() const override;
     ContentGenerator *m_reqmanager;
 };
 

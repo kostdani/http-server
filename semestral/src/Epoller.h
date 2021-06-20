@@ -19,7 +19,7 @@ public:
 
     /// Get next event
     /// @returns Next event, blocking the calling thread if no events are currently available.
-    epoll_event getEvent();
+    epoll_event GetEvent();
 
     /// Add new actor
     /// Registers given actor to be listened by epoll
@@ -31,6 +31,7 @@ public:
 
     void Error(int threadi) override;
 protected:
+    uint32_t TrackedEvents() const override;
     std::set<Actor *> m_actors;
     std::mutex m_mtx;
 };

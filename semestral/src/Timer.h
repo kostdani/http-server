@@ -22,9 +22,8 @@ public:
 
     void Error(int threadi) override;
 
-
-    bool multiplex(int epolld) override;
 protected:
+    uint32_t TrackedEvents() const override;
     timespec m_timeout{};
 };
 

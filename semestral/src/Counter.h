@@ -21,7 +21,7 @@ public:
     void Reset();
 
     /// Tracks input events level triggered
-    bool multiplex(int epolld) override;
+    uint32_t TrackedEvents() const override;
 protected:
 };
 

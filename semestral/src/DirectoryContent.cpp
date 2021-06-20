@@ -16,6 +16,8 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
     while((entity= readdir(dir))){
         if( strcmp(entity->d_name,".")!=0 ){
             std::string fname=entity->d_name;
+            if(entity->d_type==DT_DIR)
+                fname.push_back('/');
             files.insert(fname);
         }
     }
@@ -109,13 +111,4 @@ void DirectoryContent::handler(HTTPRequest& req) {
     }else{
         Forbidden(req);
     }
-}
-
-bool DirectoryContent::multiplex(int epolld) {
-
-    epoll_event ev{};
-    ev.data.ptr = this;
-    ev.events = EPOLLIN ;
-
-    return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
 }

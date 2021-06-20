@@ -24,8 +24,10 @@ public:
     /// Virtual function to implement reaction on messages
     virtual void handler(T& msg)=0;
 
-    bool multiplex(int epolld) override;
+    uint32_t TrackedEvents() const override;
 protected:
+    using Counter::Add;
+    using Counter::Reset;
     std::queue<T> m_queue;
     std::mutex m_mtx;
 };

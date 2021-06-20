@@ -12,7 +12,7 @@ Epoller::~Epoller() {
     }
 }
 
-epoll_event Epoller::getEvent() {
+epoll_event Epoller::GetEvent() {
     struct epoll_event ev;
     epoll_wait(m_descriptor,&ev,1,-1);
     return ev;
@@ -20,14 +20,12 @@ epoll_event Epoller::getEvent() {
 
 bool Epoller::AddActor(Actor *newActor) {
     if (newActor && newActor->Check()) {
-        m_mtx.lock();
+        std::lock_guard<std::mutex> guard(m_mtx);
         newActor->m_parent = this;
         if(newActor->multiplex(m_descriptor)){
             m_actors.insert(newActor);
-            m_mtx.unlock();
             return true;
         }
-        m_mtx.unlock();
     }
     return false;
 }
@@ -39,4 +37,8 @@ void Epoller::Run(int threadi) {
 
 void Epoller::Error(int threadi) {
 
+}
+
+uint32_t Epoller::TrackedEvents() const {
+    return EPOLLIN;
 }

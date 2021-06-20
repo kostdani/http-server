@@ -18,6 +18,6 @@ void TerminatorContent::Run(int threadi) {
 
 }
 
-bool TerminatorContent::multiplex(int epolld) {
-    return Counter::multiplex(epolld);
+uint32_t TerminatorContent::TrackedEvents() const {
+    return EPOLLIN;
 }

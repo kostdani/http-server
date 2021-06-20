@@ -11,13 +11,8 @@ Reciever::Reciever(Logger *l, int descriptor, sockaddr_in addr, ContentGenerator
     m_addr=addr;
 }
 
-bool Reciever::multiplex(int epolld) {
-
-    epoll_event ev{};
-    ev.data.ptr = this;
-    ev.events = EPOLLIN | EPOLLET;
-    return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
-
+uint32_t Reciever::TrackedEvents() const{
+    return EPOLLIN | EPOLLET;
 }
 
 

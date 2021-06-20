@@ -21,7 +21,7 @@ bool HTTPServer::Start() {
 void HTTPServer::threadfunction(int threadi) {
     while (!m_stop){
 
-        auto ev= m_epoller.getEvent();
+        auto ev= m_epoller.GetEvent();
         Actor *actor=(Actor *)ev.data.ptr;
         if((ev.events&EPOLLERR)||(ev.events&EPOLLHUP)||(ev.events&EPOLLRDHUP)){
             actor->Error(threadi);

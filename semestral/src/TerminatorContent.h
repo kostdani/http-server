@@ -14,8 +14,8 @@ public:
 
     void handler(HTTPRequest& msg) override{}
 
-    bool multiplex(int epolld) override;
-private:
+protected:
+    uint32_t TrackedEvents() const override;
     bool &m_stop;
     std::vector<std::thread> &m_threads;
 };

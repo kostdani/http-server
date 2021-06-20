@@ -6,10 +6,7 @@
 
 sockaddr_in IPv4_converter(const char * ip,int port){
     sockaddr_in res{};
-    if (inet_pton(AF_INET, ip, &res.sin_addr) <= 0)
-    {
-        throw "error: cant convert address\n";
-    }
+    inet_pton(AF_INET, ip, &res.sin_addr);
     res.sin_family = AF_INET;
     res.sin_port = htons(port);
     return res;
@@ -74,13 +71,6 @@ void Accepter::Error(int threadi) {
 
 }
 
-
-bool Accepter::multiplex(int epolld) {
-
-    epoll_event ev{};
-    ev.data.ptr = this;
-    ev.events = EPOLLIN | EPOLLERR | EPOLLET;
-
-    return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
-
+uint32_t Accepter::TrackedEvents() const {
+    return EPOLLIN | EPOLLERR | EPOLLET;
 }

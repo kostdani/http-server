@@ -17,14 +17,6 @@ void Counter::Reset() {
         eventfd_read(m_descriptor,&i);
 }
 
-
-
-bool Counter::multiplex(int epolld) {
-
-    epoll_event ev{};
-    ev.data.ptr = this;
-    ev.events = EPOLLIN ;
-
-    return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
-
+uint32_t Counter::TrackedEvents() const {
+    return EPOLLIN;
 }

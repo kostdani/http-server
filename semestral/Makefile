@@ -4,10 +4,12 @@ CFLAGS=-lpthread -std=c++14 -Wall -pedantic -Wno-long-long -O2 -Werror -fsanitiz
 
 all: compile doc
 
+compile: kostdani
+
 run:	compile
 	./kostdani examples/server.cfg
 
-compile: src/build/main.o src/build/Accepter.o src/build/Actor.o src/build/FileLogger.o src/build/ContentGenerator.o src/build/Counter.o src/build/DirectoryContent.o src/build/Epoller.o src/build/FileContent.o src/build/ScriptContent.o src/build/HTTPRequest.o src/build/HTTPServer.o src/build/Logger.o src/build/Queuer.o src/build/Reciever.o src/build/Sender.o src/build/TerminatorContent.o src/build/Timer.o src/build/VirtualDirrectoryContent.o
+kostdani: src/build/main.o src/build/Accepter.o src/build/Actor.o src/build/FileLogger.o src/build/ContentGenerator.o src/build/Counter.o src/build/DirectoryContent.o src/build/Epoller.o src/build/FileContent.o src/build/ScriptContent.o src/build/HTTPRequest.o src/build/HTTPServer.o src/build/Logger.o src/build/Queuer.o src/build/Reciever.o src/build/Sender.o src/build/TerminatorContent.o src/build/Timer.o src/build/VirtualDirrectoryContent.o
 	$(CC) $(CFLAGS) $^ -o kostdani
 
 

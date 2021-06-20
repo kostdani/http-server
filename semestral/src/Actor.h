@@ -51,7 +51,8 @@ public:
     /// @returns true if multiplexd sucessfuly othewise false
     virtual bool multiplex(int epolld);
 protected:
-    Actor *m_parent=0;
+    virtual uint32_t TrackedEvents() const=0;
+    Actor *m_parent= nullptr;
     int m_descriptor=-1;
 };
 

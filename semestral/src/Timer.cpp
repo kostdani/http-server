@@ -28,12 +28,6 @@ void Timer::Error(int threadi) {
 
 }
 
-bool Timer::multiplex(int epolld) {
-
-    epoll_event ev{};
-    ev.data.ptr = this;
-    ev.events = EPOLLIN | EPOLLET;
-
-    return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev) == 0;
-
+uint32_t Timer::TrackedEvents() const {
+    return EPOLLIN|EPOLLET;
 }

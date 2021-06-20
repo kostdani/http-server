@@ -8,13 +8,18 @@ Sender::Sender(int descriptor) :Queuer(){
     m_socketfd=descriptor;
 }
 
-bool Sender::multiplex(int epolld) {
-    Queuer::multiplex(epolld);
-    epoll_event ev{};
-    ev.data.ptr = this;
-    ev.events = EPOLLOUT | EPOLLET;
-    return epoll_ctl(epolld, EPOLL_CTL_ADD, m_socketfd, &ev) == 0;
+uint32_t Sender::TrackedEvents() const {
+    return EPOLLOUT|EPOLLET;
+}
 
+bool Sender::multiplex(int epolld) {
+    epoll_event ev1{};
+    ev1.data.ptr = this;
+    ev1.events = Queuer::TrackedEvents();
+    epoll_event ev2{};
+    ev2.data.ptr = this;
+    ev2.events = Sender::TrackedEvents();
+    return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev1)==0 && epoll_ctl(epolld, EPOLL_CTL_ADD, m_socketfd, &ev2) == 0;
 }
 
 void Sender::Run(int theardi) {

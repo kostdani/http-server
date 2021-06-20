@@ -16,8 +16,6 @@ public:
     DirectoryContent(const std::string& dirname);
 
     void handler(HTTPRequest& msg) override;
-
-    bool multiplex(int epolld) override;
 private:
 
     void showdirrectory(HTTPRequest& msg);

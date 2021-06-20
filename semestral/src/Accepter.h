@@ -19,7 +19,6 @@ public:
     /// @param logger Logger which will be used to log
     /// @param content Content generator which will be used by created recievers
     Accepter(Logger *logger,ContentGenerator *content,sockaddr_in addr);
-
     /// Constructor with string
     /// Converts string ip to sockaddr_in and calls basic constructor
     /// @see Accepter(Logger *,ContentGenerator *,sockaddr_in)
@@ -32,9 +31,10 @@ public:
     /// Tries to estabilish connection with new client
     /// @returns pointer to new Reciver if accept was sucessful otherwise returns nullptr
     Reciever *Accept() const;
-
-    bool multiplex(int epolld) override;
 protected:
+
+    uint32_t TrackedEvents() const override;
+
     Logger *m_logger=0;
     ContentGenerator *m_reqmanager;
 };
