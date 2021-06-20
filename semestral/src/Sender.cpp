@@ -23,7 +23,12 @@ bool Sender::multiplex(int epolld) {
     return epoll_ctl(epolld, EPOLL_CTL_ADD, m_descriptor, &ev1)==0 && epoll_ctl(epolld, EPOLL_CTL_ADD, m_socketfd, &ev2) == 0;
 }
 
-void Sender::Run(int theardi) {
+void Sender::Run(uint32_t events) {
+    if(events&(EPOLLERR|EPOLLHUP|EPOLLRDHUP)){
+        //printf("sender eeror\n");
+        return;
+    }
+
     if(last.length()-n>=0){
         ssize_t r=write(m_socketfd,last.c_str()+n,last.length()-n);
         if(r==-1){
@@ -52,21 +57,7 @@ void Sender::Run(int theardi) {
 
 }
 
-void Sender::Error(int threadi) {
-    printf("finishing sender\n");
-    m_finishing=true;
-}
-
 void Sender::handler(std::string& msg) {
-    if(m_finishing){
-        awaitedmsgs--;
-        if(awaitedmsgs==0){
-            printf("killing sender\n");
-            //RmActor(this);
-        }
-        return;
-    }
-
     n=write(m_socketfd,msg.c_str(),msg.length());
     if(n==-1){
         printf("error %d",errno);

@@ -1,6 +1,6 @@
 # HTTP Server
 
-Vytvořímme jednoduchý vícevláknový HTTP server s načítáním konfigurace a logováním.
+Vytvořímme jednoduchý asinchronni HTTP server s načítáním konfigurace a logováním.
 
 Uživatel může spustit server z příkazového řádku s zadáním konfiguračního souboru.
 například: ./Server config.cfg
@@ -12,9 +12,6 @@ Konfigurační soubor se skládá z dvojic v podobě
 "key=value;"
 
 Podporované nastavení:
-- threads: value musí být celé kladne číslo
-definuje Chilo vlaken vytvořených serverem. Vlakna jsou zatíženy stejne, počet zahrnuje vlakno ze kterého je spuštěn server.
-Pokud není zadán, výchozí hodnota je 1
 - logfile: value ma být cesta k souboru kde budou uloženy logy
 Pokud není zadán, logy budou zapisovány do konzoly
 - listen: value  ma být ip a port naslouchání 
@@ -22,10 +19,9 @@ Pokud není zadán, výchozí hodnota je "0.0.0.0:8080"
 
 
 ## Kde mám polymorfismus?
-Abstraktní třída Actor má dvě virtuální metody: Run a Error, které jsou přetěženy v potomcích
+Abstraktní třída Actor má virtuálnou metodu: Run, ktera je přetěžena v potomcích
 Metoda Run je odpovědná za provádění akcí aktérem v případě IO události. Například třída Receiver voláním této metody neblokujícím způsobem čte data ze soketu, dokud se vyčerpá
-Podobným způsobem metoda Error implementuje chování aktéra v případě přijetí chyby.
-Tyto polymorfní metody se volají v metodě threadfunc třídy HTTPServer. který přijímá z epollu další událost(IO nebo chyba) spojenou s aktérem a volá jeho odpovídající metodu
+Tato polymorfní metoda se vola v metodě threadfunc třídy HTTPServer. který přijímá z epollu další událost spojenou s aktérem a volá jeho metodu
 
 Abstraktní třídy Queuer představující aktéra, který postupně zpracovává frontu zpráv(něco jako abstraktní automat), má virtuální metodu Handle, přetěžene varianty které ve třídách potomkách skutečně definují reakce automatu na každou zprávu.
 Například třída Logger v metodě handle zpracovává zápis přijatého logu do odpovídajícího streamu zatímco třídy generátory obsahu přijímají HTTP requesty a v metodě handle implementují logiku zpracování těchto requestu

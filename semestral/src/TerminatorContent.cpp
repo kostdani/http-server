@@ -8,13 +8,8 @@ TerminatorContent::TerminatorContent(bool &stopb, std::vector<std::thread> &thrv
 
 }
 
-void TerminatorContent::Run(int threadi) {
-    if(threadi==0){
+void TerminatorContent::Run(uint32_t events) {
         m_stop=true;
-        for (auto & thr:m_threads)
-            thr.join();
-        m_threads.clear();
-    }
 
 }
 

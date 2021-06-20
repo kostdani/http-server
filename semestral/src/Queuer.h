@@ -18,9 +18,8 @@ public:
     /// Gets last message from queue if there
     std::pair<T,bool> Pop();
 
-    void Run(int threadi) override;
+    void Run(uint32_t events) override;
 
-    void Error(int threadi) override;
     /// Virtual function to implement reaction on messages
     virtual void handler(T& msg)=0;
 

@@ -29,9 +29,8 @@ public:
 
     bool RmActor(Actor * actor) override;
 
-    void Run(int threadi) override;
+    void Run(uint32_t events) override;
 
-    void Error(int threadi) override;
 protected:
     uint32_t TrackedEvents() const override;
     std::set<Actor *> m_actors;

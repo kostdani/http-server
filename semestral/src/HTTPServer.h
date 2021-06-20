@@ -53,8 +53,6 @@ protected:
     Epoller m_epoller;
     /// Vector of working threads
     std::vector<std::thread> m_threads;
-    /// Number of threads
-    int thrn=1;
     // Main content generator
     ContentGenerator *m_content= nullptr;
 };

@@ -25,12 +25,11 @@ bool HTTPRequest::ParseHead(const std::string& head){
     std::stringstream str(head);
     getline(str,m_method,' ');
     getline(str,m_uri,' ');
-
+    getline(str,m_version,'\0');
     std::stringstream ss(m_uri);
     getline(ss,m_uri,'?');
     getline(ss,m_uriparams);
-
-    getline(str,m_version,'\0');
+    std::replace( m_uriparams.begin(), m_uriparams.end(), '&', ' ');
     return true;
 }
 bool HTTPRequest::ParseHeader(const std::string& header){

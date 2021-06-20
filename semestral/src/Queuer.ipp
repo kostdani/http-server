@@ -30,7 +30,7 @@ std::pair<T,bool> Queuer<T>::Pop(){
 }
 
 template <class T>
-void Queuer<T>::Run(int threadi){
+void Queuer<T>::Run(uint32_t events){
     std::pair<T,bool> msg= {};
     while(true){
         msg=Pop();
@@ -39,11 +39,6 @@ void Queuer<T>::Run(int threadi){
         handler(msg.first);
     }
 }
-template <class T>
-void Queuer<T>::Error(int threadi){
-}
-
-
 template <class T>
 uint32_t Queuer<T>::TrackedEvents() const {
     return EPOLLIN | EPOLLET;

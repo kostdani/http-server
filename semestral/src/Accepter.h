@@ -24,9 +24,7 @@ public:
     /// @see Accepter(Logger *,ContentGenerator *,sockaddr_in)
     Accepter(Logger *logger,ContentGenerator *content,const char * ip="0.0.0.0",int port=8080);
 
-    void Run(int threadi) override;
-
-    void Error(int threadi) override;
+    void Run(uint32_t events) override;
     /// Accept new connection
     /// Tries to estabilish connection with new client
     /// @returns pointer to new Reciver if accept was sucessful otherwise returns nullptr

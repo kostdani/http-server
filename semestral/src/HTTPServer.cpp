@@ -10,11 +10,7 @@ HTTPServer::HTTPServer():m_epoller() {
 }
 
 bool HTTPServer::Start() {
-
     m_stop=false;
-    for (int i = 1; i < thrn; ++i) {
-        m_threads.emplace_back(&HTTPServer::threadfunction,this,i);
-    }
     threadfunction(0);
     return true;
 }
@@ -22,27 +18,11 @@ void HTTPServer::threadfunction(int threadi) {
     while (!m_stop){
         auto ev= m_epoller.GetEvent();
         Actor *actor=(Actor *)ev.data.ptr;
-        if((ev.events&EPOLLERR)||(ev.events&EPOLLHUP)||(ev.events&EPOLLRDHUP)){
-            actor->Error(threadi);
-        }else{
-            actor->Run(threadi);
+        try{
+            actor->Run(ev.events);
+        }catch (Actor *actor){
+            //m_epoller.RmActor(actor);
         }
-    }
-}
-
-bool HTTPServer::LoadThreads(const std::map<std::string, std::string> &cfgmap) {
-    auto it=cfgmap.find("threads");
-    if(it!=cfgmap.end()){
-
-        int threads=std::stoi(it->second);
-        if(threads>0) {
-            thrn = threads;
-            return true;
-        }else
-            return false;
-
-    }else{
-        return true;
     }
 }
 
@@ -150,7 +130,7 @@ bool HTTPServer::LoadConfig(const std::string& filename) {
 
     }
 
-return LoadThreads(configmap) && LoadLogfile(configmap) &&  LoadVirtualfs(configmap) && LoadListen(configmap);
+return LoadLogfile(configmap) &&  LoadVirtualfs(configmap) && LoadListen(configmap);
 
 
 }

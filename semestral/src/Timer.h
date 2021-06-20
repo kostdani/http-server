@@ -18,9 +18,7 @@ public:
     void ResetTimer();
 
 
-    void Run(int threadi) override;
-
-    void Error(int threadi) override;
+    void Run(uint32_t events) override;
 
 protected:
     uint32_t TrackedEvents() const override;

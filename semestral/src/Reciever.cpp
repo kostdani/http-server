@@ -16,7 +16,11 @@ uint32_t Reciever::TrackedEvents() const{
 }
 
 
-void Reciever::Run(int threadi) {
+void Reciever::Run(uint32_t events) {
+    if(events&(EPOLLERR|EPOLLHUP|EPOLLRDHUP)){
+        throw this;
+    }
+
     if(!m_sender){
         m_sender=new Sender(dup(m_descriptor));
         AddActor(m_sender);
@@ -27,7 +31,7 @@ void Reciever::Run(int threadi) {
         int len = read(m_descriptor, buf, 256);
         if(len==-1){
             printf("error %d\n",errno);
-            break;
+            throw this;
         }
         int s=0;
 
@@ -50,10 +54,6 @@ void Reciever::Run(int threadi) {
     }
 }
 
-void Reciever::Error(int threadi) {
-    printf("recieve error\n");
-    RmActor(this);
-}
 
 std::string Reciever::GetIP() const {
     return  inet_ntoa(m_addr.sin_addr);

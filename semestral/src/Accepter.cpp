@@ -56,7 +56,7 @@ Reciever * Accepter::Accept() const{
         return new Reciever(m_logger, d, addr, m_reqmanager);
 }
 
-void Accepter::Run(int threadi) {
+void Accepter::Run(uint32_t events) {
     while(true) {
         Reciever *newcli = Accept();
         if(!newcli)
@@ -67,9 +67,6 @@ void Accepter::Run(int threadi) {
 
 }
 
-void Accepter::Error(int threadi) {
-
-}
 
 uint32_t Accepter::TrackedEvents() const {
     return EPOLLIN | EPOLLERR | EPOLLET;

@@ -19,13 +19,9 @@ void Timer::ResetTimer() {
     timerfd_settime(m_descriptor,0,&its,0);
 }
 
-void Timer::Run(int threadi) {
+void Timer::Run(uint32_t events) {
     printf("timerhah\n");
     ResetTimer();
-}
-
-void Timer::Error(int threadi) {
-
 }
 
 uint32_t Timer::TrackedEvents() const {

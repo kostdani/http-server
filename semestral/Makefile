@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-lpthread -std=c++14 -Wall -pedantic -Wno-long-long -O2 -Werror -fsanitize=address
+CFLAGS=-lpthread -std=c++14 -Wall -pedantic -Wno-long-long -O2 -Werror 
 
 
 all: compile doc

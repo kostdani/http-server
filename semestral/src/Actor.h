@@ -40,10 +40,7 @@ public:
     virtual bool RmActor(Actor * actor);
 
     /// A method that implements the behavior of an actor on input event
-    virtual void Run(int threadi)=0;
-
-    /// A method that implements the behavior of an actor on output event
-    virtual void Error(int threadi)=0;
+    virtual void Run(uint32_t events)=0;
 
     friend class Epoller;
 

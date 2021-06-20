@@ -42,13 +42,10 @@ bool Epoller::RmActor(Actor *actor) {
     return true;
 }
 
-void Epoller::Run(int threadi) {
+void Epoller::Run(uint32_t events) {
 
 }
 
-void Epoller::Error(int threadi) {
-
-}
 
 uint32_t Epoller::TrackedEvents() const {
     return EPOLLIN;
