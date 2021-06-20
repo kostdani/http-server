@@ -31,6 +31,17 @@ bool Epoller::AddActor(Actor *newActor) {
 }
 
 
+bool Epoller::RmActor(Actor *actor) {
+    std::lock_guard<std::mutex> guard(m_mtx);
+    auto it=m_actors.find(actor);
+    if(it==m_actors.end())
+        return false;
+    m_actors.erase(it);
+    delete *it;
+    printf("killed an actor\n");
+    return true;
+}
+
 void Epoller::Run(int threadi) {
 
 }

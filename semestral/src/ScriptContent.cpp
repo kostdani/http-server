@@ -10,7 +10,7 @@ ScriptContent::ScriptContent(const std::string &filename) {
 
 void ScriptContent::handler(HTTPRequest &msg) {
 
-    FILE *pipe=popen((m_filename+" "+msg.GetParams()).c_str(),"r");
+    FILE *pipe=popen((m_filename+" 2>/dev/null "+msg.GetParams()).c_str(),"r");
     char buffer[128];
     std::string result;
     if (!pipe){

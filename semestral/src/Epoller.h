@@ -25,7 +25,9 @@ public:
     /// Registers given actor to be listened by epoll
     /// @note Cares about memory management i.e. class will free all actors in destructor
     /// @param newActor Actor to be added
-    bool AddActor(Actor * newActor) override;
+    bool AddActor(Actor * actor) override;
+
+    bool RmActor(Actor * actor) override;
 
     void Run(int threadi) override;
 

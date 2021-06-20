@@ -37,7 +37,7 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
         stat(p.c_str(),&buf);
         std::string type,size;
         std::string date(asctime(localtime(&buf.st_mtime)));
-        if(f==".."){
+        if(f=="../"){
             date="";
         }else if(S_ISDIR(buf.st_mode)) {
             type="D";

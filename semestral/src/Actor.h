@@ -35,7 +35,9 @@ public:
     /// Add new actor
     /// Puts the actor to be listened by same epoll as this
     /// @param newActor Actor to be added
-    virtual bool AddActor(Actor * newActor);
+    virtual bool AddActor(Actor * actor);
+
+    virtual bool RmActor(Actor * actor);
 
     /// A method that implements the behavior of an actor on input event
     virtual void Run(int threadi)=0;

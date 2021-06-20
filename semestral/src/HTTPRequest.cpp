@@ -13,6 +13,7 @@ std::string TimeStamp(){
 
 HTTPRequest::HTTPRequest(Logger* logger,Sender *sender,const std::string& host,const std::string& bytearray){
     m_sender=sender;
+    m_sender->awaitedmsgs++;
     m_logger=logger;
     m_host=host;
     m_date=TimeStamp();

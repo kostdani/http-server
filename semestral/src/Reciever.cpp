@@ -52,6 +52,7 @@ void Reciever::Run(int threadi) {
 
 void Reciever::Error(int threadi) {
     printf("recieve error\n");
+    RmActor(this);
 }
 
 std::string Reciever::GetIP() const {

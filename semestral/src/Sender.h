@@ -5,7 +5,7 @@
 #ifndef SERVER_SENDER_H
 #define SERVER_SENDER_H
 #include "Queuer.h"
-
+#include <atomic>
 /// Sender actor
 ///
 /// Sends data to client
@@ -22,12 +22,14 @@ public:
     /// Tracks input events on queue and output events on socket, level triggered
 
     bool multiplex(int epollfd) override;
+
+    std::atomic<int> awaitedmsgs;
 protected:
     uint32_t TrackedEvents() const override;
     int m_socketfd=-1;
     std::string last;
     ssize_t n=0;
-
+    bool m_finishing= false;
 };
 
 

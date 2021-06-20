@@ -20,7 +20,6 @@ bool HTTPServer::Start() {
 }
 void HTTPServer::threadfunction(int threadi) {
     while (!m_stop){
-
         auto ev= m_epoller.GetEvent();
         Actor *actor=(Actor *)ev.data.ptr;
         if((ev.events&EPOLLERR)||(ev.events&EPOLLHUP)||(ev.events&EPOLLRDHUP)){
@@ -98,23 +97,29 @@ bool HTTPServer::LoadVirtualfs(const std::map<std::string, std::string> &cfgmap)
             getline(ss, line, ',');
             if(line.empty())
                 break;
-            std::string url,content;
+            std::string url,contype,content;
             std::stringstream str(line);
             getline(str,url,'=');
+            getline(str,contype,':');
             getline(str,content,'}');
             //str>>url>>content;
-            if(content[0]=='\"'){
-                std::stringstream stream(content);
-                std::string path;
-                getline(stream,path,'\"');
-                getline(stream,path,'\"');
-                auto dir=new DirectoryContent(path);
-                m_epoller.AddActor(dir);
-                virtualdir->AddLocation(url,dir);
-            }else if(content=="terminator"){
-                auto term=new TerminatorContent(m_stop,m_threads);
-                m_epoller.AddActor(term);
-                virtualdir->AddLocation(url,term);
+            ContentGenerator *gen= nullptr;
+            if(contype=="file"){
+                gen=new FileContent(content);
+            }else if(contype=="dir"){
+                gen=new DirectoryContent(content);
+            }else if(contype=="script"){
+                gen=new ScriptContent(content);
+            }else if(contype=="special"){
+                if(content=="terminator"){
+                    gen=new TerminatorContent(m_stop,m_threads);
+                }
+            }
+            if(gen) {
+                m_epoller.AddActor(gen);
+                virtualdir->AddLocation(url, gen);
+            }else{
+                printf("errrrrrror\n");
             }
         }
         m_content=virtualdir;

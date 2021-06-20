@@ -12,7 +12,7 @@ void VirtualDirrectoryContent::AddLocation(const std::string& location, ContentG
     m_locations[location]=generator;
 }
 
-// shortens path to next '/'
+// shortens path to next '/' for example /dir/subdir -> /dir
 bool shortenpath(std::string& path){
     for(int i=path.length();i>=0;--i){
         if(path[i]=='/'){
@@ -30,6 +30,8 @@ void VirtualDirrectoryContent::handler(HTTPRequest& req) {
         auto it=m_locations.find(url);
         if(it!=m_locations.end()){
             std::string newuri(req.GetURI().c_str()+url.length());
+            if(newuri.empty())
+                newuri="/";
             req.SetUri(newuri);
             it->second->Push(req);
             return;
