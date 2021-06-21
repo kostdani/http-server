@@ -12,27 +12,32 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <array>
+#include <cstring>
 
 /// Actor recieving data from tcp socket
 class Reciever : public Actor{
 public:
     Reciever(Logger *l, int descriptor, sockaddr_in addr, ContentGenerator *generator);
-    /// Returns client IP in string form
-    std::string GetIP() const;
+
+    ~Reciever() override;
 
     void Run(uint32_t events) override;
-
 protected:
-    Sender *m_sender=nullptr;
-    Logger *m_logger=nullptr;
+    /// Returns client IP in string form
+    std::string GetIP() const;
+    /// Get next line from socket
+    std::string GetLine();
     /// Client's address
     sockaddr_in m_addr;
-    /// Raw string recieved from client
-    std::string m_str;
     /// Input, edge triggered
     uint32_t TrackedEvents() const override;
     /// Main content generator for requests
     ContentGenerator *m_reqmanager;
+
+    Sender *m_sender=nullptr;
+    Logger *m_logger=nullptr;
+    /// For buffered reading
+    FILE *m_stream;
 };
 
 

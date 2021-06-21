@@ -9,6 +9,14 @@ const int BUFSIZE=4096;
 Reciever::Reciever(Logger *l, int descriptor, sockaddr_in addr, ContentGenerator *generator) : Actor(descriptor), m_addr(addr) {
     m_logger=l;
     m_reqmanager=generator;
+    m_stream= fdopen(m_descriptor,"r");
+}
+
+Reciever::~Reciever()  {
+    if(m_stream)
+        pclose(m_stream);
+    m_stream= nullptr;
+    Close();
 }
 
 uint32_t Reciever::TrackedEvents() const{
@@ -24,32 +32,30 @@ void Reciever::Run(uint32_t events) {
         m_sender=new Sender(dup(m_descriptor));
         AddActor(m_sender);
     }
-    char buf[BUFSIZE]{};
-    while(true){
-        int len = read(m_descriptor, buf, BUFSIZE);
-        if(len==-1){
-            throw std::runtime_error("");
-        }
-        int s=0;
-        for (int i=s; i < len; ++i) {
-            if(buf[i]=='\n'&& i+1<len && buf[i+1]=='\r'){
-                m_str.append(buf+s,i-s+1);
-                HTTPRequest req(m_logger,m_sender,GetIP(),m_str);
-                m_sender->m_awaited++;
-                m_reqmanager->Push(req);
-                m_str="";
-                i+=2;
-                s=i+1;
-            }
-        }
-        m_str.append(buf+s,len-s);
 
-        if(len < BUFSIZE) {
-            break;
-        }
+    std::string request;
+    std::string line;
+    while((line=GetLine()).size()>2){
+        request+=line;
+    }
+    if(!request.empty()) {
+        HTTPRequest req(m_logger, m_sender, GetIP(), request);
+        m_sender->m_awaited++;
+        m_reqmanager->Push(req);
     }
 }
 
+std::string Reciever::GetLine() {
+    char buffer[BUFSIZE]{};
+    std::string line;
+    if(m_stream){
+        while(fgets(buffer,BUFSIZE,m_stream) && strlen(buffer)==BUFSIZE){
+            line+=buffer;
+        }
+        line+=buffer;
+    }
+    return line;
+}
 
 std::string Reciever::GetIP() const {
     return  inet_ntoa(m_addr.sin_addr);
