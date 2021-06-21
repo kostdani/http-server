@@ -30,7 +30,6 @@ bool Epoller::AddActor(Actor *newActor) {
     return false;
 }
 
-
 bool Epoller::RmActor(Actor *actor) {
     auto it=m_actors.find(actor);
     if(it==m_actors.end())

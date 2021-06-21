@@ -6,10 +6,9 @@
 
 const int BUFSIZE=4096;
 
-Reciever::Reciever(Logger *l, int descriptor, sockaddr_in addr, ContentGenerator *generator) : Actor(descriptor) {
+Reciever::Reciever(Logger *l, int descriptor, sockaddr_in addr, ContentGenerator *generator) : Actor(descriptor), m_addr(addr) {
     m_logger=l;
     m_reqmanager=generator;
-    m_addr=addr;
 }
 
 uint32_t Reciever::TrackedEvents() const{
@@ -19,7 +18,7 @@ uint32_t Reciever::TrackedEvents() const{
 
 void Reciever::Run(uint32_t events) {
     if(events&(EPOLLERR|EPOLLHUP|EPOLLRDHUP)){
-        throw this;
+        throw std::runtime_error("");
     }
     if(!m_sender){
         m_sender=new Sender(dup(m_descriptor));
@@ -29,7 +28,7 @@ void Reciever::Run(uint32_t events) {
     while(true){
         int len = read(m_descriptor, buf, BUFSIZE);
         if(len==-1){
-            throw this;
+            throw std::runtime_error("");
         }
         int s=0;
         for (int i=s; i < len; ++i) {

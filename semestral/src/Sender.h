@@ -11,11 +11,10 @@ class Sender: public Queuer<std::string>{
 public:
     /// @param descriptor tcp socket of client
     Sender(int descriptor);
-
-    void Run(uint32_t events) override;
     /// Sends msg to client if possible
     void handler(std::string& msg) override;
 
+    void Run(uint32_t events) override;
     friend class Reciever;
 protected:
     /// Number of messages are awaited to come

@@ -25,6 +25,10 @@ bool shortenpath(std::string& path){
 }
 
 void VirtualDirrectoryContent::handler(HTTPRequest& req) {
+    if(req.Malformed()){
+        BadRequest(req);
+        return;
+    }
     std::string url=req.GetURI();
     do{
         auto it=m_locations.find(url);

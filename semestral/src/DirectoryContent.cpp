@@ -7,7 +7,6 @@
 DirectoryContent::DirectoryContent(const std::string& dirname):ContentGenerator(), m_dirname(dirname) {}
 
 void DirectoryContent::ShowDirectory(HTTPRequest& msg) {
-
     DIR* dir= opendir(m_dirname.c_str());
     if(!dir)
         return;
@@ -22,14 +21,12 @@ void DirectoryContent::ShowDirectory(HTTPRequest& msg) {
         }
     }
     closedir(dir);
-
     std::string res("<!DOCTYPE html>\n"
                     "<html>\n"
                     "<body>\n"
                     "<h1>Directory view</h1>\n"
                     "<table>\n"
                     "<tr><th>Name</th><th>Type</th><th>Size</th><th>Date modified</th></tr>\n");
-
     for(const std::string & f:files){
         std::string p=m_dirname;
         p.append(f);

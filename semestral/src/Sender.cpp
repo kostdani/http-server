@@ -4,9 +4,8 @@
 
 #include "Sender.h"
 
-Sender::Sender(int descriptor) :Queuer(){
+Sender::Sender(int descriptor) :Queuer(),m_awaited(0){
     m_socketfd=descriptor;
-    m_awaited=0;
 }
 
 uint32_t Sender::TrackedEvents() const {
@@ -59,7 +58,7 @@ void Sender::Run(uint32_t events) {
 void Sender::handler(std::string& msg) {
     m_awaited--;
     if(m_socketfd==-1 && m_awaited == 0)
-        throw this;
+        throw std::runtime_error("");
 
     n=write(m_socketfd,msg.c_str(),msg.length());
     if(n==-1){

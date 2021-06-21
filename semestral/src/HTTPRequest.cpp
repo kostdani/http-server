@@ -25,6 +25,8 @@ bool HTTPRequest::ParseHead(const std::string& head){
     getline(str,m_method,' ');
     getline(str,m_uri,' ');
     getline(str,m_version,'\0');
+    if(m_method.empty()||m_uri.empty()||m_version.empty())
+        return false;
     std::stringstream ss(m_uri);
     getline(ss,m_uri,'?');
     getline(ss,m_uriparams);
@@ -100,6 +102,10 @@ std::string HTTPRequest::GetHeader(const std::string& key) const{
 std::string HTTPRequest::GetParams() const {
     return m_uriparams;
 }
+bool HTTPRequest::Malformed() const {
+    return (m_version!="HTTP/1.1"&&m_version!="HTTP/1.0") || GetHeader("Host").empty();
+}
+
 void HTTPRequest::SetCode(const std::string& code) {
     m_code=code;
 }

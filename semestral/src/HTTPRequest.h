@@ -28,6 +28,8 @@ public:
     std::string GetMethod() const;
     /// Returns params from uri (query string)
     std::string GetParams() const;
+    /// Returns true if request is malformed
+    bool Malformed() const;
 
     /// Sets uri
     void SetUri(const std::string& uri);

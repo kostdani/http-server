@@ -11,10 +11,10 @@ bool HTTPServer::Start() {
     m_stop=false;
     while (!m_stop){
         auto ev= m_epoller.GetEvent();
-        Actor *actor=(Actor *)ev.data.ptr;
+        auto *actor=(Actor *)ev.data.ptr;
         try{
             actor->Run(ev.events);
-        }catch (Actor *actor){
+        }catch (std::exception &exc){
             m_epoller.RmActor(actor);
         }
     }
@@ -53,7 +53,6 @@ bool HTTPServer::LoadListen(const std::map<std::string, std::string> &cfgmap) {
         }catch(...){
             return false;
         }
-        return true;
     }else{
         return false;
     }
