@@ -91,7 +91,8 @@ void DirectoryContent::handler(HTTPRequest& req) {
         return;
     }
 
-    if(req.GetURI()=="/"){
+    struct stat buf{};
+    if(req.GetURI()=="/" && stat(m_dirname.c_str(),&buf)==0){
         ShowDirectory(req);
     }else if(isinside(m_dirname,req.GetURI())){
         std::string subpath=m_dirname+req.GetURI();
