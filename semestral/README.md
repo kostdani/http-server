@@ -50,7 +50,7 @@ Pokud není zadán, výchozí hodnota je "0.0.0.0:8080"
 tyto páry definují mapování virtuálních URL na fyzické cesty na disku
 
 ## Podporované generátory obsahu
-- Soubor) url=file:path - znamená, že soubor umístěný na cestě path bude k dispozici pro adresu url
+- Soubor) file:path - znamená, že soubor umístěný na cestě path bude k dispozici pro adresu url
 - Adresar) dir:path - znamená, že adresar umístěný na cestě path bude k dispozici pro adresu url
 - Script) script:path - znamená, že script umístěný na cestě path bude k dispozici pro adresu url
 podporuje dotazy v url, například, url?a&b&c znamená volání skriptu s argumenty a b c
