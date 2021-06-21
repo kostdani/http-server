@@ -42,37 +42,37 @@ Konfigurační soubor se skládá z dvojic v podobě
 "key=value;"
 
 Podporované nastavení:
-logfile) value ma být cesta k souboru kde budou uloženy logy
+- logfile) value ma být cesta k souboru kde budou uloženy logy
 Pokud není zadán, logy budou zapisovány do konzoly
-listen) value  ma být ip a port naslouchání síti
+- listen) value  ma být ip a port naslouchání síti
 Pokud není zadán, výchozí hodnota je "0.0.0.0:8080"
-virtualfs) value musí být seznam pár url = obsah oddělený čárkami ve složených závorkách
+- virtualfs) value musí být seznam pár url = obsah oddělený čárkami ve složených závorkách
 tyto páry definují mapování virtuálních URL na fyzické cesty na disku
 
 ## Podporované generátory obsahu
-Soubor) url=file:path - znamená, že soubor umístěný na cestě path bude k dispozici pro adresu url
-Adresar) dir:path - znamená, že adresar umístěný na cestě path bude k dispozici pro adresu url
-Script) script:path - znamená, že script umístěný na cestě path bude k dispozici pro adresu url
+- Soubor) url=file:path - znamená, že soubor umístěný na cestě path bude k dispozici pro adresu url
+- Adresar) dir:path - znamená, že adresar umístěný na cestě path bude k dispozici pro adresu url
+- Script) script:path - znamená, že script umístěný na cestě path bude k dispozici pro adresu url
 podporuje dotazy v url, například, url?a&b&c znamená volání skriptu s argumenty a b c
-Vypinac) special:terminator - umožňuje nastavit adresu v konfiguraci (pridadně více adres), na které bude server vypnut
+- Vypinac) special:terminator - umožňuje nastavit adresu v konfiguraci (pridadně více adres), na které bude server vypnut
 
 Server přesměruje request na generátor obsahu podle nejdelší shody začátku URL adresy
 
 ## Logovani
 Server uchovává logy v Common Log Formátu a podporuje jejich zápis do souboru nebo konzoly.
 Každý řádek popisuje jeden obsloužený HTTP požadavek. Formát řádku je:
-klient ident uživatel [datum] "požadavek" status délka
+```klient ident uživatel [datum] "požadavek" status délka```
 
 ## Kde mám polymorfismus?
-Abstraktní třída Actor má virtuálnou metodu Run, ktera je přetěžena v potomcích
-Tato metod je odpovědná za provádění akcí aktérem v případě IO události. Například třída Receiver voláním této metody neblokujícím způsobem čte data ze soketu, dokud se vyčerpá, Accepter přijímá nové klienty a Queuer zpracovává zprávy
-Run se vola v metodě Start třídy HTTPServer, ktera v cyklu přijímá z epollu dalšího aktéra s nimž se stala nějaká událost a volá jeho metodu
+Abstraktní třída `Actor` má virtuálnou metodu `Run`, ktera je přetěžena v potomcích
+Tato metod je odpovědná za provádění akcí aktérem v případě IO události. Například třída `Receiver` voláním této metody neblokujícím způsobem čte data ze soketu, dokud se vyčerpá, `Accepter` přijímá nové klienty a `Queuer` zpracovává zprávy
+`Run` se vola v metodě `Start` třídy `HTTPServer`, ktera v cyklu přijímá z epollu dalšího aktéra s nimž se stala nějaká událost a volá jeho metodu
 
-Abstraktní třídy Queuer představující aktéra, který postupně zpracovává frontu zpráv, má virtuální metodu Handle, přetěžene varianty které ve třídách potomkách skutečně definují reakce automatu na každou zprávu.
-Například třída Logger zpracovává zápis přijatého logu do odpovídajícího streamu zatímco třídy generátory obsahu přijímají HTTP requesty a v metodě handle implementují logiku zpracování těchto requestu
+Abstraktní třídy `Queuer` představující aktéra, který postupně zpracovává frontu zpráv, má virtuální metodu `Handle`, přetěžene varianty které ve třídách potomkách skutečně definují reakce na každou zprávu.
+Například třída `Logger` zpracovává zápis přijatého logu do odpovídajícího streamu zatímco třídy generátory obsahu přijímají HTTP requesty a v metodě `Handle` implementují logiku zpracování těchto requestu
 
-Třída Queuer navíc implementuje parametrický polymorfismus konkrétně v tom, že typ zprávy je zadán šablonou.
-Např Sender a Logger pracujou se stringy a Generatory Contentu s HTTPRequesty
+Třída `Queuer` navíc implementuje parametrický polymorfismus konkrétně v tom, že typ zprávy je zadán šablonou.
+Např `Sender` a `Logger` pracujou se stringy a Generatory Contentu s HTTPRequesty
 
 ## Příklady
 Adresar examples obsahuje ukázkový konfigurační soubor: server.cfg a 2 skripty: sum.sh a factorial.sh pro demonstraci
