@@ -14,7 +14,6 @@
 /// Content generator associated with dirrectory
 class DirectoryContent: public ContentGenerator{
 public:
-
     DirectoryContent(const std::string& dirname);
 
     void handler(HTTPRequest& msg) override;

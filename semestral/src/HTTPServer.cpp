@@ -27,10 +27,8 @@ bool HTTPServer::LoadLogfile(const std::map<std::string, std::string> &cfgmap) {
     if(it!=cfgmap.end()){
 
         std::ofstream of(it->second);
-        if(!of.is_open()){
-            printf("Error: wrong loggerfile\n");
+        if(!of.is_open())
             return false;
-        }
         of.close();
         m_logger=new FileLogger(it->second);
     }else{
@@ -49,12 +47,14 @@ bool HTTPServer::LoadListen(const std::map<std::string, std::string> &cfgmap) {
         getline(ss,ip,':');
         getline(ss,port);
         int iport=std::stoi(port);
-
-        auto ac=new Accepter(m_logger,m_content,ip.c_str(),iport);
-        m_epoller.AddActor(ac);
+        try{
+            m_epoller.AddActor(new Accepter(m_logger,m_content,ip.c_str(),iport));
+            return true;
+        }catch(...){
+            return false;
+        }
         return true;
     }else{
-        printf("no logfile\n");
         return false;
     }
 }
@@ -94,7 +94,7 @@ bool HTTPServer::LoadVirtualfs(const std::map<std::string, std::string> &cfgmap)
                 m_epoller.AddActor(gen);
                 virtualdir->AddLocation(url, gen);
             }else{
-                throw "Error in config\n";
+                return false;
             }
         }
         m_content=virtualdir;

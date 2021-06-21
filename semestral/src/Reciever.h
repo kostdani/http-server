@@ -25,9 +25,13 @@ public:
 protected:
     Sender *m_sender=nullptr;
     Logger *m_logger=nullptr;
+    /// Client's address
     sockaddr_in m_addr;
+    /// Raw string recieved from client
     std::string m_str;
+    /// Input, edge triggered
     uint32_t TrackedEvents() const override;
+    /// Main content generator for requests
     ContentGenerator *m_reqmanager;
 };
 

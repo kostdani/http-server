@@ -36,6 +36,7 @@ void Reciever::Run(uint32_t events) {
             if(buf[i]=='\n'&& i+1<len && buf[i+1]=='\r'){
                 m_str.append(buf+s,i-s+1);
                 HTTPRequest req(m_logger,m_sender,GetIP(),m_str);
+                m_sender->m_awaited++;
                 m_reqmanager->Push(req);
                 m_str="";
                 i+=2;

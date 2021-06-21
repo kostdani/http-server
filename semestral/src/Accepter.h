@@ -22,17 +22,16 @@ public:
     /// Converts string ip to sockaddr_in and calls basic constructor
     /// @see Accepter(Logger *,ContentGenerator *,sockaddr_in)
     Accepter(Logger *logger,ContentGenerator *content,const char * ip="0.0.0.0",int port=8080);
-
-    void Run(uint32_t events) override;
     /// Accept new connection
     /// Tries to estabilish connection with new client
     /// @returns pointer to new Reciver if accept was sucessful otherwise returns nullptr
     Reciever *Accept() const;
+
+    void Run(uint32_t events) override;
 protected:
-
+    /// Tracks input events edge triggered
     uint32_t TrackedEvents() const override;
-
-    Logger *m_logger=0;
+    Logger *m_logger;
     ContentGenerator *m_reqmanager;
 };
 

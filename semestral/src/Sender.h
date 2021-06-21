@@ -16,11 +16,13 @@ public:
     /// Sends msg to client if possible
     void handler(std::string& msg) override;
 
-    std::atomic<int> awaitedmsgs;
+    friend class Reciever;
 protected:
+    /// Number of messages are awaited to come
+    std::atomic<int> m_awaited;
     /// Multiplexes bot queuer and tcp client socket
     bool multiplex(int epollfd) override;
-
+    /// Queuer is tracked for input, socket for output. Both are edge triggered
     uint32_t TrackedEvents() const override;
     int m_socketfd=-1;
     std::string last;

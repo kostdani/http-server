@@ -24,6 +24,8 @@ protected:
     void InternalError(HTTPRequest& req) const;
     /// Responds with error 501 Not Implemented
     void NotImplemented(HTTPRequest& req) const;
+    /// Responds with error 400 Bad Request
+    void BadRequest(HTTPRequest &req) const;
 };
 
 

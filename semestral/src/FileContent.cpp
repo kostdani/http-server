@@ -13,7 +13,8 @@ FileContent::FileContent(const std::string& filename):ContentGenerator(), m_file
          return;
      }
 
-     if(req.GetURI()=="/"){
+     struct stat buf{};
+     if(req.GetURI()=="/" && stat(m_filename.c_str(),&buf)==0){
          std::ifstream infile {m_filename };
          std::string file_contents { std::istreambuf_iterator<char>(infile), std::istreambuf_iterator<char>() };
          Ok(req,file_contents);

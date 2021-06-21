@@ -6,7 +6,7 @@
 
 Sender::Sender(int descriptor) :Queuer(){
     m_socketfd=descriptor;
-    awaitedmsgs=0;
+    m_awaited=0;
 }
 
 uint32_t Sender::TrackedEvents() const {
@@ -57,8 +57,8 @@ void Sender::Run(uint32_t events) {
 }
 
 void Sender::handler(std::string& msg) {
-    awaitedmsgs--;
-    if(m_socketfd==-1&&awaitedmsgs==0)
+    m_awaited--;
+    if(m_socketfd==-1 && m_awaited == 0)
         throw this;
 
     n=write(m_socketfd,msg.c_str(),msg.length());

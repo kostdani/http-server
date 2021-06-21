@@ -5,6 +5,8 @@
 #include "Actor.h"
 
 Actor::Actor(int descriptor){
+    if(descriptor==-1)
+        throw std::invalid_argument("Invalid decriptor");
     m_descriptor=descriptor;
 }
 

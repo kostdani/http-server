@@ -40,11 +40,8 @@ bool Epoller::RmActor(Actor *actor) {
     return true;
 }
 
-void Epoller::Run(uint32_t events) {
-
-}
-
+void Epoller::Run(uint32_t events) {}
 
 uint32_t Epoller::TrackedEvents() const {
-    return EPOLLIN;
+    return EPOLLIN|EPOLLET;
 }

@@ -13,7 +13,6 @@ std::string TimeStamp(){
 
 HTTPRequest::HTTPRequest(Logger* logger,Sender *sender,const std::string& host,const std::string& bytearray){
     m_sender=sender;
-    m_sender->awaitedmsgs++;
     m_logger=logger;
     m_host=host;
     m_date=TimeStamp();
@@ -57,7 +56,6 @@ bool HTTPRequest::Parse(const std::string& rawstring){
             header.pop_back();
         if(header.empty())
             break;
-
         if(!ParseHeader(header))
             return false;
     }

@@ -4,8 +4,7 @@
 
 #include "Logger.h"
 
-Logger::Logger():Queuer<std::string>(){
-}
+Logger::Logger():Queuer<std::string>(){}
 
 void Logger::handler(std::string& msg) {
     std::cout<<msg<<std::endl;

@@ -6,6 +6,7 @@
 #define SERVER_FILECONTENT_H
 #include "ContentGenerator.h"
 #include <fstream>
+#include <sys/stat.h>
 
 /// Content generator associated with file
 class FileContent: public ContentGenerator{

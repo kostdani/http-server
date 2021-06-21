@@ -14,6 +14,7 @@ public:
     /// On request finds the longest suitable uri in map and resends message to corresponding generator
     void handler(HTTPRequest& msg) override;
 protected:
+    /// Map storing associations of urls with content generators
     std::map<std::string,ContentGenerator *> m_locations;
 };
 

@@ -8,8 +8,7 @@
 #include <sys/epoll.h>
 #include <fcntl.h>
 #include <iostream>
-#include <functional>
-
+#include <exception>
 
 /// Virtual class parent of all actors, an object getting events which can be tracked by epoll
 class Actor {
@@ -20,26 +19,21 @@ public:
     /// Destructor
     /// Closes descriptor and frees memory if needed
     virtual ~Actor();
-
     /// Closes descriptor
     void Close();
-
     /// Checks if decriptor is ok
     bool Check() const;
-
     Actor(const Actor&) =delete;
     Actor& operator=(const Actor&)=delete;
-
     /// Add new actor
     /// Puts the actor to be listened by same epoll as this
     /// @param newActor Actor to be added
     virtual bool AddActor(Actor * actor);
-
     /// A method that implements the behavior of an actor on input event
+    /// @param events flag specifying which event happened
     virtual void Run(uint32_t events)=0;
 
     friend class Epoller;
-
 protected:
     /// Multiplexes actor on epoll
     /// @param epolld epoll file descriptor

@@ -43,8 +43,6 @@ private:
     bool m_stop=true;
     /// Main event poll multiplexing other actors
     Epoller m_epoller;
-    /// Vector of working threads
-    std::vector<std::thread> m_threads;
     // Main content generator
     ContentGenerator *m_content= nullptr;
 };

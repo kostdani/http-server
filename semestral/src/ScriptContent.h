@@ -5,6 +5,7 @@
 #ifndef SEMESTRAL_SCRIPTCONTENT_H
 #define SEMESTRAL_SCRIPTCONTENT_H
 #include "ContentGenerator.h"
+#include <sys/stat.h>
 /// Content generator associated with a script or a program file
 class ScriptContent:public ContentGenerator {
 public:

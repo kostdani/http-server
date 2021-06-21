@@ -29,3 +29,8 @@ void ContentGenerator::InternalError(HTTPRequest &req) const {
     req.SetCode(Status_Code::Internal_Error);
     req.Finish();
 }
+
+void ContentGenerator::BadRequest(HTTPRequest &req) const {
+    req.SetCode(Status_Code::Bad_Request);
+    req.Finish();
+}

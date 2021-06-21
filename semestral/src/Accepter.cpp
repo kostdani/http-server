@@ -17,27 +17,21 @@ Accepter::Accepter(Logger *logger,ContentGenerator *content,sockaddr_in addr): A
     m_logger=logger;
     m_reqmanager=content;
     if (fcntl(m_descriptor, F_SETFL, fcntl(m_descriptor, F_GETFL, 0) | O_NONBLOCK) == -1)
-        throw "cant make sock non blocking";
-
+        throw std::runtime_error("cant make sock non blocking");
     int enable = 1;
     if (setsockopt(m_descriptor, SOL_SOCKET, SO_REUSEADDR, &enable, sizeof(int)) < 0)
-        throw "Cant make socket reusable";
-
-    if(!Check())
-        throw "cant create server socket";
+        throw std::runtime_error("Cant make socket reusable");
 
     if(bind(m_descriptor,(sockaddr*)&addr,sizeof(addr))==-1)
-        throw "cant bind";
+        throw std::logic_error("cant bind socket to given address");
 
     if(listen(m_descriptor,10)==-1)
-        throw "cant listen";
+        throw std::runtime_error("cant start listening socket");
 }
 
 Accepter::Accepter(Logger *logger,ContentGenerator *content,const char *ip, int port) : Accepter(logger,content,IPv4_converter(ip,port)){}
 
 Reciever * Accepter::Accept() const{
-    if(!Check())
-        return nullptr;
     sockaddr_in addr={};
     socklen_t len=sizeof (sockaddr_in);
     int d=accept(m_descriptor,(sockaddr *)&addr,&len);

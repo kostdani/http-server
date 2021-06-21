@@ -12,25 +12,22 @@ class Epoller : public Actor{
 public:
     Epoller();
 
-    ~Epoller();
-
+    ~Epoller() override;
     /// Get next event
     /// @returns Next event, blocking the calling thread if no events are currently available.
     epoll_event GetEvent();
-
-    /// Registers given actor to be listened by epoll
-    /// @note Cares about memory management i.e. class will free all actors in destructor
+    /// Registers given actor to be tracked by epoll
     /// @param actor Actor to be added
     bool AddActor(Actor * actor) override;
-
-    /// Remove given actor from listened by epoll
+    /// Remove given actor from tracked by epoll
     /// @param actor Actor to be removed
     bool RmActor(Actor * actor);
 
     void Run(uint32_t events) override;
-
 protected:
+    /// Tracks input edge triggered
     uint32_t TrackedEvents() const override;
+    /// Set of tracked actors
     std::set<Actor *> m_actors;
 };
 
