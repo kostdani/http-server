@@ -72,4 +72,4 @@ src/build/VirtualDirrectoryContent.o: src/VirtualDirrectoryContent.cpp src/Virtu
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf src/build/* kostdani
+	rm -rf src/build/* doc kostdani
