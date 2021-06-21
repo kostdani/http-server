@@ -75,9 +75,12 @@ Třída `Queuer` navíc implementuje parametrický polymorfismus konkrétně v t
 Např `Sender` a `Logger` pracujou se stringy a Generatory Contentu s HTTPRequesty
 
 ## Příklady
-Adresar examples obsahuje ukázkový konfigurační soubor: server.cfg a 2 skripty: sum.sh a factorial.sh pro demonstraci
-Сonfig konfiguruje server tak, aby poslouchal adresu 0.0.0.0 na portu 8080, vypisoval logy do souboru examples/server.log,
-zobrazoval na adrese 127.0.0.1:8080 adresar doc/ s dokumentací projektu,
-na adrese 127.0.0.1:8080/sum je k dispozici volání skriptu, který přidává dvě čísla,
-na adrese 127.0.0.1:8080/factorial je k dispozici volání skriptu, který počítá faktoriál daného čísla,
-na adrese 127.0.0.1:8080/exit server se vypíná
+Adresar examples obsahuje ukázkový konfigurační soubor: server.cfg a 2 skripty: sum.sh a factorial.sh pro demonstraci.
+
+Сonfig konfiguruje server tak, aby 
+- poslouchal adresu 0.0.0.0 na portu 8080, 
+- vypisoval logy do souboru examples/server.log,
+- zobrazoval na adrese 127.0.0.1:8080 adresar doc/ s dokumentací projektu,
+- na adrese 127.0.0.1:8080/sum je k dispozici volání skriptu, který přidává dvě čísla,
+- na adrese 127.0.0.1:8080/factorial je k dispozici volání skriptu, který počítá faktoriál daného čísla,
+- na adrese 127.0.0.1:8080/exit server se vypíná
