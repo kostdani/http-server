@@ -72,7 +72,7 @@ Abstraktní třídy `Queuer` představující aktéra, který postupně zpracov�
 Například třída `Logger` zpracovává zápis přijatého logu do odpovídajícího streamu zatímco třídy generátory obsahu přijímají HTTP requesty a v metodě `Handle` implementují logiku zpracování těchto requestu
 
 Třída `Queuer` navíc implementuje parametrický polymorfismus konkrétně v tom, že typ zprávy je zadán šablonou.
-Např `Sender` a `Logger` pracujou se stringy a Generatory Contentu s HTTPRequesty
+Např `Sender` a `Logger` pracujou se stringy a `ContentGenerator`y s `HTTPRequest`y
 
 ## Příklady
 Adresar examples obsahuje ukázkový konfigurační soubor: server.cfg a 2 skripty: sum.sh a factorial.sh pro demonstraci.
@@ -80,7 +80,7 @@ Adresar examples obsahuje ukázkový konfigurační soubor: server.cfg a 2 skrip
 Сonfig konfiguruje server tak, aby 
 - poslouchal adresu 0.0.0.0 na portu 8080, 
 - vypisoval logy do souboru examples/server.log,
-- zobrazoval na adrese 127.0.0.1:8080 adresar doc/ s dokumentací projektu,
-- na adrese 127.0.0.1:8080/sum je k dispozici volání skriptu, který přidává dvě čísla,
-- na adrese 127.0.0.1:8080/factorial je k dispozici volání skriptu, který počítá faktoriál daného čísla,
-- na adrese 127.0.0.1:8080/exit server se vypíná
+- zobrazoval na adrese http://127.0.0.1:8080 adresar doc/ s dokumentací projektu,
+- na adrese http://127.0.0.1:8080/sum je k dispozici volání skriptu, který přidává dvě čísla,
+- na adrese http://127.0.0.1:8080/factorial je k dispozici volání skriptu, který počítá faktoriál daného čísla,
+- na adrese http://127.0.0.1:8080/exit server se vypíná
