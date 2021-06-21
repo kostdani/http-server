@@ -17,12 +17,12 @@ Pokud není zadán, logy budou zapisovány do konzoly
 listen) value  ma být ip a port naslouchání síti
 Pokud není zadán, výchozí hodnota je "0.0.0.0:8080"
 virtualfs) value musí být seznam pár url = obsah oddělený čárkami ve složených závorkách
-tyto páry definují mapování virtuálních URL na fyzické cesty na disku
+tyto páry definují mapování virtuálních URL na generátory obsahu
 
 ## Podporované generátory obsahu
-Soubor) url=file:path - znamená, že soubor umístěný na cestě path bude k dispozici pro adresu url
-Adresar) dir:path - znamená, že adresar umístěný na cestě path bude k dispozici pro adresu url
-Script) script:path - znamená, že script umístěný na cestě path bude k dispozici pro adresu url
+Soubor) file:path - umožňuje zobrazit obsah souboru
+Adresar) dir:path - umožňuje zobrazit obsah složky 
+Script) script:path - umožňuje získat výsledek spuštění skriptu nebo programu
 podporuje dotazy v url, například, url?a&b&c znamená volání skriptu s argumenty a b c
 Vypinac) special:terminator - umožňuje nastavit adresu v konfiguraci (pridadně více adres), na které bude server vypnut
 
