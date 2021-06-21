@@ -14,13 +14,11 @@ void ScriptContent::handler(HTTPRequest &msg) {
     char buffer[4096];
     std::string result;
     if (!pipe){
-        NotImplemented(msg);
+        InternalError(msg);
         return;
     }
-    while (fgets(buffer, 4096, pipe) != nullptr) {
+    while (fgets(buffer, 4096, pipe) != nullptr)
         result += buffer;
-    }
     pclose(pipe);
-
     Ok(msg,result);
 }

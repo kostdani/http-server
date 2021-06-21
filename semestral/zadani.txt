@@ -20,11 +20,10 @@ Pokud není zadán, výchozí hodnota je "0.0.0.0:8080"
 tyto páry definují mapování virtuálních URL na fyzické cesty na disku
 
 ## Podporované generátory obsahu
-- Soubor:
-
-- Adresar
-
-- Script
+- Soubor: file:path
+- Adresar: dir:path
+- Script: script:path
+- Vypinac: special:terminator
 
 
 

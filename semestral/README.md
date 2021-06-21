@@ -1,8 +1,6 @@
 # HTTP Server
 
-V tomto adresáři doporučujeme vyvíjet vaší semestrální práci. Struktura semestrální práce a tedy i tohoto adresář by měla odpovídat informacím na [Courses PA2 - Semestrální práce](https://courses.fit.cvut.cz/BI-PA2/semestral.html).
-
-Přímo v tomto adresáři doporučujeme vyvořit podadresář `<login>`, kde `<login>` je tvůj username a v tomto podadresáři dále vyvíjet. Dále si zde můžeš například vytvořit skript `pack.sh`, který zabalí tvoji semestrální práci do `.zip` souboru, přesně podle pokynů na Courses.
+Autor: Danila Kost
 
 # Téma z Progtestu
 
@@ -19,7 +17,8 @@ Server musí implementovat:
 - omezení na práci s konkrétním adresářem
 - log přenosů (kam se má ukládat, v jakém formátu, jak má vypadat hlavička každého záznamu, ...)
 - vypnutí serveru na (konfigurovatelné) URL adrese
-- HTTP server může umět obsloužit více domén nebo poskytovat virtuální filesystém (mapování virtuálních URL na fyzické cesty na disku)
+
+HTTP server může umět obsloužit více domén nebo poskytovat virtuální filesystém (mapování virtuálních URL na fyzické cesty na disku)
 
 Volitelně: Podpora HTTPS (openssl), vícevláknové obsloužení klientů
 

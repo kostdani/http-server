@@ -40,8 +40,7 @@ Reciever * Accepter::Accept() const{
         return nullptr;
     sockaddr_in addr={};
     socklen_t len=sizeof (sockaddr_in);
-
-    int d= accept(m_descriptor,(sockaddr *)&addr,&len);
+    int d=accept(m_descriptor,(sockaddr *)&addr,&len);
     if(d==-1)
         return nullptr;
     else
@@ -49,13 +48,10 @@ Reciever * Accepter::Accept() const{
 }
 
 void Accepter::Run(uint32_t events) {
-    while(true) {
-        Reciever *newcli = Accept();
-        if(!newcli)
-            break;
-        AddActor(newcli);
+    Reciever *client;
+    while((client=Accept())) {
+        AddActor(client);
     }
-
 }
 
 uint32_t Accepter::TrackedEvents() const {

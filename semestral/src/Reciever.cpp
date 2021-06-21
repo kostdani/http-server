@@ -20,20 +20,17 @@ void Reciever::Run(uint32_t events) {
     if(events&(EPOLLERR|EPOLLHUP|EPOLLRDHUP)){
         throw this;
     }
-
     if(!m_sender){
         m_sender=new Sender(dup(m_descriptor));
         AddActor(m_sender);
     }
-
     char buf[4096]{};
     while(true){
-        ssize_t len = read(m_descriptor, buf, 256);
+        int len = read(m_descriptor, buf, 4096);
         if(len==-1){
             throw this;
         }
         int s=0;
-
         for (int i=s; i < len; ++i) {
             if(buf[i]=='\n'&& i+1<len && buf[i+1]=='\r'){
                 m_str.append(buf+s,i-s+1);

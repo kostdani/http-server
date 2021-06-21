@@ -18,6 +18,7 @@ Actor::~Actor() {
 void Actor::Close() {
     if(Check())
         close(m_descriptor);
+    m_descriptor=-1;
 }
 bool Actor::AddActor(Actor *newActor) {
     if(m_parent)

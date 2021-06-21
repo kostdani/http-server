@@ -7,10 +7,11 @@
 #include "Actor.h"
 #include "Logger.h"
 #include "Sender.h"
+#include "ContentGenerator.h"
 #include "HTTPRequest.h"
 #include <netdb.h>
 #include <arpa/inet.h>
-#include "ContentGenerator.h"
+#include <array>
 
 /// Actor recieving data from tcp socket
 class Reciever : public Actor{
