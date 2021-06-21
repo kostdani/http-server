@@ -12,13 +12,13 @@ int main(int argc,char **argv) {
     }
     std::string cfgpath(argv[1]);
     HTTPServer serv;
-    std::cout<<"Starting server."<<std::endl;
     if(!serv.LoadConfig(cfgpath)){
-        std::cout<<"Wrong config."<<std::endl;
+        std::cout<<"Server has not started because something is wrong with config."<<std::endl;
         return 1;
     }
+    std::cout<<"Server has started."<<std::endl;
     serv.Start();
-    std::cout<<"Server stopped."<<std::endl;
+    std::cout<<"Server has stopped."<<std::endl;
     return 0;
 
 }
