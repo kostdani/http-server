@@ -26,7 +26,7 @@ public:
     std::string GetURI() const;
     /// Returns method of request
     std::string GetMethod() const;
-
+    /// Returns params from uri (query string)
     std::string GetParams() const;
 
     /// Sets uri

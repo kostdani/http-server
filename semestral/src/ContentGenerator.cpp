@@ -24,6 +24,7 @@ void ContentGenerator::Ok(HTTPRequest& req,const std::string& body)  const{
     req.SetBody(body);
     req.Finish();
 }
+
 void ContentGenerator::InternalError(HTTPRequest &req) const {
     req.SetCode(Status_Code::Internal_Error);
     req.Finish();

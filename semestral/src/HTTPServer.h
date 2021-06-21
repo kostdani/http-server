@@ -15,7 +15,6 @@
 #include "TerminatorContent.h"
 #include "DirectoryContent.h"
 #include "VirtualDirrectoryContent.h"
-#include <thread>
 #include <vector>
 #include <fstream>
 #include <map>
@@ -23,7 +22,7 @@
 class HTTPServer {
 public:
     // Constructor
-    HTTPServer();
+    HTTPServer()=default;
     /// Read parse and load config from file
     /// @param cfgpath path to config file
     /// returns true if config was loaded successfully

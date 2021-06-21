@@ -4,6 +4,8 @@
 
 #include "ScriptContent.h"
 
+const int BUFSIZE=4096;
+
 ScriptContent::ScriptContent(const std::string &filename) {
     m_filename=filename;
 }
@@ -11,13 +13,13 @@ ScriptContent::ScriptContent(const std::string &filename) {
 void ScriptContent::handler(HTTPRequest &msg) {
 
     FILE *pipe=popen((m_filename+" 2>/dev/null "+msg.GetParams()).c_str(),"r");
-    char buffer[4096];
+    char buffer[BUFSIZE];
     std::string result;
     if (!pipe){
         InternalError(msg);
         return;
     }
-    while (fgets(buffer, 4096, pipe) != nullptr)
+    while (fgets(buffer, BUFSIZE, pipe) != nullptr)
         result += buffer;
     pclose(pipe);
     Ok(msg,result);

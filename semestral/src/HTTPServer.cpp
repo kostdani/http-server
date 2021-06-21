@@ -5,9 +5,6 @@
 #include "HTTPServer.h"
 
 
-HTTPServer::HTTPServer():m_epoller() {
-}
-
 bool HTTPServer::Start() {
     if(!m_stop)
         return false;

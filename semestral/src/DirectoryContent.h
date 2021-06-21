@@ -14,12 +14,14 @@
 /// Content generator associated with dirrectory
 class DirectoryContent: public ContentGenerator{
 public:
+
     DirectoryContent(const std::string& dirname);
 
     void handler(HTTPRequest& msg) override;
 private:
-    void showdirrectory(HTTPRequest& msg);
-
+    /// Respond to the request with html page listing the directory content
+    void ShowDirectory(HTTPRequest& msg);
+    /// Directory path
     std::string m_dirname;
 };
 

@@ -10,6 +10,7 @@
 #include <iostream>
 #include <functional>
 
+
 /// Virtual class parent of all actors, an object getting events which can be tracked by epoll
 class Actor {
 public:
@@ -34,8 +35,6 @@ public:
     /// @param newActor Actor to be added
     virtual bool AddActor(Actor * actor);
 
-    virtual bool RmActor(Actor * actor);
-
     /// A method that implements the behavior of an actor on input event
     virtual void Run(uint32_t events)=0;
 
@@ -43,12 +42,14 @@ public:
 
 protected:
     /// Multiplexes actor on epoll
-    /// Tracks input and output events level triggered
     /// @param epolld epoll file descriptor
-    /// @returns true if multiplexd sucessfuly othewise false
+    /// @returns true if multiplexed sucessfuly othewise false
     virtual bool multiplex(int epolld);
+    /// Returns flags specifying how should epoll track this actor
     virtual uint32_t TrackedEvents() const=0;
+    /// Points to epoll which is tacking this actor
     Actor *m_parent= nullptr;
+    /// Actors's main descriptor
     int m_descriptor=-1;
 };
 

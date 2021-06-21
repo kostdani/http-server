@@ -6,7 +6,7 @@
 
 DirectoryContent::DirectoryContent(const std::string& dirname):ContentGenerator(), m_dirname(dirname) {}
 
-void DirectoryContent::showdirrectory(HTTPRequest& req) {
+void DirectoryContent::ShowDirectory(HTTPRequest& msg) {
 
     DIR* dir= opendir(m_dirname.c_str());
     if(!dir)
@@ -54,7 +54,7 @@ void DirectoryContent::showdirrectory(HTTPRequest& req) {
     res+="</table>\n"
          "</body>\n"
          "</html>";
-    Ok(req,res);
+    Ok(msg, res);
 }
 
 // Removes ../ from path
@@ -92,7 +92,7 @@ void DirectoryContent::handler(HTTPRequest& req) {
     }
 
     if(req.GetURI()=="/"){
-        showdirrectory(req);
+        ShowDirectory(req);
     }else if(isinside(m_dirname,req.GetURI())){
         std::string subpath=m_dirname+req.GetURI();
         struct stat sb{};

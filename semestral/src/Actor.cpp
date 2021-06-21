@@ -26,12 +26,6 @@ bool Actor::AddActor(Actor *newActor) {
     return false;
 }
 
-bool Actor::RmActor(Actor *actor) {
-    if(m_parent)
-        return m_parent->RmActor(actor);
-    return false;
-}
-
 bool Actor::multiplex(int epolld){
 
     epoll_event ev{};

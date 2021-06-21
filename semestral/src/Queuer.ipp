@@ -10,7 +10,6 @@ Queuer<T>::Queuer():Counter() {}
 
 template <class T>
 void Queuer<T>::Push(const T& msg){
-    std::lock_guard<std::mutex> guard(m_mtx);
     m_queue.push(msg);
     Add(1);
 }
@@ -18,7 +17,6 @@ void Queuer<T>::Push(const T& msg){
 template <class T>
 std::pair<T,bool> Queuer<T>::Pop(){
     std::pair<T,bool> r= {};
-    std::lock_guard<std::mutex> guard(m_mtx);
     if(!m_queue.empty()){
         r.first=m_queue.front();
         r.second=true;

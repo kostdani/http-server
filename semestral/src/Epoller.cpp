@@ -21,7 +21,6 @@ epoll_event Epoller::GetEvent() {
 
 bool Epoller::AddActor(Actor *newActor) {
     if (newActor && newActor->Check()) {
-        std::lock_guard<std::mutex> guard(m_mtx);
         newActor->m_parent = this;
         if(newActor->multiplex(m_descriptor)){
             m_actors.insert(newActor);
@@ -33,7 +32,6 @@ bool Epoller::AddActor(Actor *newActor) {
 
 
 bool Epoller::RmActor(Actor *actor) {
-    std::lock_guard<std::mutex> guard(m_mtx);
     auto it=m_actors.find(actor);
     if(it==m_actors.end())
         return false;
