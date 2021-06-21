@@ -6,6 +6,7 @@
 #define SRC_FILELOGGER_H
 #include "Logger.h"
 
+/// Logger actor writes recieved logs to given file
 class FileLogger: public Logger{
 public:
     FileLogger(const std::string& logfilename);

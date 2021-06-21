@@ -6,9 +6,7 @@
 #define SERVER_SENDER_H
 #include "Queuer.h"
 #include <atomic>
-/// Sender actor
-///
-/// Sends data to client
+/// Sender actor, sends data to client
 class Sender: public Queuer<std::string>{
 public:
     /// @param descriptor tcp socket of client
@@ -17,12 +15,12 @@ public:
     void Run(uint32_t events) override;
     /// Sends msg to client if possible
     void handler(std::string& msg) override;
-    /// Tracks input events on queue and output events on socket, level triggered
-
-    bool multiplex(int epollfd) override;
 
     std::atomic<int> awaitedmsgs;
 protected:
+    /// Multiplexes bot queuer and tcp client socket
+    bool multiplex(int epollfd) override;
+
     uint32_t TrackedEvents() const override;
     int m_socketfd=-1;
     std::string last;

@@ -5,7 +5,6 @@
 #ifndef SERVER_RECIEVER_H
 #define SERVER_RECIEVER_H
 #include "Actor.h"
-#include "Queuer.h"
 #include "Logger.h"
 #include "Sender.h"
 #include "HTTPRequest.h"

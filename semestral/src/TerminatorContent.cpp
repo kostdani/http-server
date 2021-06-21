@@ -4,14 +4,13 @@
 
 #include "TerminatorContent.h"
 
-TerminatorContent::TerminatorContent(bool &stopb, std::vector<std::thread> &thrvec):m_stop(stopb),m_threads(thrvec) {
-
-}
+TerminatorContent::TerminatorContent(bool &stopb):m_stop(stopb) {}
 
 void TerminatorContent::Run(uint32_t events) {
         m_stop=true;
-
 }
+
+void TerminatorContent::handler(HTTPRequest &msg) {}
 
 uint32_t TerminatorContent::TrackedEvents() const {
     return EPOLLIN;

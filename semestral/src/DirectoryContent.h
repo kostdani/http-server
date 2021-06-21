@@ -11,13 +11,13 @@
 #include <set>
 #include <sys/stat.h>
 #include <cstring>
+/// Content generator associated with dirrectory
 class DirectoryContent: public ContentGenerator{
 public:
     DirectoryContent(const std::string& dirname);
 
     void handler(HTTPRequest& msg) override;
 private:
-
     void showdirrectory(HTTPRequest& msg);
     std::string m_dirname;
 };

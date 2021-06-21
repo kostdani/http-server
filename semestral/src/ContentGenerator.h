@@ -13,7 +13,6 @@
 class ContentGenerator: public Queuer<HTTPRequest>{
 public:
     ContentGenerator()=default;
-
 protected:
     /// Responds with error 404 Not Found
     void NotFound(HTTPRequest& req) const;

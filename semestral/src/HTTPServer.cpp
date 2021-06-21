@@ -6,24 +6,22 @@
 
 
 HTTPServer::HTTPServer():m_epoller() {
-
 }
 
 bool HTTPServer::Start() {
+    if(!m_stop)
+        return false;
     m_stop=false;
-    threadfunction(0);
-    return true;
-}
-void HTTPServer::threadfunction(int threadi) {
     while (!m_stop){
         auto ev= m_epoller.GetEvent();
         Actor *actor=(Actor *)ev.data.ptr;
         try{
             actor->Run(ev.events);
         }catch (Actor *actor){
-            //m_epoller.RmActor(actor);
+            m_epoller.RmActor(actor);
         }
     }
+    return true;
 }
 
 bool HTTPServer::LoadLogfile(const std::map<std::string, std::string> &cfgmap) {
@@ -92,14 +90,14 @@ bool HTTPServer::LoadVirtualfs(const std::map<std::string, std::string> &cfgmap)
                 gen=new ScriptContent(content);
             }else if(contype=="special"){
                 if(content=="terminator"){
-                    gen=new TerminatorContent(m_stop,m_threads);
+                    gen=new TerminatorContent(m_stop);
                 }
             }
             if(gen) {
                 m_epoller.AddActor(gen);
                 virtualdir->AddLocation(url, gen);
             }else{
-                printf("errrrrrror\n");
+                throw "Error in config\n";
             }
         }
         m_content=virtualdir;
@@ -121,16 +119,11 @@ bool HTTPServer::LoadConfig(const std::string& filename) {
         }else{
             key={key.begin(),std::remove_if( key.begin(), key.end(), isspace )};
             val={val.begin(),std::remove_if( val.begin(), val.end(), isspace )};
-
             auto it=configmap.find(key);
             if(it!=configmap.end())
                 return false;
             configmap[key]=val;
         }
-
     }
-
 return LoadLogfile(configmap) &&  LoadVirtualfs(configmap) && LoadListen(configmap);
-
-
 }

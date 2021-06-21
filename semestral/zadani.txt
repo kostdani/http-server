@@ -16,12 +16,22 @@ Podporované nastavení:
 Pokud není zadán, logy budou zapisovány do konzoly
 - listen: value  ma být ip a port naslouchání 
 Pokud není zadán, výchozí hodnota je "0.0.0.0:8080"
+- virtualfs: value musí být seznam pár url = obsah oddělený čárkami ve složených závorkách
+tyto páry definují mapování virtuálních URL na fyzické cesty na disku
+
+## Podporované generátory obsahu
+- Soubor:
+
+- Adresar
+
+- Script
+
 
 
 ## Kde mám polymorfismus?
-Abstraktní třída Actor má virtuálnou metodu: Run, ktera je přetěžena v potomcích
-Metoda Run je odpovědná za provádění akcí aktérem v případě IO události. Například třída Receiver voláním této metody neblokujícím způsobem čte data ze soketu, dokud se vyčerpá
-Tato polymorfní metoda se vola v metodě threadfunc třídy HTTPServer. který přijímá z epollu další událost spojenou s aktérem a volá jeho metodu
+Abstraktní třída Actor má virtuálnou metodu Run, ktera je přetěžena v potomcích
+Tato metod je odpovědná za provádění akcí aktérem v případě IO události. Například třída Receiver voláním této metody neblokujícím způsobem čte data ze soketu, dokud se vyčerpá, Accepter přijímá nové klienty a Queuer zpracovává zprávy
+Run se vola v metodě threadfunc třídy HTTPServer, který přijímá z epollu další událost spojenou s aktérem a volá jeho metodu
 
 Abstraktní třídy Queuer představující aktéra, který postupně zpracovává frontu zpráv(něco jako abstraktní automat), má virtuální metodu Handle, přetěžene varianty které ve třídách potomkách skutečně definují reakce automatu na každou zprávu.
 Například třída Logger v metodě handle zpracovává zápis přijatého logu do odpovídajícího streamu zatímco třídy generátory obsahu přijímají HTTP requesty a v metodě handle implementují logiku zpracování těchto requestu

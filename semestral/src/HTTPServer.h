@@ -29,22 +29,15 @@ public:
     /// returns true if config was loaded successfully
     bool LoadConfig(const std::string& cfgpath);
     /// Starts the server
-    /// @returns true if server have started
+    /// IF start was succesful the call is blocking and return true only when server is shut down
     bool Start();
-
-protected:
-    /// Function for threads
-    /// @param threadi thread number
-    void threadfunction(int threadi);
-    /// Load threads configuration
-    bool LoadThreads(const std::map<std::string,std::string> &cfgmap);
+private:
     /// Load log configuration
     bool LoadLogfile(const std::map<std::string,std::string> &cfgmap);
     /// Load tcp listen configuration
     bool LoadListen(const std::map<std::string,std::string> &cfgmap);
     /// Load virtual filesystem map configuration
     bool LoadVirtualfs(const std::map<std::string,std::string> &cfgmap);
-
     /// The logger used to store logs
     Logger *m_logger=nullptr;
     /// Threads contiunue running while this is true

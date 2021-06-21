@@ -7,13 +7,14 @@
 Epoller::Epoller(): Actor(epoll_create(666)) {}
 
 Epoller::~Epoller() {
+    Close();
     for(auto ptr:m_actors){
         delete ptr;
     }
 }
 
 epoll_event Epoller::GetEvent() {
-    struct epoll_event ev;
+    struct epoll_event ev{};
     epoll_wait(m_descriptor,&ev,1,-1);
     return ev;
 }
@@ -36,9 +37,8 @@ bool Epoller::RmActor(Actor *actor) {
     auto it=m_actors.find(actor);
     if(it==m_actors.end())
         return false;
+    delete actor;
     m_actors.erase(it);
-    delete *it;
-    printf("killed an actor\n");
     return true;
 }
 

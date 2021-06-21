@@ -28,9 +28,8 @@ void Reciever::Run(uint32_t events) {
 
     char buf[4096]{};
     while(true){
-        int len = read(m_descriptor, buf, 256);
+        ssize_t len = read(m_descriptor, buf, 256);
         if(len==-1){
-            printf("error %d\n",errno);
             throw this;
         }
         int s=0;

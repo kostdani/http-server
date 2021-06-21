@@ -5,12 +5,13 @@
 #ifndef SERVER_VIRTUALDIRRECTORYCONTENT_H
 #define SERVER_VIRTUALDIRRECTORYCONTENT_H
 #include "ContentGenerator.h"
-
+/// Associates uri with other content generators
 class VirtualDirrectoryContent:public ContentGenerator {
 public:
     VirtualDirrectoryContent();
-
-    void AddLocation(const std::string &location,ContentGenerator *generator);
+    /// Adds new location to map
+    void AddLocation(const std::string &uri,ContentGenerator *generator);
+    /// On request finds the longest suitable uri in map and resends message to corresponding generator
     void handler(HTTPRequest& msg) override;
 protected:
     std::map<std::string,ContentGenerator *> m_locations;

@@ -25,15 +25,15 @@ bool Sender::multiplex(int epolld) {
 
 void Sender::Run(uint32_t events) {
     if(events&(EPOLLERR|EPOLLHUP|EPOLLRDHUP)){
-        //printf("sender eeror\n");
-        return;
+        close(m_socketfd);
+        m_socketfd=-1;
     }
 
-    if(last.length()-n>=0){
+    if(last.length()-n>=0&&m_socketfd!=-1){
         ssize_t r=write(m_socketfd,last.c_str()+n,last.length()-n);
         if(r==-1){
-            printf("error %d",errno);
-            return;
+            close(m_socketfd);
+            m_socketfd=-1;
         }else if(r<(ssize_t)last.length()-n){
             n+=r;
             return;
@@ -52,16 +52,19 @@ void Sender::Run(uint32_t events) {
         if(!last.empty()){
             break;
         }
-        //std::cout<<msg<<std::endl;
     }
 
 }
 
 void Sender::handler(std::string& msg) {
+    awaitedmsgs--;
+    if(m_socketfd==-1&&awaitedmsgs==0)
+        throw this;
+
     n=write(m_socketfd,msg.c_str(),msg.length());
     if(n==-1){
-        printf("error %d",errno);
-        return;
+        close(m_socketfd);
+        m_socketfd=-1;
     }else if(n<(ssize_t)msg.length()){
         last=msg;
     }else{

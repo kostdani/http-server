@@ -8,9 +8,7 @@
 #include <set>
 #include <mutex>
 
-/// Epoll actor
-///
-/// Class wrapper for epoll file descriptor
+/// Epoll actor, wrapper for epoll file descriptor
 class Epoller : public Actor{
 public:
     Epoller();

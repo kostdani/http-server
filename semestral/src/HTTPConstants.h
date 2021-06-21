@@ -7,12 +7,11 @@
 #include <string>
 
 namespace Status_Code{
-    const std::string OK = "200 OK";
-    const std::string Bad_Request = "400 Bad Request";
-    const std::string Forbidden = "403 Forbidden";
-    const std::string Not_Found = "404 Not Found";
-    const std::string Not_Impelemented = "501 Not Implemented";
-
+    static const std::string OK = "200 OK";
+    static const std::string Bad_Request = "400 Bad Request";
+    static const std::string Forbidden = "403 Forbidden";
+    static const std::string Not_Found = "404 Not Found";
+    static const std::string Not_Impelemented = "501 Not Implemented";
 }
 
 

@@ -5,19 +5,17 @@
 #ifndef SERVER_TERMINATORCONTENT_H
 #define SERVER_TERMINATORCONTENT_H
 #include "ContentGenerator.h"
-#include <thread>
+/// Actor shutting down the server when getting a message
 class TerminatorContent : public ContentGenerator{
 public:
-    TerminatorContent(bool &stopb,std::vector<std::thread> &thrvec);
+    TerminatorContent(bool &stopb);
 
     void Run(uint32_t events) override;
 
-    void handler(HTTPRequest& msg) override{}
-
+    void handler(HTTPRequest& msg) override;
 protected:
     uint32_t TrackedEvents() const override;
     bool &m_stop;
-    std::vector<std::thread> &m_threads;
 };
 
 

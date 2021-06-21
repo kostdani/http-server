@@ -10,9 +10,8 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
-/// Actor that accept new clients
-///
-/// This actor estabilishes connection with client and creates Reciever actor
+
+/// Accepter actor estabilishes new connections with clients and creates Reciever actor
 class Accepter : public Actor{
 public:
     /// Basic constructor

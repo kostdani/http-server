@@ -8,7 +8,7 @@
 #include <iostream>
 #include <fstream>
 
-/// Log managing actor
+/// Logger actor writes recieved logs to stdout
 class Logger: public Queuer< std::string >{
 public:
     Logger();

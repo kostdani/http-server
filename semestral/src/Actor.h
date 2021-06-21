@@ -10,10 +10,7 @@
 #include <iostream>
 #include <functional>
 
-/// Virtual class parent of all actors
-///
-/// Actor is an object getting events which can be tracked by epoll
-/// technically it's a wrapper for unix descriptor
+/// Virtual class parent of all actors, an object getting events which can be tracked by epoll
 class Actor {
 public:
     /// Constructor
@@ -23,7 +20,7 @@ public:
     /// Closes descriptor and frees memory if needed
     virtual ~Actor();
 
-    /// Function that closes descriptor
+    /// Closes descriptor
     void Close();
 
     /// Checks if decriptor is ok
@@ -44,12 +41,12 @@ public:
 
     friend class Epoller;
 
+protected:
     /// Multiplexes actor on epoll
     /// Tracks input and output events level triggered
     /// @param epolld epoll file descriptor
     /// @returns true if multiplexd sucessfuly othewise false
     virtual bool multiplex(int epolld);
-protected:
     virtual uint32_t TrackedEvents() const=0;
     Actor *m_parent= nullptr;
     int m_descriptor=-1;

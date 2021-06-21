@@ -6,7 +6,6 @@
 
 Actor::Actor(int descriptor){
     m_descriptor=descriptor;
-
 }
 
 bool Actor::Check() const{
