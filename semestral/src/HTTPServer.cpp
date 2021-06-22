@@ -11,7 +11,7 @@ bool HTTPServer::Start() {
     m_stop=false;
     while (!m_stop){
         auto ev= m_epoller.GetEvent();
-        auto *actor=(Actor *)ev.data.ptr;
+        auto *actor=static_cast<Actor *>(ev.data.ptr);
         try{
             actor->Run(ev.events);
         }catch (std::exception &exc){
