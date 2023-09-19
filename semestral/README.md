@@ -1,86 +1,66 @@
 # HTTP Server
 
-Autor: Danila Kost
+The task is to program a  create a simple asynchronous HTTP server with configuration loading and logging.
 
-# Téma z Progtestu
+The user can start the server from the command line by specifying a configuration file.
+for example: ./Server config.cfg
 
-Úkolem je naprogramovat jednoduchý HTTP server s podporou různých generátorů obsahu. Generátor obsahu musí podporovat:
+The server implements:
 
-- výpis obsahu adresáře
-- konkrétní html stránka (statický obsah)
-- externí skript nebo program
+- loading the configuration file
+- network listening parameters (IP address, port)
+- restrictions on working with a specific directory
+- transmission log (where it should be saved, in what format, how the header of each record should look, ...)
+- turning off the server at the (configurable) URL address
 
-Server musí implementovat:
-
-- načítání konfiguračního souboru
-- parametry naslouchání na síti (IP adresa, port)
-- omezení na práci s konkrétním adresářem
-- log přenosů (kam se má ukládat, v jakém formátu, jak má vypadat hlavička každého záznamu, ...)
-- vypnutí serveru na (konfigurovatelné) URL adrese
-
-HTTP server může umět obsloužit více domén nebo poskytovat virtuální filesystém (mapování virtuálních URL na fyzické cesty na disku)
-
-Volitelně: Podpora HTTPS (openssl), vícevláknové obsloužení klientů
-
-Kde lze využít polymorfismus? (doporučené)
-
-- Druh souboru: adresář, HTML soubor, obrázek, skript, nepodporovaný formát, ...
-- Logování: na konzoli, do souboru, do databáze, ...
-- Styl logování: jednoduchá hlavička, kompletní požadavek (např. pouze pro chybové stavy), statistika přístupů, ...
-
-# Vlastní zadání
-
-Vytvořím jednoduchý asinchronni HTTP server s načítáním konfigurace a logováním.
-
-Uživatel může spustit server z příkazového řádku s zadáním konfiguračního souboru.
-například: ./Server config.cfg
+An HTTP server can serve multiple domains or provide a virtual file system (mapping virtual URLs to physical paths on the disk)
 
 ## Config file structure
 
-Bílé znaky v konfiguračním souboru jsou ignorovány
-Konfigurační soubor se skládá z dvojic v podobě
+White characters in the configuration file are ignored
+The configuration file consists of pairs of the form
 "key=value;"
 
-Podporované nastavení:
-- logfile) value ma být cesta k souboru kde budou uloženy logy
-Pokud není zadán, logy budou zapisovány do konzoly
-- listen) value  ma být ip a port naslouchání síti
-Pokud není zadán, výchozí hodnota je "0.0.0.0:8080"
-- virtualfs) value musí být seznam pár url = obsah oddělený čárkami ve složených závorkách
-tyto páry definují mapování virtuálních URL na generátory obsahu
+Supported settings:
+- logfile) value should be the path to the file where the logs will be stored
+If not specified, logs will be written to the console
+- listen) value should be the ip and port of listening to the network
+If not specified, defaults to "0.0.0.0:8080"
+- virtualfs) value must be a comma-separated list of url=content pairs in braces
+these pairs define the mapping of virtual URLs to content generators
 
-## Podporované generátory obsahu
-- Soubor) file:path - umožňuje zobrazit obsah souboru
-- Adresar) dir:path - umožňuje zobrazit obsah složky 
-- Script) script:path - umožňuje získat výsledek spuštění skriptu nebo programu
-podporuje dotazy v url, například, url?a&b&c znamená volání skriptu s argumenty a b c
-- Vypinac) special:terminator - umožňuje nastavit adresu v konfiguraci (pridadně více adres), na které bude server vypnut
+## Supported content generators
+- File) file:path - allows you to display the contents of the file
+- Directory) dir:path - allows you to display the contents of the folder
+- Script) script:path - allows you to get the result of running a script or program
+supports queries in url, for example, url?a&b&c means call script with arguments a b c
+- Vypinac) special:terminator - allows you to set the address in the configuration (plus more addresses) at which the server will be shut down
 
-Server přesměruje request na generátor obsahu podle nejdelší shody začátku URL adresy
+The server redirects the request to the content generator according to the longest match of the beginning of the URL address
 
-## Logovani
-Server uchovává logy v Common Log Formátu a podporuje jejich zápis do souboru nebo konzoly.
-Každý řádek popisuje jeden obsloužený HTTP požadavek. Formát řádku je:
-```klient ident uživatel [datum] "požadavek" status délka```
+## Login
+The server stores logs in the Common Log Format and supports writing them to a file or console.
+Each line describes one served HTTP request. The line format is:
+```client ident user [date] "request" status length```
 
-## Kde mám polymorfismus?
-Abstraktní třída `Actor` má virtuálnou metodu `Run`, ktera je přetěžena v potomcích
-Tato metod je odpovědná za provádění akcí aktérem v případě IO události. Například třída `Receiver` voláním této metody neblokujícím způsobem čte data ze soketu, dokud se vyčerpá, `Accepter` přijímá nové klienty a `Queuer` zpracovává zprávy
-`Run` se vola v metodě `Start` třídy `HTTPServer`, ktera v cyklu přijímá z epollu dalšího aktéra s nimž se stala nějaká událost a volá jeho metodu
+## Where do I have polymorphism?
+The abstract class `Actor` has a virtual method `Run` which is overloaded in descendants
+This method is responsible for performing actions by the actor in case of an IO event. For example, the `Receiver` class reads data from the socket non-blockingly by calling this method until it is exhausted, the `Accepter` accepts new clients, and the `Queuer` processes messages
+`Run` is called in the `Start` method of the `HTTPServer` class, which in a cycle receives from epoll the next actor with which some event happened and calls its method
 
-Abstraktní třídy `Queuer` představující aktéra, který postupně zpracovává frontu zpráv, má virtuální metodu `Handle`, přetěžene varianty které ve třídách potomkách skutečně definují reakce na každou zprávu.
-Například třída `Logger` zpracovává zápis přijatého logu do odpovídajícího streamu zatímco třídy generátory obsahu přijímají HTTP requesty a v metodě `Handle` implementují logiku zpracování těchto requestu
+The abstract class `Queuer` representing the actor that sequentially processes the message queue has a virtual `Handle` method, overloaded variants that actually define the response to each message in the child classes.
+For example, the `Logger` class processes the recording of the received log into the corresponding stream, while the content generator classes receive HTTP requests and implement the logic of processing these requests in the `Handle` method
 
-Třída `Queuer` navíc implementuje parametrický polymorfismus konkrétně v tom, že typ zprávy je zadán šablonou.
-Např `Sender` a `Logger` pracujou se stringy a `ContentGenerator`y s `HTTPRequest`y
+Additionally, the `Queuer` class implements parametric polymorphism specifically in that the message type is specified by a template.
+For example `Sender` and `Logger` work with strings and `ContentGenerator` with `HTTPRequest`
 
-## Příklady
-Adresar examples obsahuje ukázkový konfigurační soubor: server.cfg a 2 skripty: sum.sh a factorial.sh pro demonstraci.
+## Examples
+The examples directory contains an example configuration file: server.cfg and 2 scripts: sum.sh and factorial.sh for demonstration.
 
-Сonfig konfiguruje server tak, aby 
-- poslouchal adresu 0.0.0.0 na portu 8080, 
-- vypisoval logy do souboru examples/server.log,
-- zobrazoval na adrese http://127.0.0.1:8080 adresar doc/ s dokumentací projektu,
-- na adrese http://127.0.0.1:8080/sum je k dispozici volání skriptu, který přidává dvě čísla,
-- na adrese http://127.0.0.1:8080/factorial je k dispozici volání skriptu, který počítá faktoriál daného čísla,
-- na adrese http://127.0.0.1:8080/exit server se vypíná
+Сonfig configures the server so that
+- listened to address 0.0.0.0 on port 8080,
+- wrote logs to the file examples/server.log,
+- displayed at http://127.0.0.1:8080 address book doc/ with project documentation,
+- at http://127.0.0.1:8080/sum there is a script call that adds two numbers,
+- at the address http://127.0.0.1:8080/factorial there is a call to a script that calculates the factorial of a given number,
+- at the address http://127.0.0.1:8080/exit the server shuts down
